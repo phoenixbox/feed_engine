@@ -13,6 +13,8 @@ group :test do
   gem 'capybara'
 end
 
+gem "figaro"
+gem 'twitter'
 gem 'pg'
 gem 'jquery-rails'
 gem 'omniauth-twitter'
