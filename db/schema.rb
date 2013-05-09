@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130509193748) do
+ActiveRecord::Schema.define(:version => 20130509202641) do
 
   create_table "tweets", :force => true do |t|
     t.string   "tweet_id"
@@ -25,9 +25,11 @@ ActiveRecord::Schema.define(:version => 20130509193748) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.string   "subdomain"
+    t.string   "twitter_token"
+    t.string   "twitter_secret"
   end
 
 end

@@ -8,9 +8,11 @@ class User < ActiveRecord::Base
     name = auth["info"]["nickname"]
     create! do |user|
       user.provider = auth["provider"]
-      user.uid = auth["uid"]  
+      user.uid = auth["uid"]
       user.name = name
-      user.subdomain = name.downcase 
+      user.subdomain = name.downcase
+      user.twitter_token = auth["credentials"]["token"]
+      user.twitter_secret = auth["credentials"]["secret"]
     end
   end
 end
