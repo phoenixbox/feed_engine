@@ -14,6 +14,7 @@ group :test do
 end
 
 gem "figaro"
+gem 'activerecord-postgres-hstore'
 gem 'twitter'
 gem 'pg'
 gem 'jquery-rails'
