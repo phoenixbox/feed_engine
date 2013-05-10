@@ -11,8 +11,8 @@ class User < ActiveRecord::Base
       user.uid = auth["uid"]
       user.name = name
       user.subdomain = name.downcase
-      user.twitter_token = auth["credentials"]["token"]
-      user.twitter_secret = auth["credentials"]["secret"]
+      #user.twitter_token = auth["credentials"]["token"]
+      #user.twitter_secret = auth["credentials"]["secret"]
     end
   end
 end
