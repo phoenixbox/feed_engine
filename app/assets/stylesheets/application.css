@@ -80,11 +80,25 @@ margin-top: 0;
   background: #e3e3e3;
 }
 
+#tweet-content {
+  margin:5px;
+  width: 330px;
+  height:140px;
+  background: #ff5763;
+}
+
 #textpost-sample {
   margin: 5px;
   width: 340px;
   height: 350px;
   background: #848484;
+}
+
+#textpost-content {
+  margin: 5px;
+  width: 330px;
+  height: 340px;
+  background: #ff5763;
 }
 
 #imgpost-sample {
@@ -94,11 +108,25 @@ margin-top: 0;
   background: #636363;
 }
 
+#imgpost-content {
+  margin: 5px;
+  width: 330px;
+  height: 480px;
+  background: #ff5763;
+}
+
 #linkpost-sample {
   margin: 5px;
   width: 340px;
   height: 150px;
   background: #929292;
+}
+
+#linkpost-content {
+  margin: 5px;
+  width: 330px;
+  height: 140px;
+  background: #ff5763;
 }
 
 #albumart-sample {
@@ -108,11 +136,25 @@ margin-top: 0;
   background: #b6b6b6;
 }
 
+#albumart-content {
+  margin: 5px;
+  width: 330px;
+  height: 300px;
+  background: #ff5763;
+}
+
 #soundcloud-sample {
   margin: 5px;
   width: 340px;
   height: 150px;
   background: #d5d5d5;
+}
+
+#soundcloud-content {
+  margin: 5px;
+  width: 330px;
+  height: 140px;
+  background: #ff5763;
 }
 
 /* // 4. COLUMNS */
