@@ -11,3 +11,145 @@
  *= require_self
  *= require_tree .
  */
+
+ /* ###################################################################
+
+  // 1. RESET STYLES
+  // 2. TYPOGRAPHY
+  // 3. PAGE SECTIONS STYLES
+  // 4. COLUMNS
+  // 5. HEADER
+  // 6. CONTENT WRAPPER
+  // 7. OTHERS
+
+################################################################### */
+
+ /* // 1. RESET STYLES */
+/* ################################################################ */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;font:inherit;vertical-align:baseline;text-decoration:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}body{cursor:default}
+
+/* // 2. TYPOGRAPHY */
+/* ################################################################ */
+body,h1,h2,h3,h4,h5,h6,p { font-family: Oswald, Helvetica, Arial, sans-serif; }
+
+body{
+margin:0;
+padding:0;
+line-height: 1.5em;
+}
+
+b{font-size: 110%;}
+em{color: red;}
+
+/* // 3. PAGE SECTION STYLES */
+/* ################################################################ */
+
+#topsection{
+background: #EAEAEA;
+height: 3em; /*Height of top section*/
+}
+
+#topsection h1{
+margin: 0;
+padding-top: 15px;
+}
+
+#contentwrapper{
+float: left;
+width: 100%;
+}
+
+.innertube{
+margin: 5px; /*Margins for inner DIV inside each column (to provide padding)*/
+margin-top: 0;
+}
+
+.links-inline li {
+  display: inline;
+}
+
+#masonry-container {
+  border-style: solid;
+  border-width: 1px;
+}
+
+#tweet-sample {
+  width: 340px;
+  height: 150px;
+  background: #e3e3e3;
+}
+
+#textpost-sample {
+  width: 340px;
+  height: 350px;
+  background: #848484;
+}
+
+#imgpost-sample {
+  width: 340px;
+  height: 490px;
+  background: #e3e3e3;
+}
+
+#linkpost-sample {
+  width: 340px;
+  height: 150px;
+  background: #848484;
+}
+
+#albumart-sample {
+  width: 340px;
+  height: 310px;
+  background: #e3e3e3;
+}
+
+#soundcloud-sample {
+  width: 340px;
+  height: 150px;
+  background: #848484;
+}
+
+/* // 4. COLUMNS */
+/* ################################################################ */
+
+#contentcolumn{
+margin-left: 200px; /*Set left margin to LeftColumnWidth*/
+}
+
+#leftcolumn{
+float: left;
+width: 200px; /*Width of left column*/
+margin-left: -100%;
+background: #e3e3e3;
+height: 100%;
+}
+
+#personal-profile {
+  height: 100%;
+  border-style: solid;
+  border-width: 1px;
+}
+
+#user-posting {
+  border-style: solid;
+  border-width: 1px;
+}
+
+#soundcloud-player {
+  border-style: solid;
+  border-width: 1px;
+  height: 100%;
+}
+
+/* // 5. HEADERS */
+/* ################################################################ */
+#logo {
+  float: left;
+  font-size: x-large;
+}
+
+#login {
+  float: right;
+  border-style: solid;
+  border-width: 1px;
+}
