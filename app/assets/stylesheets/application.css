@@ -44,16 +44,6 @@ em{color: red;}
 /* // 3. PAGE SECTION STYLES */
 /* ################################################################ */
 
-#topsection{
-background: #EAEAEA;
-height: 3em; /*Height of top section*/
-}
-
-#topsection h1{
-margin: 0;
-padding-top: 15px;
-}
-
 #contentwrapper{
 float: left;
 width: 100%;
@@ -157,6 +147,48 @@ margin-top: 0;
   background: #ff5763;
 }
 
+/******************** Account Mgmt Page *************************/
+
+#account-mgmt-container {
+  width: 960px;
+  margin:0 auto;
+  background: #d5d5d5;
+  height: 100%;
+}
+
+#account-mgmt-filters {
+  margin: 10px;
+  background: #e5e5e5;
+  height: 60px;
+  text-align: middle;
+}
+
+#account-mgmt-filters a {
+  display: inline;
+  width:100%;
+}
+
+#integration-info {
+  margin: 10px;
+  padding-top: 40px;
+  height: 100px;
+  background: #e5e5e5;
+  text-align: center;
+}
+
+#integration-outer-container {
+  margin: 10px;
+  height: 270px;
+  background: #e5e5e5;
+}
+
+#integration-inner-container {
+  display: block;
+  margin: 10px;
+  height: 260px;
+  background: #ffffff;
+}
+
 /* // 4. COLUMNS */
 /* ################################################################ */
 
@@ -195,6 +227,17 @@ height: 100%;
 
 /* // 5. HEADERS */
 /* ################################################################ */
+
+#topsection{
+background: #EAEAEA;
+height: 3em; /*Height of top section*/
+}
+
+#topsection h1{
+margin: 0;
+padding-top: 15px;
+}
+
 #logo {
   float: left;
   font-size: x-large;
