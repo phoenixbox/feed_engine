@@ -68,45 +68,46 @@ margin-top: 0;
   display: inline;
 }
 
-#masonry-container {
+#content {
   border-style: solid;
   border-width: 1px;
 }
 
 #tweet-sample {
-  width: 340px;
+  margin: 5px;
+  width: 300px;
   height: 150px;
   background: #e3e3e3;
 }
 
 #textpost-sample {
-  width: 340px;
+  width: 300px;
   height: 350px;
   background: #848484;
 }
 
 #imgpost-sample {
-  width: 340px;
+  width: 300px;
   height: 490px;
-  background: #e3e3e3;
+  background: #636363;
 }
 
 #linkpost-sample {
-  width: 340px;
+  width: 300px;
   height: 150px;
-  background: #848484;
+  background: #929292;
 }
 
 #albumart-sample {
-  width: 340px;
+  width: 300px;
   height: 310px;
-  background: #e3e3e3;
+  background: #b6b6b6;
 }
 
 #soundcloud-sample {
-  width: 340px;
+  width: 300px;
   height: 150px;
-  background: #848484;
+  background: #d5d5d5;
 }
 
 /* // 4. COLUMNS */
