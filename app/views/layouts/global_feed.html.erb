@@ -128,14 +128,11 @@
     </div> <!--end of #maincontainer -->
   </body>
   <script>
-    $('input[name=text]').click(function () {
-      $('#textpost').slideToggle($(this).is(':checked'));
-    });
-    $('input[name=link]').click(function () {
-      $('#linkpost').slideToggle($(this).is(':checked'));
-    });
-    $('input[name=image]').click(function () {
-      $('#imagepost').slideToggle($(this).is(':checked'));
+ $('input[type="checkbox"]').on('change', function () {
+    $('#' + this.name + 'post').slideToggle(this.checked)
+                                   .siblings('div')
+                                   .slideUp();
+    $(this).siblings('input').prop('checked', false);
     });
   </script>
 </html>
