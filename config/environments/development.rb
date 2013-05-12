@@ -1,5 +1,6 @@
 FeedEngine::Application.configure do
-  config.action_dispatch.tld_length = 5
+  #config.action_dispatch.tld_length = 2
+  FeedEngine::Application.config.session_store :cookie_store, key: '_feed_engine_session', domain: '.lvh.me'
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on

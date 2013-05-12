@@ -11,6 +11,9 @@ end
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'launchy'
+  gem 'rack_session_access'
+  gem 'selenium-webdriver', '2.31.0'
 end
 
 gem "figaro"
