@@ -151,27 +151,31 @@ margin-top: 0;
 
 #account-mgmt-container {
   width: 960px;
-  margin:0 auto;
+  margin: auto;
   background: #d5d5d5;
   height: 100%;
 }
 
-#account-mgmt-filters {
+#account-mgmt-filter-container {
   margin: 10px;
   background: #e5e5e5;
-  height: 60px;
+  height: 40px;
   text-align: middle;
 }
 
-#account-mgmt-filters a {
+#account-mgmt-filter-buttons {
+}
+
+#account-mgmt-filter-container a {
+  margin: 0px 40px 0px 15px;
   display: inline;
   width:100%;
 }
 
 #integration-info {
   margin: 10px;
-  padding-top: 40px;
-  height: 100px;
+  padding-top: 20px;
+  height: 60px;
   background: #e5e5e5;
   text-align: center;
 }
@@ -183,10 +187,107 @@ margin-top: 0;
 }
 
 #integration-inner-container {
-  display: block;
+  margin: 10px;
   height: 260px;
   background: #ff5763;
 }
+
+.integration-container {
+  float: left;
+  margin: 18px 10px 10px 10px;
+  width: 210px;
+  height: 225px;
+  background: #e5e5e5;
+}
+
+.integration-header {
+  margin: 5px;
+  width: 200px;
+  height: 50px;
+  background: #ff5763;
+  text-align: center;
+}
+
+.integration-header h3 {
+  padding-top: 10px;
+}
+
+.integration-logo-container {
+  margin: 5px;
+  width: 200px;
+  height: 120px;
+  vertical-align: middle;
+  background: #ff5763;
+}
+
+/* TODO: not correctly centered */
+.integration-logo img{
+  margin: 10px 0px 0px 50px;
+}
+
+.integration-button-container {
+  margin: 5px;
+  width: 200px;
+  height: 30px;
+  background: #ff5763;
+}
+
+.integration-button {
+  /* % experimentation */
+  margin-left: 33%;
+}
+
+#account-details-outer-container {
+  margin: 10px;
+  height: 230px;
+  background: #e5e5e5;
+}
+
+#account-details-inner-container {
+  margin: 10px;
+  height: 220px;
+  background: #ff5763;
+  display: block-inline;
+}
+
+#account-details-header {
+  margin:5px;
+  height: 40px;
+  width: 910px;
+  background: #e5e5e5;
+  padding-top: 5px;
+  text-align: center;
+}
+
+#account-details-content {
+  margin: 5px;
+  height: 120px;
+  width: 910px;
+  background: #e5e5e5;
+}
+
+#account-details-content h3 {
+  padding: 10px 5px 5px 10px;
+}
+
+#account-buttons-container {
+  margin: 5px;
+  height: 40px;
+  width: 910px;
+  background: #e5e5e5;
+}
+
+#account-buttons {
+  margin-top: 5px;
+  float: right;
+}
+
+#account-buttons a {
+  margin: 0px 40px 0px 0px;
+  display: inline;
+  width:100%;
+}
+
 
 /* // 4. COLUMNS */
 /* ################################################################ */
