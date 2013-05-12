@@ -160,10 +160,6 @@ margin-top: 0;
   margin: 10px;
   background: #e5e5e5;
   height: 40px;
-  text-align: middle;
-}
-
-#account-mgmt-filter-buttons {
 }
 
 #account-mgmt-filter-container a {
@@ -288,6 +284,138 @@ margin-top: 0;
   width:100%;
 }
 
+/********************** Content Show Page *************************/
+
+#content-show-detail-container {
+  margin: 10px;
+  height: 330px;
+  width: 940px;
+  background: #e5e5e5;
+}
+
+#content-show-picture-base {
+  float: left;
+  margin: 5px;
+  width: 340px;
+  height: 310px;
+  background: #ff5763;
+}
+
+#content-show-picture {
+  float: left;
+  position: relative;
+  margin: 5px;
+  width: 330px;
+  height: 300px;
+  background: #e5e5e5;
+}
+
+#content-show-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 330px;
+  height: 120px;
+  background: #ff5763;
+}
+
+#content-copy-base {
+  float: right;
+  margin: 5px;
+  width: 580px;
+  height: 310px;
+  background: #ff5763;
+}
+
+.content-copy-header {
+  margin: 5px;
+  width: 570px;
+  height: 35px;
+  background: #e5e5e5;
+}
+
+.sep {
+  margin: 5px;
+  width: 570px;
+  height: 1px;
+  background: #e5e5e5;
+}
+
+#content-copy-main {
+  margin: 5px;
+  width: 570px;
+  height: 110px;
+  background: #e5e5e5;
+}
+
+#content-copy-main p {
+  font-size: small;
+}
+
+#content-copy-secondary {
+  margin: 5px;
+  width: 570px;
+  height: 90px;
+  background: #e5e5e5;
+}
+
+#content-copy-secondary p {
+  font-size: small;
+}
+
+#comments-base {
+  margin: 10px;
+  height: 300px;
+  width: 940px;
+  background: #e5e5e5;
+}
+
+#comments-container {
+  float: left;
+  margin: 5px;
+  width: 930px;
+  height: 290px;
+  background: #ff5763;
+}
+
+#old-comments {
+  margin: 5px;
+  width: 920px;
+  height: 150px;
+  background: #e5e5e5;
+}
+
+#new-comment {
+  float: left;
+  margin: 5px;
+  width: 920px;
+  height: 120px;
+  background: #e5e5e5;
+}
+
+#comment-textarea {
+  margin: 5px;
+  width: 910px;
+  height: 75px;
+  background: #ffffff;
+}
+
+#post-button {
+  margin: 5px;
+  width: 910px;
+  height: 30px;
+  background: #ffffff;
+}
+
+#post-button a {
+  text-align: right;
+  display: inline;
+  width:100%;
+}
+
+#button-right {
+  margin-right: 10px;
+  float: right;
+}
 
 /* // 4. COLUMNS */
 /* ################################################################ */
