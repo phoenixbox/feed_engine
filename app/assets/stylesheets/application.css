@@ -286,17 +286,15 @@ margin-top: 0;
 
 /********************** Account Mgmt Feeds Page *************************/
 
-/* TODO: table styling */
 #pending-table {
   float: left;
-  /*margin: 5px;*/
   width: 100%;
   border-collapse: collapse;
 }
 
 #pending-table th {
   vertical-align: middle;
-  background-color: #A7C942;
+  background-color: #ff5763;
   height: 50px;
 }
 
@@ -307,7 +305,7 @@ margin-top: 0;
 }
 
 #pending-table tr.alt td {
-  background-color:#EAF2D3;
+  background-color: #ffabb1;
 }
 
 /********************** Content Show Page *************************/
