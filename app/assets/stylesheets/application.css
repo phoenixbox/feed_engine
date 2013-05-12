@@ -284,6 +284,32 @@ margin-top: 0;
   width:100%;
 }
 
+/********************** Account Mgmt Feeds Page *************************/
+
+/* TODO: table styling */
+#pending-table {
+  float: left;
+  /*margin: 5px;*/
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#pending-table th {
+  vertical-align: middle;
+  background-color: #A7C942;
+  height: 50px;
+}
+
+#pending-table td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+#pending-table tr.alt td {
+  background-color:#EAF2D3;
+}
+
 /********************** Content Show Page *************************/
 
 #content-show-detail-container {
