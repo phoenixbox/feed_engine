@@ -1,1 +1,7 @@
 <h1>This is my profile!</h1>
+<%= form_for @feed_item do |f| %>
+  <div class="field">
+    <%= f.text_area :tl_text %>
+  </div>
+  <%= f.submit "Submit" %>
+<% end %>

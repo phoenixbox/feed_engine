@@ -2,35 +2,22 @@ require 'spec_helper'
 
 feature "authenticated user can add feed_items to their feed" do
   # user must login
-  before "sign in user with Twitter account" do
-    visit '/'
-    mock_auth_hash
-    click_link 'Sign in with Twitter'
-    visit root_path(subdomain: "mockuser")
-  end
+  context "creating a new post" do
 
-  describe "creating a new post" do
-
-    context "text only" do
-      it "posts text to a user's feed", js: true do
-
-        # click_link "Post"
-        # Then I should see a text field with a post button
-        # And it should be limited to 512 chars
+      it "posts text to a user's feed" do
+        visit 'http://lvh.me:1234/'
+        mock_auth_hash
+        click_link 'Sign in with Twitter'
+        click_link 'Go to my page'
+        fill_in('feed_item_tl_text', :with => "This is a test post")
+        click_button("Submit")
       end
-    end
 
-    context "creating a new image" do
       # Then I should see an option to attach an image
       # When I want to attach a photo
       # Then I am restricted to ADDING A COMMENT of 256 chars long 
-    end
-
-    context "creating a new link" do
       # When I want to include a link to another web page
       # Then I am restricted to ADDING A COMMENT of 256 chars long
-    end
-
   end
 
 
