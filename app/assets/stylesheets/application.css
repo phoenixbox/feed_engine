@@ -147,6 +147,20 @@ margin-top: 0;
   background: #ff5763;
 }
 
+.item-action {
+  float: right;
+  text-align: center;
+  margin: 5px;
+  width: 100px;
+  height: 30px;
+  background: #e3e3e3
+}
+
+.item-action a {
+  vertical-align: middle;
+  margin: 0px 5px 0px 5px;
+}
+
 /******************** Account Mgmt Page *************************/
 
 #account-mgmt-container {

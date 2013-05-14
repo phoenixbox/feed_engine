@@ -56,6 +56,20 @@
       <div> <!--end of #personal-profile -->
       <div id="user-posting">
         <h1>This is my profile!</h1>
+        <h2>Feed:</h2>
+        <% @feeds.each do |feed| %>
+          <%= render feed.type, feed: feed %>
+        <% end %>
+
+        <hr>
+
+        <%= form_for @feed_item do |f| %>
+          <div class="field">
+            <%= f.label :post%><br />
+            <%= f.text_area :tl_text %>
+          </div>
+          <%= f.submit "Submit" %>
+        <% end %>
         <%= form_for @feed_item do |f| %>
           <div class="field">
             <%= f.text_area :tl_text %>
