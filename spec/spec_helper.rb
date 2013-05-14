@@ -22,4 +22,5 @@ RSpec.configure do |config|
   config.order = "random"
 end
 
+Capybara.server_port = 1234
 OmniAuth.config.test_mode = true
