@@ -1,15 +1,15 @@
 <h2>Feed:</h2>
 
 <% @feeds.each do |feed| %>
-  <%= render feed.type, feed: feed %>
+  <%= render feed.type.downcase, feed: feed %>
 <% end %>
 
 <hr>
 
-<%= form_for @feed_item do |f| %>
+<%= form_for @tl_text do |f| %>
   <div class="field">
     <%= f.label :post%><br />
-    <%= f.text_area :tl_text %>
+    <%= f.text_area :content %>
   </div>
   <%= f.submit "Submit" %>
 <% end %>

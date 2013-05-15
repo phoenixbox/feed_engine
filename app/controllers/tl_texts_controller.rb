@@ -1,8 +1,9 @@
 class TlTextsController < ApplicationController
 
   def create
-    @feed_item = TlText.create_from_tuneline(params[:feed_item], current_user)
-    if @feed_item.save
+    @tl_text = current_user.tl_texts.create_from_form(params[:tl_text])
+    #@tl_text = current_user.tl_texts.create(params[:feed_item])
+    if @tl_text.save
       redirect_to :back, notice: "Successfully added item to feed"
     else
       redirect_to :back, notice: "Sorry pal"
