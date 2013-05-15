@@ -4,7 +4,7 @@ class FeedItem < ActiveRecord::Base
   attr_accessible :data, :feed_item_points_count, :user_id
   belongs_to :user
 
-  VALID_DATA_ATTRIBUTES = %w[type tl_text]
+  VALID_DATA_ATTRIBUTES = %w[type tl_text tl_link tl_image]
 
   def self.create_from_tuneline(input, user)
     create! do |item|

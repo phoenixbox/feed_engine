@@ -70,6 +70,14 @@ margin-top: 0;
   background: #e3e3e3;
 }
 
+
+#text-sample {
+  margin: 5px;
+  width: 340px;
+  height: 150px;
+  background: #e3e3e3;
+}
+
 #tweet-content {
   margin:5px;
   width: 330px;

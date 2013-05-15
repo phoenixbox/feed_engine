@@ -1,1 +1,5 @@
-<%= feed.tl_text %><br />
+<div class="item" id="">    
+    <% current_user.feed_items.each do |feed| %>
+      <%= feed.tl_text %>
+    <% end %>
+</div>
