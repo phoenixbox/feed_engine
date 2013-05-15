@@ -29,16 +29,8 @@
             <%= content_tag :div, msg, id: "flash_#{name}" %>
           <% end %>
         </div> <!--end of .innertube -->
-      </div> <!--end of #topsection -->          
-      <%= yield %>     
+      </div> <!--end of #topsection -->
+      <%= yield %>
     </div> <!--end of #maincontainer -->
   </body>
-  <script>
-    $('input[type="checkbox"]').on('change', function () {
-      $('#' + this.name + 'post').slideToggle(this.checked)
-                                     .siblings('div')
-                                     .slideUp();
-      $(this).siblings('input').prop('checked', false);
-    });
-  </script>
 </html>

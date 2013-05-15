@@ -1,24 +1,3 @@
-<div id="maincontainer">
-  <div id="topsection">
-    <div class="innertube">
-      <div id="logo">
-        <h1>Tuneline</h1>
-      </div>
-      <div id="login">
-        <% if current_user %>
-          Signed in as <%= current_user.name %>!
-          <%= link_to "Go to my page", root_url(subdomain: current_user.subdomain) %>
-          <%= link_to "Sign out", signout_path %>
-          <!-- render template for header nav -->
-        <% else %>
-          <%= link_to "Sign in with Twitter", "/auth/twitter" %>
-        <% end %>
-      </div> <!--end of #login -->
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, id: "flash_#{name}" %>
-      <% end %>
-    </div> <!--end of .innertube -->
-  </div> <!--end of #topsection -->
   <div id="contentwrapper">
     <div id="contentcolumn">
       <div class="innertube">
@@ -30,20 +9,11 @@
           </ul>
         </div> <!--end of .links-inline -->
         <div id="content">
-          <div class="item" id="tweet-sample"></div> <!--end of #tweet-sample -->
-          <div class="item" id="textpost-sample"></div> <!--end of #extpost-sample -->
-          <div class="item" id="imgpost-sample"></div> <!--end of #imgpost-sample -->
-          <div class="item" id="linkpost-sample"></div> <!--end of #linkpost-sample -->
-          <div class="item" id="albumart-sample"></div> <!--end of #albumart-sample -->
-          <div class="item" id="soundcloud-sample"></div> <!--end of #souncloud-sample -->
-
-          <div class="item" id="textpost-sample"></div> <!--end of #extpost-sample -->
-          <div class="item" id="linkpost-sample"></div> <!--end of #linkpost-sample -->
-          <div class="item" id="imgpost-sample"></div> <!--end of #imgpost-sample -->
-          <div class="item" id="tweet-sample"></div> <!--end of #tweet-sample -->
-          <div class="item" id="soundcloud-sample"></div> <!--end of #souncloud-sample -->
-          <div class="item" id="albumart-sample"></div> <!--end of #albumart-sample -->
-          <%= yield %>
+          <!-- Want each text feed item to be put in a div with the text styling -->
+          <% @feeds.each do |feed| %>
+            <%= render feed.type, feed: feed %>
+          <% end %>
+        </div>
         </div> <!--end of #masonry-container -->
       </div> <!--end of .innertube -->
     </div> <!--end of #contentcolumn -->
@@ -52,45 +22,38 @@
     <div class="innertube">
       <div id="personal-profile">
         <h1><b>Personal Profile</b></h1>
-        <p>Donec id elit non mi porta gravida at eget metus. Aenean lacinia bibendum nulla sed consectetur.</p>
+        <p>I love TuneLine yes I do</p>
       <div> <!--end of #personal-profile -->
       <div id="user-posting">
         <h1>This is my profile!</h1>
         <h2>Feed:</h2>
-        <% @feeds.each do |feed| %>
-          <%= render feed.type, feed: feed %>
-        <% end %>
-
         <hr>
-
-        <%= form_for @feed_item do |f| %>
-          <div class="field">
-            <%= f.label :post%><br />
-            <%= f.text_area :tl_text %>
+        <!-- ************************ LINK POST ************************ -->
+        <%= simple_form_for @feed_item do |f| %>
+          <div id="textpost" style=display:none >
+            <%= f.text_area :tl_text, label: "512 character limit", :rows => 6, :cols => 30 %>
+            <%= f.submit "Submit" %>
           </div>
-          <%= f.submit "Submit" %>
-        <% end %>
-      
-        <form name="wallpost" action="#" method="post">
           <input name="text" id="messagetick2" type="checkbox" value="yes" />Text &nbsp;
+        <% end %>
+        <!-- ************************ LINK POST ************************ -->
+        <%= simple_form_for @feed_item do |f| %>
+          <div id="linkpost" style=display:none >
+            <%= f.input :tl_link, label: "Please enter link here" %>
+            <%= f.text_area :tl_text, :rows => 6, :cols => 30 %>
+            <%= f.submit "Submit" %>
+          </div>
           <input name="link" id="messagetick2" type="checkbox" value="yes" />Link &nbsp;
+        <% end %>
+        <!-- ************************ IMAGE POST ************************ -->
+        <%= simple_form_for @feed_item do |f| %>
+          <div id="imagepost" style=display:none >
+            <%= f.file_field :tl_image, :label => 'Please enter link here' %>
+            <%= f.text_area :tl_text, :rows => 6, :cols => 30 %>
+            <%= f.submit "Submit" %>
+          </div>
           <input name="image" id="messagetick2" type="checkbox" value="yes" />Image &nbsp;
-          <div id="textpost" style=display:none;>Please type your message.
-            <textarea name="setmessage" cols="23" rows="5"></textarea>
-            <input type="submit" value="Post">
-          </div> <!--end of #textpost -->
-          <div id="linkpost" style=display:none;>Please type your message.
-            <input type="text" name="link" value="Enter your link here"><br>
-            <textarea name="setmessage" cols="23" rows="5"></textarea>
-            <input type="submit" value="Post">
-          </div> <!--end of #linkpost -->
-          <div id="imagepost" style=display:none;>Please type your message.
-            <input type="text" name="img"><br>
-            <input type="submit" value="Upload">
-            <textarea name="setmessage" cols="23" rows="5"></textarea>
-            <input type="submit" value="Post">
-          </div> <!--end of #imagepost -->
-        </form> <!--end of form 'wallpost' -->
+        <% end %>
       </div> <!--end of #user-postin -->
       <div id="soundcloud-player">
         <h2>Soundcloud Player</h2>
@@ -98,11 +61,11 @@
     </div> <!--end of #innertube -->
   </div><!--end of #leftcolumn -->
 </div> <!--end of #maincontainer -->
- <script>
+<script>
   $('input[type="checkbox"]').on('change', function () {
     $('#' + this.name + 'post').slideToggle(this.checked)
                                    .siblings('div')
                                    .slideUp();
     $(this).siblings('input').prop('checked', false);
     });
-  </script>
+</script>     
