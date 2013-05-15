@@ -6,6 +6,13 @@ class FeedItem < ActiveRecord::Base
 
   VALID_DATA_ATTRIBUTES = %w[type tl_text]
 
+  def self.update_with_twitter
+    User.all.each do |user|
+      auth = user.authorizations.where(:service_provider => "twitter").first
+      twitter = Twitter::Client.new(oauth_token: auth.token, oauth_token_secret: auth.secret)
+    end
+  end
+
   def self.create_from_tuneline(input, user)
     create! do |item|
       item.data["type"] = self.type(input)

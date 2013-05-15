@@ -43,6 +43,41 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: authorizations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE authorizations (
+    id integer NOT NULL,
+    type character varying(255),
+    token character varying(255),
+    secret character varying(255),
+    raw_info hstore,
+    user_id integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: authorizations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE authorizations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: authorizations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE authorizations_id_seq OWNED BY authorizations.id;
+
+
+--
 -- Name: feed_items; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -85,39 +120,6 @@ CREATE TABLE schema_migrations (
 
 
 --
--- Name: tweets; Type: TABLE; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE TABLE tweets (
-    id integer NOT NULL,
-    tweet_id character varying(255),
-    content text,
-    image_url character varying(255),
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
---
--- Name: tweets_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE tweets_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: tweets_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE tweets_id_seq OWNED BY tweets.id;
-
-
---
 -- Name: users; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -128,9 +130,7 @@ CREATE TABLE users (
     name character varying(255),
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    subdomain character varying(255),
-    twitter_token character varying(255),
-    twitter_secret character varying(255)
+    subdomain character varying(255)
 );
 
 
@@ -157,14 +157,14 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY feed_items ALTER COLUMN id SET DEFAULT nextval('feed_items_id_seq'::regclass);
+ALTER TABLE ONLY authorizations ALTER COLUMN id SET DEFAULT nextval('authorizations_id_seq'::regclass);
 
 
 --
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY tweets ALTER COLUMN id SET DEFAULT nextval('tweets_id_seq'::regclass);
+ALTER TABLE ONLY feed_items ALTER COLUMN id SET DEFAULT nextval('feed_items_id_seq'::regclass);
 
 
 --
@@ -175,19 +175,19 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 
 
 --
+-- Name: authorizations_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY authorizations
+    ADD CONSTRAINT authorizations_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: feed_items_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY feed_items
     ADD CONSTRAINT feed_items_pkey PRIMARY KEY (id);
-
-
---
--- Name: tweets_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
---
-
-ALTER TABLE ONLY tweets
-    ADD CONSTRAINT tweets_pkey PRIMARY KEY (id);
 
 
 --
@@ -206,6 +206,13 @@ CREATE INDEX feed_items_data ON feed_items USING gin (data);
 
 
 --
+-- Name: index_authorizations_on_user_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_authorizations_on_user_id ON authorizations USING btree (user_id);
+
+
+--
 -- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -216,18 +223,14 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 -- PostgreSQL database dump complete
 --
 
-INSERT INTO schema_migrations (version) VALUES ('0');
-
 INSERT INTO schema_migrations (version) VALUES ('20130508210303');
 
 INSERT INTO schema_migrations (version) VALUES ('20130509173254');
-
-INSERT INTO schema_migrations (version) VALUES ('20130509193748');
-
-INSERT INTO schema_migrations (version) VALUES ('20130509202641');
 
 INSERT INTO schema_migrations (version) VALUES ('20130510030336');
 
 INSERT INTO schema_migrations (version) VALUES ('20130510030740');
 
 INSERT INTO schema_migrations (version) VALUES ('20130511200058');
+
+INSERT INTO schema_migrations (version) VALUES ('20130514202320');
