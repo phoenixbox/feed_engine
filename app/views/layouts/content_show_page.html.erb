@@ -1,0 +1,75 @@
+    <div id="maincontainer">
+      <div id="topsection">
+        <div class="innertube">
+          <div id="logo">
+            <h1>Tuneline</h1>
+          </div>
+          <div id="login">
+            <% if current_user %>
+              Signed in as <%= current_user.name %>!
+              <%= link_to "Go to my page", root_url(subdomain: current_user.subdomain) %>
+              <%= link_to "Sign out", signout_path %>
+              <!-- render template for header nav -->
+            <% else %>
+              <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+            <% end %>
+          </div> <!--end of #login -->
+          <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, id: "flash_#{name}" %>
+          <% end %>
+        </div> <!--end of .innertube -->
+      </div> <!--end of #topsection -->
+      <div id="contentwrapper">
+        <div id="account-mgmt-container">
+          <%= yield %>
+          <div id="account-mgmt-filter-container">
+            <div id="account-mgmt-filter-buttons">
+            <a href="#">Integration</a>
+            <a href="#">Feeds</a>
+            <a href="#">Requests</a>
+            <a href="#">Feeders</a>
+            </div> <!--end of #account-mgmt-filter-buttons -->
+          </div> <!--end of #account-mgmt-filters -->
+          <div id="content-show-detail-container">
+            <div id="content-show-picture-base">
+              <div id="content-show-picture">
+                <div id="content-show-overlay">
+                  <h1>Miles Davis Picture</h1>
+                </div> <!--end of #content-show-overlay -->
+              </div> <!--end of #content-picture -->
+            </div> <!--end of #content-picture-base -->
+            <div id="content-copy-base">
+              <div class="content-copy-header">
+                <h1>Artist Bio</h1>
+              </div> <!--end of .content-copy-header -->
+              <div class="sep"></div> <!--end of .sep -->
+              <div id="content-copy-main">
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec id elit non mi porta gravida at eget metus.</p>
+              </div> <!--end of .content-copy-p -->
+              <div class="content-copy-header">
+                <h1>Other Information</h1>
+              </div> <!--end of .content-copy-header -->
+              <div class="sep"></div> <!--end of sep -->
+              <div id="content-copy-secondary">
+                <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+              </div> <!--end of .content-copy-p -->
+            </div> <!--end of #content-copy-base -->
+          </div> <!--end of #content-show-detail-container -->
+          <div id="comments-base">
+            <div id="comments-container">
+              <div id="old-comments">
+              </div> <!--end of #old-comments -->
+              <div id="new-comment">
+                <div id="comment-textarea">
+                </div> <!--end of #comment-textarea -->
+                <div id="post-button">
+                  <div id="button-right">
+                    <a href="#">Post Comment</a>
+                  </div> <!--end of #button-right -->
+                </div> <!--end of #post-button -->
+              </div> <!--end of #new-comment -->
+            </div> <!--end of #comments-container -->
+          </div> <!--end of #comments-base -->
+        </div> <!--end of #account-mgmt-container -->
+      </div> <!--end of #contentwrapper -->
+    </div> <!--end of #maincontainer -->

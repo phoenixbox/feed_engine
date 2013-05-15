@@ -14,7 +14,7 @@ feature "authenticated user can add feed_items to their feed" do
         expect(page).to have_content("This is a test post")
       end
 
-      it "throws an error if the post is over 512 chars"
+      xit "throws an error if the post is over 512 chars"
 
       # Move the items below to separate features
       # Then I should see an option to attach an image
