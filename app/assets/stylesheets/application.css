@@ -162,6 +162,8 @@ margin-top: 0;
 }
 
 .feed-item-image {
+  position: absolute;
+  bottom: 5px;
   margin: 5px;
   width: 310px;
   height: 280px;

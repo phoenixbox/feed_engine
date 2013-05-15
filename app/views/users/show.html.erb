@@ -28,7 +28,7 @@
         <h1>This is my profile!</h1>
         <h2>Feed:</h2>
         <hr>
-        <!-- ************************ LINK POST ************************ -->
+        <!-- ************************ TEXT POST ************************ -->
         <%= simple_form_for @feed_item do |f| %>
           <div id="textpost" style=display:none >
             <%= f.text_area :tl_text, label: "512 character limit", :rows => 6, :cols => 30 %>
