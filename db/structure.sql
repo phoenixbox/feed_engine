@@ -43,6 +43,41 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: authorizations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE authorizations (
+    id integer NOT NULL,
+    type character varying(255),
+    token character varying(255),
+    secret character varying(255),
+    raw_info hstore,
+    user_id integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: authorizations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE authorizations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: authorizations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE authorizations_id_seq OWNED BY authorizations.id;
+
+
+--
 -- Name: feed_items; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -52,7 +87,8 @@ CREATE TABLE feed_items (
     data hstore,
     feed_item_points_count integer,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    type character varying(255)
 );
 
 
@@ -122,6 +158,13 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY authorizations ALTER COLUMN id SET DEFAULT nextval('authorizations_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY feed_items ALTER COLUMN id SET DEFAULT nextval('feed_items_id_seq'::regclass);
 
 
@@ -130,6 +173,14 @@ ALTER TABLE ONLY feed_items ALTER COLUMN id SET DEFAULT nextval('feed_items_id_s
 --
 
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
+
+
+--
+-- Name: authorizations_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY authorizations
+    ADD CONSTRAINT authorizations_pkey PRIMARY KEY (id);
 
 
 --
@@ -156,6 +207,13 @@ CREATE INDEX feed_items_data ON feed_items USING gin (data);
 
 
 --
+-- Name: index_authorizations_on_user_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_authorizations_on_user_id ON authorizations USING btree (user_id);
+
+
+--
 -- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -175,3 +233,7 @@ INSERT INTO schema_migrations (version) VALUES ('20130510030336');
 INSERT INTO schema_migrations (version) VALUES ('20130510030740');
 
 INSERT INTO schema_migrations (version) VALUES ('20130511200058');
+
+INSERT INTO schema_migrations (version) VALUES ('20130514202320');
+
+INSERT INTO schema_migrations (version) VALUES ('20130515173030');

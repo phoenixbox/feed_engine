@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  token: MyString
+  secret: MyString
+  raw_info: 
+  user: 
+
+two:
+  type: 
+  token: MyString
+  secret: MyString
+  raw_info: 
+  user: 

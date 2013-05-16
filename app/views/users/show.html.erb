@@ -1,3 +1,4 @@
+<div id="maincontainer">
   <div id="contentwrapper">
     <div id="contentcolumn">
       <div class="innertube">
@@ -11,7 +12,7 @@
         <div id="content">
           <!-- Want each text feed item to be put in a div with the text styling -->
           <% @feeds.each do |feed| %>
-            <%= render feed.type, feed: feed %>
+            <%= render feed.type.downcase, feed: feed %>
           <% end %>
         </div>
         </div> <!--end of #masonry-container -->
@@ -45,4 +46,4 @@
                                    .slideUp();
     $(this).siblings('input').prop('checked', false);
     });
-</script>     
+</script> 
