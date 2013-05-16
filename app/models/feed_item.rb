@@ -4,9 +4,9 @@ class FeedItem < ActiveRecord::Base
   attr_accessible :data, :feed_item_points_count, :user_id
   belongs_to :user
 
-  def method_missing(method, *args, &block)
+  def method_missing(method, *args)
     if valid_attrs.include?(method.to_s) && method.to_s.include?('=')
-      self.data[method] = args.first
+      self.data[method.to_s] = args.first
     elsif valid_attrs.include?(method.to_s)
       data && data[method.to_s]
     else
@@ -28,7 +28,7 @@ class FeedItem < ActiveRecord::Base
   end
 end
 
-  #(SHARED_ATTRS + UNIQUE_API_ATTRS).each do |key|
+  #(SHARED_ATTRS).each do |key|
   #  attr_accessible key
   #  scope "has_#{key}", lambda { |value| where("data @> hstore(?, ?)", key, value) }
 
