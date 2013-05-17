@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
 
   has_many :feed_items
   has_many :tl_texts
+  has_many :tl_images
+  has_many :tl_links
   has_many :authorizations
 
   def self.from_omniauth(auth)

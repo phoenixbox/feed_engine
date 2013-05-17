@@ -4,6 +4,8 @@ class UsersController < ApplicationController
     @user = User.find_by_subdomain!(request.subdomain)
     @feeds = current_user.feed_items.order('created_at DESC')
     @tl_text = TlText.new
+    @tl_link = TlLink.new
+    @tl_image = TlImage.new
   end
 
 end
