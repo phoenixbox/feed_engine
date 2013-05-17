@@ -2,10 +2,10 @@
 <!-- ************************ TEXT POST ************************ -->
 <%= simple_form_for @tl_text do |f| %>
   <div id="textpost" style=display:none >
-    <%= f.text_area :content, label: "512 character limit", :rows => 6, :cols => 30 %>
+    <%= f.text_area :content, label: "512 character limit", placeholder: "512 character limit", :rows => 6, :cols => 30 %>
     <%= f.submit "Submit" %>
   </div>
-  <input name="text" id="messagetick2" type="checkbox" value="yes" />Text &nbsp;
+  <input name="text" id="text_checkbox" type="checkbox" value="yes" />Text &nbsp;
 <% end %>
 
 <!-- ************************ LINK POST ************************ -->
@@ -15,7 +15,7 @@
     <%= f.text_area :content, :rows => 6, :cols => 30 %>
     <%= f.submit "Submit" %>
   </div>
-  <input name="link" id="messagetick2" type="checkbox" value="yes" />Link &nbsp;
+  <input name="link" id="link_checkbox" type="checkbox" value="yes" />Link &nbsp;
 <% end %>
   
 <!-- ************************ IMAGE POST ************************ -->
@@ -24,5 +24,5 @@
     <%= f.text_area :content, :rows => 6, :cols => 30 %>
     <%= f.submit "Submit" %>
   </div>
-  <input name="image" id="messagetick2" type="checkbox" value="yes" />Image &nbsp;
+  <input name="image" id="image_checkbox" type="checkbox" value="yes" />Image &nbsp;
 <% end %>
