@@ -21,7 +21,7 @@
 <!-- ************************ IMAGE POST ************************ -->
 <%= simple_form_for @tl_image do |f| %>
   <div id="imagepost" style=display:none >
-    <%= f.file_field :tl_image %>
+    <%= f.file_field :image %>
     <%= f.text_area :content, :rows => 6, :cols => 30 %>
     <%= f.submit "Submit" %>
   </div>
