@@ -19,7 +19,7 @@ require 'spec_helper'
         expect(page).to have_content "This is my profile!"
       end
 
-      it "user can enter a link and text into the link and textarea fields " do
+      it "user can post a link feed_item" do
         check('link')
         within(:css, 'div#linkpost') {
           fill_in 'tl_link_content', :with => 'Sample input'
