@@ -7,8 +7,6 @@ describe TlLinksController do
     before(:each) do
       @valid_attributes = { tl_link: { link: "http://www.valid.com", content: "loop loop"}}
       @invalid_attributes = { tl_link: { link: "http:valid.com", content: ""}}
-      @bad_link = {tl_link: { link: "www.invalid", content: "example"} }
-      @bad_content = {tl_link: { link: "www.valid.com", content: ""}}
       @user = FactoryGirl.create(:user)
       controller.stub(:current_user => @user)
       request.env["HTTP_REFERER"] = '/'
