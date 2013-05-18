@@ -1,6 +1,6 @@
 class TlText < FeedItem
   validates_presence_of :content, :message => "Your submission can't be empty"
-  validates_length_of :content, :maximum => 512
+  validates_length_of :content, :maximum => 512, :message => "Your message must not exceed 512 characters"
 
   #def self.update_twitter_feed_items
   #  User.all.each do |user|

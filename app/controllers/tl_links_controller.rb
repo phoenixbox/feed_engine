@@ -5,7 +5,7 @@ class TlLinksController < ApplicationController
     if @tl_link.save
       redirect_to :back, notice: "Successfully added item to feed"
     else
-      redirect_to :back, notice: "Sorry pal"
+      redirect_to :back, notice: "Link post not created!"
     end
   end
 end
