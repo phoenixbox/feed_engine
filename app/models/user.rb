@@ -51,4 +51,10 @@ class User < ActiveRecord::Base
   def twitter_authorization
     twitter_auths.first
   end
+
+  def create_from_mentions
+    tuneline_mentions.each do |mention|
+      tweets.create(data: {"text" => mention.text, "twitter_id" => mention.id})
+    end
+  end
 end
