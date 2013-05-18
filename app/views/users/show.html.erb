@@ -45,7 +45,8 @@
                                    .slideUp();
     $(this).siblings('input').prop('checked', false);
     });
-</script> 
+</script>
+
 <% @feeds.each do |feed| %>
   <%= render feed.type, feed: feed %>
 <% end %>
@@ -65,4 +66,3 @@
   <%= form.file_field :photo %>
   <%= form.submit "Submit" %>
 <% end %>
-

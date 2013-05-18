@@ -8,10 +8,14 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :test do
+group :development, :test do
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'capybara'
   gem 'launchy'
+  gem 'cane'
+  gem 'reek'
+  gem 'simplecov'
   gem 'rack_session_access'
   gem 'selenium-webdriver', '2.31.0'
 end
