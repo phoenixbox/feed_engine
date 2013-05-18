@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   has_many :authorizations
   has_many :twitter_auths
+  has_many :lastfm_auths
 
   def self.from_omniauth(auth)
     where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)

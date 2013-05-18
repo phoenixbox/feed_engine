@@ -1,0 +1,3 @@
+class LastfmAuth < Authorization
+
+end

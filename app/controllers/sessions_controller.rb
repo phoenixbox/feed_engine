@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
   def create
-    fail
     #auth = env['omniauth.auth']
     user = User.from_omniauth(env["omniauth.auth"])
     #if user.persisted?

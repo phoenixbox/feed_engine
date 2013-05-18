@@ -32,3 +32,5 @@ gem 'binding_of_caller'
 gem 'pry'
 gem 'simple_form'
 gem 'lastfm'
+
+gem 'resque'

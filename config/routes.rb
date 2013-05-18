@@ -6,6 +6,7 @@ FeedEngine::Application.routes.draw do
   resources :tl_links
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
+  match 'connect/:provider/callback', to: 'authorizations#create'
   match 'signout', to: 'sessions#destroy', as: 'signout'
   match '', to: 'users#show', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
   root :to => "home#show"
