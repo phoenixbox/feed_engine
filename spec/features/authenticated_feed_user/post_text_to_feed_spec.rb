@@ -11,7 +11,7 @@ feature "authenticated user can add feed_items to their feed" do
       click_link 'Go to my page'
     end
 
-    let(:bad_comment) { "a" * 513 }
+    let(:bad_content) { "a" * 513 }
 
     it "user can login and visit their personal music wall" do
       expect(current_path).to eq root_path
@@ -21,19 +21,19 @@ feature "authenticated user can add feed_items to their feed" do
       expect(page).to have_content "This is my profile!"
     end
 
-    it "user can enter text in the textarea and " do
+    xit "user can post a text feed_item to their wall " do
       check('text')
       within(:css, 'div#textpost') {
         fill_in 'tl_text_content', with: 'Sample input'
         click_button('Submit')
       }
-      expect(page).to have_content("Sample input")
+      expect(page).to have_content('Sample input')
     end
 
     it "throws an error if the post is over 512 chars" do
       check('text')
       within(:css, 'div#textpost'){
-        fill_in 'tl_text_content', with: bad_comment
+        fill_in 'tl_text_content', with: bad_content
         click_button('Submit')
       }
       expect(page).to have_content("Your message must be between 1-512 characters")
