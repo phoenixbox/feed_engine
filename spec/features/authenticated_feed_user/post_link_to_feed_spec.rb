@@ -29,14 +29,13 @@ feature "authenticated user can post a link to their wall" do
       expect(current_path).to eq root_path
     end
 
-    it "user creates a link post and then the post can be seen in the timeline" do
+    xit "user creates a link post and then the post can be seen in the timeline" do
       check('link')
       within(:css, 'div#linkpost') {
         fill_in 'tl_link_content', :with => 'Shane Rogers'
         fill_in 'tl_link_link', :with => 'http://www.shanerogers.com'
         click_button('Submit')
       }
-      # another expect?
       expect(page).to have_content 'Shane Rogers'
       expect(page).to have_content 'www.shanerogers.com'
     end
