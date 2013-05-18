@@ -6,6 +6,7 @@ describe TlLinksController do
     
     before(:each) do
       @valid_attributes = { tl_link: { link: "http://www.valid.com", content: "loop loop"}}
+      @invalid_attributes = { tl_link: { link: "http:valid.com", content: ""}}
       @bad_link = {tl_link: { link: "www.invalid", content: "example"} }
       @bad_content = {tl_link: { link: "www.valid.com", content: ""}}
       @user = FactoryGirl.create(:user)
@@ -17,8 +18,8 @@ describe TlLinksController do
       expect {post :create, @valid_attributes}.to change(FeedItem, :count).by(1)
     end
 
-    xit 'does not increase the tl_texts by 1 with a bad_link' do
-      expect {post :create, @bad_link}.to change(FeedItem, :count).by(0)
+    it 'does not increase the tl_texts by 1 with invalid attributes' do
+      expect {post :create, @invalid_attributes}.to raise_exception(ActiveRecord::RecordInvalid)
     end
   end
 

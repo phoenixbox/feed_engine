@@ -21,7 +21,6 @@ feature "authenticated user can add feed_items to their feed" do
       expect(page).to have_content "This is my profile!"
     end
 
-
     it "user can enter text in the textarea and " do
       check('text')
       within(:css, 'div#textpost') {

@@ -23,17 +23,17 @@ require 'spec_helper'
         check('link')
         within(:css, 'div#linkpost') {
           fill_in 'tl_link_content', :with => 'Sample input'
-          fill_in 'tl_link_link', :with => 'www.sample.com'
+          fill_in 'tl_link_link', :with => 'http://www.sample.com'
           click_button('Submit')
         }
-        expect(curent_path).to eq root_path
+        expect(current_path).to eq root_path
       end
 
       it "user creates a link post and then the post can be seen in the timeline" do
         check('link')
         within(:css, 'div#linkpost') {
           fill_in 'tl_link_content', :with => 'Shane Rogers'
-          fill_in 'tl_link_link', :with => 'www.shanerogers.com'
+          fill_in 'tl_link_link', :with => 'http://www.shanerogers.com'
           click_button('Submit')
         }
         expect(page).to have_content 'Shane Rogers'
