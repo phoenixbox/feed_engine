@@ -14,5 +14,9 @@ describe TlTextsController do
     it 'increases the tl_texts by 1 with valid attributes' do
       expect {post :create, @valid_attributes}.to change(FeedItem, :count).by(1)
     end
+
+    it 'does not increase the tl_texts by 1 with invalid attributes' do
+      expect {post :create, @invalid_attributes}.to change(FeedItem, :count).by(0)
+    end
   end
 end
