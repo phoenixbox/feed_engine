@@ -6,13 +6,6 @@ class Tweet < FeedItem
     end
   end
 
-  def self.create_from_form(input)
-    create do |tweet|
-      tweet.data["text"] = input["text"]
-      tweet.data["twitter_id"] = input["twitter_id"]
-    end
-  end
-
   def valid_attrs
     %[text twitter_id]
   end

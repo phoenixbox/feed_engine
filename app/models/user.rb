@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
 
   def create_from_mentions
     tuneline_mentions.each do |mention|
-      tweets.create_from_form({"text" => mention.text, "twitter_id" => mention.id})
+      tweets.create(data: {"text" => mention.text, "twitter_id" => mention.id})
     end
   end
 end
