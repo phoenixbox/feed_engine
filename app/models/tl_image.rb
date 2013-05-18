@@ -1,4 +1,6 @@
 class TlImage < FeedItem
+  validates_presence_of :content, :message => "Where is your link?"
+  validates_length_of :content, :maximum => 240
 
 
   def self.create_from_form(input)
