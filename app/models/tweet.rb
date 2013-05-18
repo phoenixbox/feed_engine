@@ -2,9 +2,7 @@ class Tweet < FeedItem
 
   def self.update_tweets
     User.all.each do |user|
-      user.tuneline_mentions.each do |mention|
-        user.tweets.create_from_form({"text" => mention.text, "twitter_id" => mention.id})
-      end
+      user.create_from_mentions
     end
   end
 
