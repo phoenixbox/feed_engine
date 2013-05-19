@@ -21,9 +21,9 @@
 <div class="radio-perk"><input class="perkdrop" id="tab1" type="radio" name="amount" value="250"><label for="tab1">Image Post</label>
 </div>
 <div id="tabs-250" class="dropdown">
-    <%= simple_form_for @tl_image do |f| %>
-    <%= f.file_field :image %>
-    <%= f.text_area :content, :rows => 6, :cols => 30 %>
+    <%= simple_form_for @tl_image, :html => { :multipart => true } do |f| %>
+    <%= f.label :photo %>
+    <%= f.file_field :photo %>
     <%= f.submit "Submit" %>
   <% end %>
 </div>
