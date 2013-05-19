@@ -54,6 +54,10 @@ margin: 5px; /*Margins for inner DIV inside each column (to provide padding)*/
 margin-top: 0;
 }
 
+.dropdown{
+  display: none;
+}
+
 .links-inline li {
   display: inline;
 }
