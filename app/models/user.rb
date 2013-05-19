@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :tl_images
   has_many :tl_links
   has_many :tweets
+  has_many :lastfm_top_tracks
 
   has_many :authorizations
   has_many :twitter_auths
@@ -58,4 +59,5 @@ class User < ActiveRecord::Base
       tweets.create(data: {"text" => mention.text, "twitter_id" => mention.id})
     end
   end
+
 end
