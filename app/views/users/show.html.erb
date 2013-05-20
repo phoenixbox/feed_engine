@@ -27,8 +27,7 @@
         <p><%= link_to "Link to LastFM", "/auth/lastfm" %></p>
       <div> <!--end of #personal-profile -->
       <div id="user-posting">
-        <h1>This is my profile!</h1>
-        <h2>Feed:</h2>
+        <h2>Post to your feed:</h2>
         <hr>
         <%= render 'user_post' %>
 
@@ -39,11 +38,3 @@
     </div> <!--end of #innertube -->
   </div><!--end of #leftcolumn -->
 </div> <!--end of #maincontainer -->
-<script>
-  $('input[type="checkbox"]').on('change', function () {
-    $('#' + this.name + 'post').slideToggle(this.checked)
-                                   .siblings('div')
-                                   .slideUp();
-    $(this).siblings('input').prop('checked', false);
-    });
-</script> 
