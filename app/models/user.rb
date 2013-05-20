@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
     @user = create! do |user|
       user.uid = auth["uid"]
       user.name = name
-      user.subdomain = name.downcase
+      user.subdomain = name.downcase.gsub('_','-')
     end
     @user.twitter_auths.create_from_omniauth(auth["credentials"]["token"], auth["credentials"]["secret"], @user.id, "twitter")
     @user
