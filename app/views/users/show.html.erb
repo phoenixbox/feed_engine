@@ -10,7 +10,6 @@
           </ul>
         </div> <!--end of .links-inline -->
         <div id="content">
-          <!-- Want each text feed item to be put in a div with the text styling -->
           <% @feeds.each do |feed| %>
             <%= render feed.type.downcase, feed: feed %>
           <% end %>
@@ -31,7 +30,6 @@
         <h2>Feed:</h2>
         <hr>
         <%= render 'user_post' %>
-
       </div> <!--end of #user-postin -->
       <div id="soundcloud-player">
         <h2>Soundcloud Player</h2>

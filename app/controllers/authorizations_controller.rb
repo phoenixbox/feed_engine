@@ -6,7 +6,15 @@ class AuthorizationsController < ApplicationController
     lfm.session = lfm.auth.get_session(:token => params["token"])['key']
     lastfm_auth = user.lastfm_auths.new(token: lfm.session)
 
-    # NOTES:
+    if lastfm_auth.save
+      redirect_to root_path
+    else
+      redirect_to user_path(user), :message => "Sorry, unable to connect"
+    end
+  end
+end
+
+# NOTES:
     # establish last_fm object
     # last_fm = Lastfm.new(ENV["LASTFM_CONSUMER_KEY"], ENV["LASTFM_CONSUMER_SECRET"])
 
@@ -21,11 +29,3 @@ class AuthorizationsController < ApplicationController
 
     # now enter commands
     # last_fm.track.scrobble(:artist => 'Hujiko Pro', :track => 'acid acid 7riddim')
-
-    if lastfm_auth.save
-      redirect_to root_path
-    else
-      redirect_to user_path(user), :message => "Sorry, unable to connect"
-    end
-  end
-end
