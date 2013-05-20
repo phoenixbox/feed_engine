@@ -33,7 +33,7 @@ gem 'pry'
 gem 'simple_form'
 gem 'lastfm'
 
-gem 'resque'
+gem 'resque', :require => 'resque/server'
 gem 'paperclip'
 gem 'aws-s3'
 gem 'aws-sdk'
