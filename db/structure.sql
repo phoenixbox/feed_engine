@@ -171,9 +171,8 @@ CREATE TABLE users (
     subdomain character varying(255),
     twitter_token character varying(255),
     twitter_secret character varying(255),
-    is_public boolean,
     image_url character varying(255)
-);
+;
 
 
 --
@@ -309,3 +308,5 @@ INSERT INTO schema_migrations (version) VALUES ('20130517235950');
 INSERT INTO schema_migrations (version) VALUES ('20130520171743');
 
 INSERT INTO schema_migrations (version) VALUES ('20130520214310');
+
+INSERT INTO schema_migrations (version) VALUES ('20130520171743');
