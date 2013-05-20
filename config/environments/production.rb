@@ -1,5 +1,6 @@
 FeedEngine::Application.configure do
-  config.action_dispatch.tld_length = 3
+
+  FeedEngine::Application.config.session_store :cookie_store, key: '_feed_engine_session', domain: '.lvh.me'
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -65,4 +66,13 @@ FeedEngine::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'tl_images',
+      :access_key_id => 'AKIAJ6WNNJP26WT5XVVA',
+      :secret_access_key => '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'
+    }
+  }
 end
+

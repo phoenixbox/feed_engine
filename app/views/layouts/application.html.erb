@@ -5,9 +5,7 @@
     <title>FeedEngine</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "soundcloud" %>
     <%= csrf_meta_tags %>
-  </head>
   <body>
     <div id="maincontainer">
       <div id="topsection">
@@ -17,9 +15,9 @@
           </div>
           <div id="login">
             <% if current_user %>
-              Signed in as <%= current_user.name %>!
-              <%= link_to "Go to my page", root_url(subdomain: current_user.subdomain) %>
-              <%= link_to "Sign out", signout_path %>
+                <%= current_user.name %>!
+                <%= link_to "Profile Page", root_url(subdomain: current_user.subdomain) %>
+                <%= link_to "Sign out", signout_path %>
               <!-- render template for header nav -->
             <% else %>
               <%= link_to "Sign in with Twitter", "/auth/twitter" %>
