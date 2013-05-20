@@ -88,11 +88,11 @@ CREATE TABLE feed_items (
     feed_item_points_count integer,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    type character varying(255),
     photo_file_name character varying(255),
     photo_content_type character varying(255),
     photo_file_size integer,
-    photo_updated_at timestamp without time zone
+    photo_updated_at timestamp without time zone,
+    type character varying(255)
 );
 
 
@@ -171,7 +171,8 @@ CREATE TABLE users (
     subdomain character varying(255),
     twitter_token character varying(255),
     twitter_secret character varying(255),
-    is_public boolean
+    is_public boolean,
+    image_url character varying(255)
 );
 
 
@@ -306,3 +307,5 @@ INSERT INTO schema_migrations (version) VALUES ('20130517153856');
 INSERT INTO schema_migrations (version) VALUES ('20130517235950');
 
 INSERT INTO schema_migrations (version) VALUES ('20130520171743');
+
+INSERT INTO schema_migrations (version) VALUES ('20130520214310');

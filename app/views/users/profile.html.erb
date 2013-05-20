@@ -34,23 +34,6 @@
             <div id="integration-inner-container">
               <div class="integration-container">
                 <div class="integration-header">
-                  <h3>Spotify</h3>
-                </div><!--end of .integration-header -->
-                <div class="integration-logo-container">
-                  <div class="integration-logo">
-                    <%= image_tag('spotify.png')%>
-                  </div><!--end of .integration-logo -->
-                </div><!--end of .integration-logo-container -->
-                <div class="integration-button-container">
-                  <div class="integration-button">
-                    <form name="integrate" action="#" method="post">
-                      <button type="button">Integrate</button>
-                    </form><!--end of integrate form -->
-                  </div> <!--end of integration-button -->
-                </div><!--end of .integration-button-container -->
-              </div><!--end of .integration-container -->
-              <div class="integration-container">
-                <div class="integration-header">
                   <h3>SoundCloud</h3>
                 </div><!--end of .integration-header -->
                 <div class="integration-logo-container">
@@ -77,9 +60,22 @@
                 </div><!--end of .integration-logo-container -->
                 <div class="integration-button-container">
                   <div class="integration-button">
-                    <form name="integrate" action="#" method="post">
-                      <button type="button">Integrate</button>
-                    </form><!--end of integrate form -->
+                    <%= link_to "Integrate", "/auth/lastfm" %>
+                  </div> <!--end of integration-button -->
+                </div><!--end of .integration-button-container -->
+              </div><!--end of .integration-container -->
+              <div class="integration-container">
+                <div class="integration-header">
+                  <h3>Spotify</h3>
+                </div><!--end of .integration-header -->
+                <div class="integration-logo-container">
+                  <div class="integration-logo">
+                    <%= image_tag('spotify.png')%>
+                  </div><!--end of .integration-logo -->
+                </div><!--end of .integration-logo-container -->
+                <div class="integration-button-container">
+                  <div class="integration-button">
+                    <h3>Coming Soon!</h3>
                   </div> <!--end of integration-button -->
                 </div><!--end of .integration-button-container -->
               </div><!--end of .integration-container -->
@@ -108,8 +104,10 @@
                 <h3>Account Info</h3>
               </div><!--end of #account-details-header -->
               <div id="account-details-content">
-                <h3>Username: <%= current_user.name %></h3>
-                <h3>Feed Url: <%= current_user.name %>.streamrolled.com</a></h3>
+                 <%= image_tag current_user.image_url %>
+                <h3>Username: <%= current_user.name %>
+                  <br>
+                Feed Url: <%= current_user.name %>.streamrolled.com</a></h3>
               </div><!--end of #account-details-content -->
               <div id="account-buttons-container">
                 <div id="account-buttons">
