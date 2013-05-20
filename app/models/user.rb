@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   has_many :feed_items
   has_many :tl_texts
   has_many :tl_images

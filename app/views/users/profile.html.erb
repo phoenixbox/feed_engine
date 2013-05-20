@@ -1,1 +1,132 @@
-This is my profile!
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+    <title>FeedEngine</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "soundcloud" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="maincontainer">  
+          <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, id: "flash_#{name}" %>
+          <% end %>
+        </div> <!--end of .innertube -->
+      </div> <!--end of #topsection -->
+      <div id="contentwrapper">
+        <div id="account-mgmt-container">
+        <%= yield %>
+          <div id="account-mgmt-filter-container">
+            <div id="account-mgmt-filter-buttons">
+            <a href="#">Integration</a>
+            <a href="#">Feeds</a>
+            <a href="#">Requests</a>
+            <a href="#">Feeders</a>
+            </div>
+          </div> <!--end of #account-mgmt-filters -->
+          <div id="integration-info">
+            <h1>Integrate with your favourite music services!</h1>
+            <h3>Click to add to your Streamrolled feed</h3>
+          </div> <!--end of #integration-info -->
+          <div id="integration-outer-container">
+            <div id="integration-inner-container">
+              <div class="integration-container">
+                <div class="integration-header">
+                  <h3>Spotify</h3>
+                </div><!--end of .integration-header -->
+                <div class="integration-logo-container">
+                  <div class="integration-logo">
+                    <%= image_tag('spotify.png')%>
+                  </div><!--end of .integration-logo -->
+                </div><!--end of .integration-logo-container -->
+                <div class="integration-button-container">
+                  <div class="integration-button">
+                    <form name="integrate" action="#" method="post">
+                      <button type="button">Integrate</button>
+                    </form><!--end of integrate form -->
+                  </div> <!--end of integration-button -->
+                </div><!--end of .integration-button-container -->
+              </div><!--end of .integration-container -->
+              <div class="integration-container">
+                <div class="integration-header">
+                  <h3>SoundCloud</h3>
+                </div><!--end of .integration-header -->
+                <div class="integration-logo-container">
+                  <div class="integration-logo">
+                    <%= image_tag('soundcloud.png')%>
+                  </div><!--end of .integration-logo -->
+                </div><!--end of .integration-logo-container -->
+                <div class="integration-button-container">
+                  <div class="integration-button">
+                    <form name="integrate" action="#" method="post">
+                      <button type="button">Integrate</button>
+                    </form><!--end of integrate form -->
+                  </div> <!--end of integration-button -->
+                </div><!--end of .integration-button-container -->
+              </div><!--end of .integration-container -->
+              <div class="integration-container">
+                <div class="integration-header">
+                  <h3>LastFM</h3>
+                </div><!--end of .integration-header -->
+                <div class="integration-logo-container">
+                  <div class="integration-logo">
+                    <%= image_tag('lastfm.png')%>
+                  </div><!--end of .integration-logo -->
+                </div><!--end of .integration-logo-container -->
+                <div class="integration-button-container">
+                  <div class="integration-button">
+                    <form name="integrate" action="#" method="post">
+                      <button type="button">Integrate</button>
+                    </form><!--end of integrate form -->
+                  </div> <!--end of integration-button -->
+                </div><!--end of .integration-button-container -->
+              </div><!--end of .integration-container -->
+              <div class="integration-container">
+                <div class="integration-header">
+                  <h3>HypeMachine</h3>
+                </div><!--end of .integration-header -->
+                <div class="integration-logo-container">
+                  <div class="integration-logo">
+                    <%= image_tag('hypemachine.png')%>
+                  </div><!--end of .integration-logo -->
+                </div><!--end of .integration-logo-container -->
+                <div class="integration-button-container">
+                  <div class="integration-button">
+                    <form name="integrate" action="#" method="post">
+                      <h3>Coming Soon!</h3>
+                    </form><!--end of integrate form -->
+                  </div> <!--end of integration-button -->
+                </div><!--end of integration-button-container -->
+              </div><!--end of .integration-container -->
+            </div><!--end of #integration-inner-container -->
+          </div><!--end of #integration-outer-container -->
+          <div id="account-details-outer-container">
+            <div id="account-details-inner-container">
+              <div id="account-details-header">
+                <h3>Account Info</h3>
+              </div><!--end of #account-details-header -->
+              <div id="account-details-content">
+                <h3>Username: <%= current_user.name %></h3>
+                <h3>Feed Url: <%= current_user.name %>.streamrolled.com</a></h3>
+              </div><!--end of #account-details-content -->
+              <div id="account-buttons-container">
+                <div id="account-buttons">
+                </div><!--end of #account-buttons -->
+              </div><!--end of #account-details-buttons -->
+            </div><!--end of #account-details-inner-container -->
+          </div> <!--end of #account-details-outer-container -->
+        </div> <!--end of #account-mgmt-container -->
+      </div> <!--end of #contentwrapper -->
+    </div> <!--end of #maincontainer -->
+  </body>
+  <script>
+ $('input[type="checkbox"]').on('change', function () {
+    $('#' + this.name + 'post').slideToggle(this.checked)
+                                   .siblings('div')
+                                   .slideUp();
+    $(this).siblings('input').prop('checked', false);
+    });
+  </script>
+</html>
