@@ -291,7 +291,14 @@ margin-top: 0;
 }
 
 .lastfm-top-track-details {
-
+  bottom: -5px;
+  position: absolute;
+  width: 260px;
+  height: 120px;
+  background: #ffffff;
+  opacity:0.6;
+  z-index: 10;
+  display: none;
 }
 
 /******************** Account Mgmt Page *************************/
