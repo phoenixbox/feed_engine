@@ -43,6 +43,14 @@ em{color: red;}
 
 /* // 3. PAGE SECTION STYLES */
 /* ################################################################ */
+#wrapper {
+  position: relative;
+}
+
+#maincontainer {
+  position: relative;
+  height: 100%;
+}
 
 #contentwrapper{
 float: left;
@@ -372,37 +380,39 @@ width: 100%;
 /*------------------ Drawer ------------------*/
 
 .drawer {
+  float: right;
   bottom:0px;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   width: 100%;
-  z-index: 5;
+  z-index: 1000;
 }
 
 .drawer header {
-  background: #000000;
+  background: #4d4d4d;
   color: #ffffff;
-  display: block;
-  height: 25px;
-  line-height: 25px;
-  margin: auto;
+  display: inline;
+  margin-left: 45%;
   overflow: hidden;
-  padding: 5px;
+  padding: 0px 30px 0px 30px;
+  vertical-align: middle;
   text-align: center;
-  width: 150px;
-  border-top-left-radius: 25px 40px;
-  border-top-right-radius: 25px 40px;
+  border-top-left-radius: 25px 20px;
+  border-top-right-radius: 25px 20px;
+  font-size: x-large;
 }
 
 .clickme {
   cursor: pointer;
+  width: 200px;
 }
 
 .drawer-content {
+  position: relative;
   background: #ffffff;
   border-collapse: collapse;
   border-top: 3px solid #000000;
-  height: 110px;
+  height: 200px;
   width: 100%;
 }
 
@@ -425,6 +435,32 @@ width: 100%;
   padding: 12px;
   text-decoration: none;
   width: 176px;
+}
+
+#drawer-tab {
+  display:inline;
+  width: 200px;
+  background: #ffffff;
+}
+
+.drawer-container {
+  position: relative;
+  height: 100%;
+  margin: 10px;
+}
+
+.drawer-posting {
+  float: left;
+  width: 695px;
+  height: 85%;
+  background: #4d4d4d;
+}
+
+.drawer-music {
+  float: right;
+  height: 85%;
+  width: 695px;
+  background: #4d4d4d;
 }
 
 /******************** Account Mgmt Page *************************/
