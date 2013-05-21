@@ -10,9 +10,9 @@
 
 <script>
   $(".lastfm-top-track-inner-box").on('mouseover', function(){
-    $(this).find('.lastfm-top-track-details').show();
+    $(this).find('.lastfm-top-track-details').slideDown(400);
   }).on('mouseleave', function(){
-    $(this).find('.lastfm-top-track-details').hide();
+    $(this).find('.lastfm-top-track-details').slideUp(200);
   });
 </script>
 
