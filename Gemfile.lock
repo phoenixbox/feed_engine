@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/bvandenbos/resque-scheduler
+  revision: d9aa0f718f260147d30fe3baa67951a36b695cf6
+  specs:
+    resque-scheduler (2.0.1)
+      redis (>= 2.0.1)
+      resque (>= 1.20.0)
+      rufus-scheduler
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -202,6 +211,8 @@ GEM
     ruby_parser (3.1.3)
       sexp_processor (~> 4.1)
     rubyzip (0.9.9)
+    rufus-scheduler (2.0.19)
+      tzinfo (>= 0.3.23)
     sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -278,6 +289,7 @@ DEPENDENCIES
   rails (= 3.2.13)
   reek
   resque
+  resque-scheduler!
   rspec-rails
   sass-rails (~> 3.2.3)
   selenium-webdriver (= 2.31.0)

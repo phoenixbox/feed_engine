@@ -6,7 +6,7 @@ class TweetForAllUsers
   def self.perform(options = {})
     User.all.each do |user|
       log.info "Fetching tweets for #{user.id}"
-      Resque.enqueue(TweetUpdates, {:user_id => user.id})
+      Resque.enqueue(1.minutes, TweetUpdates, {:user_id => user.id})
     end
   end
 

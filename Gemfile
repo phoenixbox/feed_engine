@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'lastfm'
 
 gem 'resque', :require => 'resque/server'
+gem 'resque-scheduler', :require => 'resque_scheduler', git: 'git://github.com/bvandenbos/resque-scheduler'
 gem 'paperclip'
 gem 'aws-s3'
 gem 'aws-sdk'
