@@ -615,7 +615,7 @@ height: 100%;
 
 #topsection{
 background: #EAEAEA;
-height: 3em; /*Height of top section*/
+height: 7em; /*Height of top section*/
 }
 
 #topsection h1{
@@ -624,12 +624,20 @@ padding-top: 15px;
 }
 
 #logo {
-  float: left;
-  font-size: x-large;
+  float: center;
+  margin: 5px 40px 0px 515px;
+}
+
+.logo_image {
+  bottom: 5px;
+  margin: 5px;
+  width: 310px;
+  height: 100px;
 }
 
 #login {
   float: right;
   border-style: solid;
   border-width: 1px;
+  margin: -75px 40px 0px 800px;
 }
