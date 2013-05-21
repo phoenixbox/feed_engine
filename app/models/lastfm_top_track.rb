@@ -14,19 +14,21 @@ class LastfmTopTrack < FeedItem
 
   def self.update_top_tracks_for_user(user_id)
     user = User.find(user_id)
-    unless user.lastfm_auths.empty?
-      lastfm = Lastfm.new(ENV["LASTFM_CONSUMER_KEY"], ENV["LASTFM_CONSUMER_SECRET"])
-      # dont want this to fire until I have authorised the token
-      token = user.lastfm_auths.first.token
-      lastfm.session = token
 
-      lastfm_username = lastfm.user.get_info["name"]
+    lastfm = Lastfm.new(ENV["LASTFM_CONSUMER_KEY"], ENV["LASTFM_CONSUMER_SECRET"])
+    token = user.lastfm_auths.first.token
+    lastfm.session = token
 
-      top_tracks = lastfm.user.get_top_tracks(lastfm_username).first(9)
+    lastfm_username = lastfm.user.get_info["name"]
 
-      top_tracks.each do |track|
-        if track["image"]
-          user.lastfm_top_tracks.create(data: {
+    top_tracks = lastfm.user.get_top_tracks(lastfm_username).first(7)
+    date = DateTime.now
+
+    top_tracks.each do |track|
+      if track["image"]
+        user.lastfm_top_tracks.create(
+          api_created_at: date,
+          data: {
             "artist"    => track["artist"]["name"],
             "name"      => track["name"],
             "rank"      => track["rank"],
@@ -35,6 +37,7 @@ class LastfmTopTrack < FeedItem
           })
         end
       end
+      date -= 1
     end
   end
 

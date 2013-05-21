@@ -1,8 +1,7 @@
 FeedEngine::Application.configure do
-
-  FeedEngine::Application.config.session_store :cookie_store, key: '_feed_engine_session', domain: '.lvh.me'
   # Settings specified here will take precedence over those in config/application.rb
 
+  FeedEngine::Application.config.session_store :cookie_store, key: '_feed_engine_session', domain: '.lvh.me'
   # Code is not reloaded between requests
   config.cache_classes = true
 
