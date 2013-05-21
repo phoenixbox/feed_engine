@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :tweets
   has_many :lastfm_top_tracks
   has_many :lastfm_top_artists
+  has_many :lastfm_top_albums
 
   has_many :authorizations
   has_many :twitter_auths
