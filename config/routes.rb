@@ -10,4 +10,6 @@ FeedEngine::Application.routes.draw do
   match 'signout', to: 'sessions#destroy', as: 'signout'
   match '', to: 'users#show', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
   root :to => "home#show"
+
+  mount Resque::Server => '/resque'
 end

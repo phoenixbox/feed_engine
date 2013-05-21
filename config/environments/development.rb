@@ -46,4 +46,5 @@ FeedEngine::Application.configure do
       :secret_access_key => '2wHbvQlHC5okdz87O5RH0ijsJxDgJCUPCt2NxlBU'
     }
   }
+  ENV["REDISTOGO_URL"] = 'redis://localhost:6379'
 end
