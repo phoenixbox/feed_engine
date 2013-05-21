@@ -5,12 +5,12 @@
         <%= image_tag('small_link.png')%>
       </div>
       <div class="link-box">
-        <%= link_to feed.link, "http://#{feed.link}", :target => "_blank" %>
+        <%= link_to @tl_link.link, "http://#{@tl_link.link}", :target => "_blank" %>
       </div><!--end of .link-box -->
     </div>
 
     <div class="text-content">
-      <p><%= feed.content %></p><br />
+      <p><%= @tl_link.content %></p><br />
     </div>
   </div>
 </div>

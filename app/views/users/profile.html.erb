@@ -63,7 +63,7 @@
                   <center>
                   <div id="account-details-content">
                     <br>
-                    <div id= "account-details-image"><%= image_tag current_user.image_url %></div>
+                    <div id= "account-details-image"><%= image_tag current_user.image_url.gsub("normal","bigger") %></div>
                     <h3>Username: <%= current_user.name %>
                     <br>
                     Feed Url: <%= current_user.name %>.streamrolled.com</h3>
