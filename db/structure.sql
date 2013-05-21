@@ -88,15 +88,12 @@ CREATE TABLE feed_items (
     feed_item_points_count integer,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
+    type character varying(255),
     photo_file_name character varying(255),
     photo_content_type character varying(255),
     photo_file_size integer,
     photo_updated_at timestamp without time zone,
-<<<<<<< HEAD
-    type character varying(255)
-=======
     api_created_at timestamp without time zone
->>>>>>> 436c167c84ae0f0ad84f6063ee7c65bfc70ecc25
 );
 
 
@@ -252,5 +249,7 @@ INSERT INTO schema_migrations (version) VALUES ('20130515173030');
 INSERT INTO schema_migrations (version) VALUES ('20130517153856');
 
 INSERT INTO schema_migrations (version) VALUES ('20130517235950');
+
+INSERT INTO schema_migrations (version) VALUES ('20130520214310');
 
 INSERT INTO schema_migrations (version) VALUES ('20130521160841');

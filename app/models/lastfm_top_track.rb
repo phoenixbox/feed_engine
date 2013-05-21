@@ -35,7 +35,6 @@ class LastfmTopTrack < FeedItem
             "playcount" => track["playcount"],
             "image_url" => track["image"][3]["content"]
           })
-        end
       end
       date -= 1
     end
