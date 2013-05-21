@@ -1,7 +1,4 @@
-<div class="radio-perk">
-  <a href="#" class="perkdrop" id="tab1" name="amount" value="250">
-    <label for="tab1">Text Post</label>
-  </a>
+<div class="radio-perk"><input class="perkdrop" id="tab1" type="radio" name="amount" value="250"><label for="tab1">Text Post</label>
 </div>
 <div id="tabs-250" class="dropdown">
    <%= simple_form_for @tl_text do |f| %>
@@ -11,10 +8,7 @@
   <% end %>
 </div>
 
-<div class="radio-perk">
-  <a href="#" class="perkdrop" id="tab1" type="radio" name="amount" value="250">
-    <label for="tab1">Link Post</label>
-  </a>
+<div class="radio-perk"><input class="perkdrop" id="tab1" type="radio" name="amount" value="250"><label for="tab1">Link Post</label>
 </div>
 
 <div id="tabs-250" class="dropdown">
@@ -25,10 +19,7 @@
 <% end %>
 </div>
 
-<div class="radio-perk">
-  <a href="#" class="perkdrop" id="tab1" type="radio" name="amount" value="250">
-    <label for="tab1">Image Post</label>
-  </a>
+<div class="radio-perk"><input class="perkdrop" id="tab1" type="radio" name="amount" value="250"><label for="tab1">Image Post</label>
 </div>
 <div id="tabs-250" class="dropdown">
     <%= simple_form_for @tl_image, :html => { :multipart => true } do |f| %>
@@ -40,8 +31,6 @@
 
 
 <script>
-  $(".radio-perk ").find("a");
-
   $('.perkdrop').change(function () {
     $('.dropdown').slideUp();
     if ($(this).is(':checked')) {
