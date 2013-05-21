@@ -135,7 +135,8 @@ CREATE TABLE users (
     name character varying(255),
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    subdomain character varying(255)
+    subdomain character varying(255),
+    image_url character varying(255)
 );
 
 
@@ -247,3 +248,5 @@ INSERT INTO schema_migrations (version) VALUES ('20130515173030');
 INSERT INTO schema_migrations (version) VALUES ('20130517153856');
 
 INSERT INTO schema_migrations (version) VALUES ('20130517235950');
+
+INSERT INTO schema_migrations (version) VALUES ('20130520214310');
