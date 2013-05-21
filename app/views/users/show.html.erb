@@ -36,9 +36,14 @@
   $(function(){
     $('.drawer').slideDrawer({
       showDrawer: true,
-      slideTimeout: true,
+      slideTimeout: false,
       slideSpeed: 600,
-      slideTimeoutCount: 3000,
+    });
+    var wait = setTimeout(function(){
+      $('.drawer').slideDrawer({showDrawer:"slide"});
+    },3000);
+    $(document).on("mouseover", ".drawer", function(){
+      clearTimeout(wait);
     });
   });
 </script>
