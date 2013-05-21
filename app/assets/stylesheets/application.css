@@ -304,20 +304,21 @@ width: 100%;
 /********************** Lastfm Top Tracks *************************/
 
 .lastfm-top-track-container {
-  margin: 5px;
+  margin: 5px 5px 0px 5px;  
   width: 270px;
-  height: 270px;
+  height: auto;
+  /*height: 270px;*/
   background: #5d5d5d;
 }
 
 .lastfm-top-track-inner-box {
   position: relative;
   /*padding: 5px;*/
-  margin: 5px;
+  margin: 5px 5px 5px 5px;
   width: 260px;
-  height: 255px;
+  height: auto;
   font-size: medium;
-  background: #ffffff;
+  /*background: #ffffff;*/
   word-wrap: break-word;
 }
 
@@ -337,7 +338,7 @@ width: 100%;
 .top-track-transparent {
   position: relative;
   width: 260px;
-  height: 120px;
+  height: 110px;
   background: #4d4d4d;
   opacity:0.6;
 }
@@ -353,11 +354,16 @@ width: 100%;
 
 .track-bottom-info {
   position: absolute;
-  bottom: 5px;
+  bottom: 10px;
 }
 
 .track-bottom-info p {
   color:#ffffff;
+}
+
+.lastfm-top-track-inner-box img {
+  vertical-align: middle;
+  /*text-align: center;*/
 }
 
 .lastfm-top-track-inner-box  h1{

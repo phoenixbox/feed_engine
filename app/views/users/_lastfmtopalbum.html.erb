@@ -1,0 +1,39 @@
+<div class="item lastfm-top-track-container">   
+  <div class="lastfm-top-track-inner-box">
+    <%= image_tag feed.image_url %>
+    <div class="lastfm-top-track-upper-info-box">
+      <div class="upper-info-transparent">
+        <div class="icon-type">
+          <%= image_tag('small_note.png')%>
+        </div>
+        <div class="rank-box">
+        </div>
+      </div>
+    </div>
+    <div class="lastfm-top-track-info-box">
+      <div class="top-track-transparent"></div>
+      <div class="top-track-details">
+        <h1><%= feed.artist %></h1>
+        <p><%= feed.name %></p>
+        <div class="track-bottom-info">
+          <p>Rank: <%= feed.rank %></p>
+        </div>
+      </div>
+    </div>
+  </div><!-- end of .text-post-box  -->
+</div><!--end of .item text-post -->
+
+<!-- jQuery for image mousenter reveal details -->
+
+<script>
+  $(".lastfm-top-track-inner-box").on('mouseover', function(){
+    $(this).find('.lastfm-top-track-info-box').slideDown(400);
+    $(this).find('.lastfm-top-track-upper-info-box').slideDown(400);
+  }).on('mouseleave', function(){
+    $(this).find('.lastfm-top-track-info-box').slideUp(200);
+    $(this).find('.lastfm-top-track-upper-info-box').slideUp(400)
+  });
+</script>
+
+
+ 
