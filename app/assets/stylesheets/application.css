@@ -290,16 +290,41 @@ margin-top: 0;
   width: 100%;
 }
 
-.lastfm-top-track-details {
+.lastfm-top-track-info-box {
   bottom: -5px;
   position: absolute;
   width: 260px;
   height: 120px;
-  background: #ffffff;
-  opacity:0.6;
   z-index: 10;
   display: none;
 }
+
+.top-track-transparent {
+  position: relative;
+  width: 260px;
+  height: 120px;
+  background: #4d4d4d;
+  opacity:0.6;
+}
+
+.top-track-details {
+  top: 5px;
+  left: 10px;
+  position: absolute;
+  width: 260px;
+  height: 120px;
+  z-index: 10;
+}
+
+.lastfm-top-track-inner-box  h1{
+  font-size: x-large;
+  color:#ffffff;
+}
+.lastfm-top-track-inner-box  p{
+  color:#ffffff;
+}
+
+
 
 /******************** Account Mgmt Page *************************/
 
