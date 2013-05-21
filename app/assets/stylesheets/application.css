@@ -30,7 +30,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 /* // 2. TYPOGRAPHY */
 /* ################################################################ */
-body,h1,h2,h3,h4,h5,h6,p { font-family: Oswald, Helvetica, Arial, sans-serif; }
+body,h1,h2,h3,h4,h5,h6,p { font-family: Helvetica, Arial, sans-serif; }
 
 body{
 margin:0;
@@ -43,6 +43,14 @@ em{color: red;}
 
 /* // 3. PAGE SECTION STYLES */
 /* ################################################################ */
+#wrapper {
+  position: relative;
+}
+
+#maincontainer {
+  position: relative;
+  height: 100%;
+}
 
 #contentwrapper{
 float: left;
@@ -50,12 +58,14 @@ width: 100%;
 }
 
 .innertube{
-margin: 5px; /*Margins for inner DIV inside each column (to provide padding)*/
-margin-top: 0;
+  position: relative;
+  margin-top: 0;
 }
 
 .dropdown{
   display: none;
+  float: right;
+  margin-right: 100px;
 }
 
 .links-inline li {
@@ -81,10 +91,20 @@ margin-top: 0;
   background: #ff5763;
 }
 
+#twitter-bird {
+  width:auto;
+  height:60px;
+}
+
+#twitter-bird img {
+  margin-top: 5px;
+  margin-left: 40%;
+}
+
 .text-post {
   margin: 5px;
-  width: 340px;
-  height: 360px;
+  width: 270px;
+  height: auto;
   background: #5d5d5d;
 }
 
@@ -92,11 +112,18 @@ margin-top: 0;
   position: relative;
   padding: 5px;
   margin: 5px;
-  width: 320px;
-  height: 340px;
+  width: 250px;
+  height: auto;
   font-size: medium;
   background: #ffffff;
   word-wrap: break-word;
+}
+
+.content-type-float {
+  margin-right: 5px;
+  float: left;
+  height: 50px;
+  width: 50px;
 }
 
 .user-thumbnail {
@@ -118,7 +145,7 @@ margin-top: 0;
   /*text-align: center;*/
   margin-left: 10px;
   vertical-align: middle;
-  line-height: 80px;
+  line-height: 30px;
 }
 
 #textpost-sample {
@@ -152,17 +179,17 @@ margin-top: 0;
 
 .img-post {
   margin: 5px;
-  width: 340px;
-  height: 535px;
+  width: 270px;
+  height: auto;
   background: #5d5d5d;
 }
 
 .img-post-box {
   position: relative;
   padding: 5px;
-  margin: 5px;
-  width: 320px;
-  height: 515px;
+  margin: 5px 5px 5px 5px;
+  width: 250px;
+  height: auto;
   font-size: medium;
   background: #ffffff;
 }
@@ -171,13 +198,14 @@ margin-top: 0;
   position: absolute;
   bottom: 5px;
   margin: 5px;
-  width: 310px;
-  height: 280px;
+  width: 240px;
+  height: auto;
 }
 
-.feed-item-image img {
-  max-width: 100%;
-  max-height: 100%;
+.img-post-box img {
+ /* max-width: 100%;
+  max-height: 100%;*/
+  width: 100%
 }
 
 #linkpost-sample {
@@ -196,8 +224,8 @@ margin-top: 0;
 
 .link-post {
   margin: 5px;
-  width: 340px;
-  height: 280px;
+  width: 270px;
+  height: auto;
   background: #5d5d5d;
   word-wrap: break-word;
 }
@@ -211,17 +239,24 @@ margin-top: 0;
   position: relative;
   padding: 5px;
   margin: 5px;
-  width: 320px;
-  height: 260px;
+  width: 250px;
+  height: auto;
   font-size: medium;
   background: #ffffff
 }
 
 .link-box {
-  margin-top: 90px;
+  text-align: center;
+  margin-top: 12px;
+  float: right;
   height: 25px;
-  width: 320px; 
+  width: 190px; 
   background: #d5d5d5;
+}
+
+.link-details {
+  height: 50px;
+  width: auto;
 }
 
 #albumart-sample {
@@ -256,7 +291,7 @@ margin-top: 0;
   float: right;
   text-align: center;
   margin: 5px;
-  width: 100px;
+  width: 150px;
   height: 30px;
   background: #e3e3e3
 }
@@ -264,6 +299,219 @@ margin-top: 0;
 .item-action a {
   vertical-align: middle;
   margin: 0px 5px 0px 5px;
+}
+
+/********************** Lastfm Top Tracks *************************/
+
+.lastfm-top-track-container {
+  margin: 5px;
+  width: 270px;
+  height: 270px;
+  background: #5d5d5d;
+}
+
+.lastfm-top-track-inner-box {
+  position: relative;
+  /*padding: 5px;*/
+  margin: 5px;
+  width: 260px;
+  height: 255px;
+  font-size: medium;
+  background: #ffffff;
+  word-wrap: break-word;
+}
+
+.lastfm-top-track-container img {
+  width: 100%;
+}
+
+.lastfm-top-track-info-box {
+  bottom: -5px;
+  position: absolute;
+  width: 260px;
+  height: 120px;
+  z-index: 10;
+  display: none;
+}
+
+.top-track-transparent {
+  position: relative;
+  width: 260px;
+  height: 120px;
+  background: #4d4d4d;
+  opacity:0.6;
+}
+
+.top-track-details {
+  top: 5px;
+  left: 10px;
+  position: absolute;
+  width: 260px;
+  height: 120px;
+  z-index: 10;
+}
+
+.track-bottom-info {
+  position: absolute;
+  bottom: 5px;
+}
+
+.track-bottom-info p {
+  color:#ffffff;
+}
+
+.lastfm-top-track-inner-box  h1{
+  font-size: x-large;
+  color:#ffffff;
+}
+.lastfm-top-track-inner-box  p{
+  color:#ffffff;
+}
+
+/*------------------ Upper Info Box ------------------*/
+.lastfm-top-track-upper-info-box {
+  top: -5px;
+  position: absolute;
+  width: 260px;
+  height: 60px;
+  z-index: 10;
+  display: none;
+}
+
+.upper-info-transparent {
+  position: relative;
+  width: 260px;
+  height: 55px;
+  
+}
+
+.icon-type {
+  margin-top: 5px;
+  float: left;
+  width: 50px;
+  height: 50px;
+}
+
+.icon-type-overlay {
+  float: left;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 10;
+}
+
+.rank-box {
+  margin-top: 5px;
+  display: inline;
+  float: right;
+  width: 50px;
+  height: 50px;
+}
+
+/*------------------ Drawer ------------------*/
+
+.drawer {
+  float: right;
+  bottom:0px;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.drawer header {
+  background: #4d4d4d;
+  color: #ffffff;
+  display: inline;
+  margin-left: 45%;
+  overflow: hidden;
+  padding: 0px 30px 0px 30px;
+  vertical-align: middle;
+  text-align: center;
+  border-top-left-radius: 25px 20px;
+  border-top-right-radius: 25px 20px;
+  font-size: x-large;
+}
+
+.clickme {
+  cursor: pointer;
+  width: 200px;
+}
+
+.drawer-content {
+  position: relative;
+  background: #ffffff;
+  border-collapse: collapse;
+  border-top: 3px solid #000000;
+  height: 200px;
+  width: 100%;
+}
+
+.drawer-items {
+  margin: auto;
+  width: 960px;
+}
+
+.drawer-items li {
+  float: left;
+  list-style: none;
+  margin-left: 0px;
+  width: 200px;
+}
+
+.drawer-items li a {
+  color: #fff;
+  display: block;
+  height: 86px;
+  padding: 12px;
+  text-decoration: none;
+  width: 176px;
+}
+
+#drawer-tab {
+  display:inline;
+  width: 200px;
+  background: #ffffff;
+}
+
+.drawer-container {
+  position: relative;
+  height: 100%;
+  margin: 10px;
+}
+
+.drawer-posting {
+  float: left;
+  width: 695px;
+  height: 85%;
+  background: #4d4d4d;
+}
+
+.drawer-music {
+  float: right;
+  height: 85%;
+  width: 695px;
+  background: #4d4d4d;
+}
+
+/*---------------------- Radio Buttons ----------------------*/
+
+.radio-perk {
+  margin: 20px 20px 0px 40px;
+  padding-top: 5px;
+}
+
+/*---------------------- Drawer Music ----------------------*/
+
+.drawer-music li {
+  margin: 8px;
+  height: 40;
+  width: 150px;
+  background: #ffffff;
+}
+
+.drawer-music ul {
+  text-align: center;
 }
 
 /******************** Account Mgmt Page *************************/
@@ -572,11 +820,15 @@ margin-left: 10px; /*Set left margin to LeftColumnWidth*/
 }
 
 #leftcolumn{
-float: left;
-width: 320px; /*Width of left column*/
-margin-left: -100%;
-background: #e3e3e3;
-height: 100%;
+  float: left;
+  width: 320px; /*Width of left column*/
+  margin-left: -100%;
+  background: #e3e3e3;
+  height: 100%;
+
+  display: none;
+  position: absolute;
+  z-index: 10
 }
 
 #personal-profile {
@@ -600,22 +852,29 @@ height: 100%;
 /* ################################################################ */
 
 #topsection{
-background: #EAEAEA;
-height: 3em; /*Height of top section*/
+  background: #EAEAEA;
+  height: 3em; /*Height of top section*/
 }
 
 #topsection h1{
-margin: 0;
-padding-top: 15px;
+  margin: 0;
+  padding-top: 15px;
 }
 
 #logo {
+  margin-left: 47%;
+  vertical-align: middle;
   float: left;
   font-size: x-large;
 }
 
 #login {
   float: right;
-  border-style: solid;
-  border-width: 1px;
+  margin-right: 15px;
+  
+  line-height: 55px;
+}
+
+#login > a {
+  padding: 0px 0px 0px 35px;
 }

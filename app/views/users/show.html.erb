@@ -1,38 +1,44 @@
-<div id="maincontainer">
-  <div id="contentwrapper">
-    <div id="contentcolumn">
-      <div class="innertube">
-        <div class="links-inline">
-          <ul>
-            <li><a href="#">All</a></li>  
-            <li><a href="#">Re-Feeds</a></li>  
-            <li><a href="#">Mics</a></li>
-          </ul>
-        </div> <!--end of .links-inline -->
-        <div id="content">
-          <!-- Want each text feed item to be put in a div with the text styling -->
-          <% @feeds.each do |feed| %>
-            <%= render feed.type.downcase, feed: feed %>
-          <% end %>
-        </div>
-        </div> <!--end of #masonry-container -->
-      </div> <!--end of .innertube -->
-    </div> <!--end of #contentcolumn -->
-  </div> <!--end of #contentwrapper -->
-  <div id="leftcolumn">
+<div id="contentwrapper">
+  <div id="homepage-contentcolumn">
     <div class="innertube">
-      <div id="personal-profile">
-        <h1><b>Personal Profile</b></h1>
-        <p>I love TuneLine yes I do</p>
-        <p><%= link_to "Link to LastFM", "/auth/lastfm" %></p>
-      <div> <!--end of #personal-profile -->
-      <div id="user-posting">
-        <h2>Post to your feed:</h2>
-        <hr>
-        <%= render 'user_post' %>
-
-      </div> <!--end of #user-postin -->
-     
-    </div> <!--end of #innertube -->
-  </div><!--end of #leftcolumn -->
-</div> <!--end of #maincontainer -->
+      <div id="content">
+        <% @feeds.each do |feed| %>
+          <%= render feed.type.downcase, feed: feed %>
+        <% end %>
+      </div>
+      </div> <!--end of #masonry-container -->
+    </div> <!--end of .innertube -->
+  </div> <!--end of #contentcolumn -->
+</div> <!--end of #contentwrapper -->
+<footer class="drawer" style="height: 220px;">
+  <header class="clickme">Content</header>
+  <div class="drawer-content">
+    <div class="drawer-container">
+      <div class="drawer-posting">
+        <%=  render 'user_post' %>
+      </div><!-- end of .drawer-posting -->
+      <div class="drawer-music">
+        <ul>
+          <li class="genre"><a href='#'>Dubstep</a></li>
+          <li class="genre"><a href='#'>Electronic</a></li>
+          <li class="genre"><a href='#'>Punk</a></li>
+          <li class="genre"><a href='#'>House</a></li>
+          <li class="genre"><a href='#'>R&B</a></li>
+        </ul>
+        <div id="target"></div>
+      </div><!-- end of .drawer-music -->
+    </div><!-- end of .drawer-container -->
+  </div><!-- end of .drawer-content -->
+</footer><!-- end of .drawer -->
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<%= javascript_include_tag "jquery.slidedrawer.min.js" %>
+<script>
+  $(function(){
+    $('.drawer').slideDrawer({
+      showDrawer: true,
+      slideTimeout: true,
+      slideSpeed: 600,
+      slideTimeoutCount: 3000,
+    });
+  });
+</script>
