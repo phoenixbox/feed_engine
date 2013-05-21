@@ -12,7 +12,7 @@
 </div>
 
 <div id="tabs-250" class="dropdown">
-   <%= simple_form_for @tl_link do |f| %>
+   <%= simple_form_for @tl_link, remote: true do |f| %>
     <%= f.input :link, label: "Please enter link here" %>
     <%= f.text_area :content, :rows => 6, :cols => 30 %>
     <%= f.submit "Submit" %>
