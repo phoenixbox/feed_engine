@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_subdomain!(request.subdomain)
-    @feeds = @user.feed_items.order('created_at DESC')
+    @feeds = @user.feed_items.order('created_at DESC').sort {|a, b| rand <=> rand }
      # && LastfmTopTrack.update_top_tracks_for_user(@user.id)
     # when should it be fired - when itegration is called
     @tl_text = TlText.new
