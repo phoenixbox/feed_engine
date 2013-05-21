@@ -30,7 +30,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 /* // 2. TYPOGRAPHY */
 /* ################################################################ */
-body,h1,h2,h3,h4,h5,h6,p { font-family: Oswald, Helvetica, Arial, sans-serif; }
+body,h1,h2,h3,h4,h5,h6,p { font-family: Helvetica, Arial, sans-serif; }
 
 body{
 margin:0;
@@ -50,7 +50,6 @@ width: 100%;
 }
 
 .innertube{
-margin: 5px; /*Margins for inner DIV inside each column (to provide padding)*/
 margin-top: 0;
 }
 
@@ -84,7 +83,7 @@ margin-top: 0;
 .text-post {
   margin: 5px;
   width: 340px;
-  height: 360px;
+  height: 220px;
   background: #5d5d5d;
 }
 
@@ -93,7 +92,7 @@ margin-top: 0;
   padding: 5px;
   margin: 5px;
   width: 320px;
-  height: 340px;
+  height: 200px;
   font-size: medium;
   background: #ffffff;
   word-wrap: break-word;
@@ -118,7 +117,7 @@ margin-top: 0;
   /*text-align: center;*/
   margin-left: 10px;
   vertical-align: middle;
-  line-height: 80px;
+  line-height: 30px;
 }
 
 #textpost-sample {
@@ -153,7 +152,7 @@ margin-top: 0;
 .img-post {
   margin: 5px;
   width: 340px;
-  height: 535px;
+  height: 400px;
   background: #5d5d5d;
 }
 
@@ -162,7 +161,7 @@ margin-top: 0;
   padding: 5px;
   margin: 5px;
   width: 320px;
-  height: 515px;
+  height: 380px;
   font-size: medium;
   background: #ffffff;
 }
@@ -176,8 +175,9 @@ margin-top: 0;
 }
 
 .feed-item-image img {
-  max-width: 100%;
-  max-height: 100%;
+ /* max-width: 100%;
+  max-height: 100%;*/
+  width: 100%
 }
 
 #linkpost-sample {
@@ -256,7 +256,7 @@ margin-top: 0;
   float: right;
   text-align: center;
   margin: 5px;
-  width: 100px;
+  width: 150px;
   height: 30px;
   background: #e3e3e3
 }
@@ -266,13 +266,31 @@ margin-top: 0;
   margin: 0px 5px 0px 5px;
 }
 
-/********************** Lastfm Tracks *************************/
+/********************** Lastfm Top Tracks *************************/
 
-.lastfm-track-container {
-
+.lastfm-top-track-container {
+  margin: 5px;
+  width: 270px;
+  height: 270px;
+  background: #5d5d5d;
 }
 
-.lastfm-track-details {
+.lastfm-top-track-inner-box {
+  position: relative;
+  /*padding: 5px;*/
+  margin: 5px;
+  width: 260px;
+  height: 255px;
+  font-size: medium;
+  background: #ffffff;
+  word-wrap: break-word;
+}
+
+.lastfm-top-track-container img {
+  width: 100%;
+}
+
+.lastfm-top-track-details {
 
 }
 
@@ -582,11 +600,15 @@ margin-left: 10px; /*Set left margin to LeftColumnWidth*/
 }
 
 #leftcolumn{
-float: left;
-width: 320px; /*Width of left column*/
-margin-left: -100%;
-background: #e3e3e3;
-height: 100%;
+  float: left;
+  width: 320px; /*Width of left column*/
+  margin-left: -100%;
+  background: #e3e3e3;
+  height: 100%;
+
+  display: none;
+  position: absolute;
+  z-index: 10
 }
 
 #personal-profile {
@@ -610,22 +632,29 @@ height: 100%;
 /* ################################################################ */
 
 #topsection{
-background: #EAEAEA;
-height: 3em; /*Height of top section*/
+  background: #EAEAEA;
+  height: 3em; /*Height of top section*/
 }
 
 #topsection h1{
-margin: 0;
-padding-top: 15px;
+  margin: 0;
+  padding-top: 15px;
 }
 
 #logo {
+  margin-left: 47%;
+  vertical-align: middle;
   float: left;
   font-size: x-large;
 }
 
 #login {
   float: right;
-  border-style: solid;
-  border-width: 1px;
+  margin-right: 15px;
+  
+  line-height: 55px;
+}
+
+#login > a {
+  padding: 0px 0px 0px 35px;
 }

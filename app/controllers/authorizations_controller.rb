@@ -7,7 +7,8 @@ class AuthorizationsController < ApplicationController
     lastfm_auth = user.lastfm_auths.new(token: lfm.session)
 
     if lastfm_auth.save
-      redirect_to root_path
+      LastfmTopTrack.update_top_tracks_for_user(user.id)
+      redirect_to ''
     else
       redirect_to user_path(user), :message => "Sorry, unable to connect"
     end

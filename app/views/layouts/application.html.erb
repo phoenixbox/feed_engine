@@ -6,12 +6,12 @@
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <script src="http://connect.soundcloud.com/sdk.js"></script>
   <body>
     <div id="maincontainer">
       <div id="topsection">
-        <div class="innertube">
           <div id="logo">
-            <h1><%= link_to "Tuneline", root_path %></h1>
+            <h1><%= link_to "Tuneline", "http://lvh.me:3000" %></h1>
           </div>
           <div id="login">
             <% if current_user %>
@@ -26,9 +26,16 @@
           <% flash.each do |name, msg| %>
             <%= content_tag :div, msg, id: "flash_#{name}" %>
           <% end %>
-        </div> <!--end of .innertube -->
+
       </div> <!--end of #topsection -->
       <%= yield %>
+        <ul>
+          <li><a href='#' class="genre">dubstep</a></li>
+          <li><a href='#' class="genre">electronic</a></li>
+          <li><a href='#' class="genre">punk</a></li>
+        </ul>
+       <div id="target"></div>
+      </div> <!--end of #soundcloud-player -->
     </div> <!--end of #maincontainer -->
   </body>
 </html>

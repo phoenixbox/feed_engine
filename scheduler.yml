@@ -1,0 +1,5 @@
+TweetForAllUsers:
+  every: ["30s"]
+  class: TweetForAllUsers
+  queue: tweet_for_all_users
+  cron: "*/1 * * * *"
