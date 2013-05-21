@@ -50,7 +50,8 @@ width: 100%;
 }
 
 .innertube{
-margin-top: 0;
+  position: relative;
+  margin-top: 0;
 }
 
 .dropdown{
@@ -366,6 +367,64 @@ margin-top: 0;
   width: 50px;
   height: 50px;
   background: #ffffff;
+}
+
+/*------------------ Drawer ------------------*/
+
+.drawer {
+  bottom:0px;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+}
+
+.drawer header {
+  background: #000000;
+  color: #ffffff;
+  display: block;
+  height: 25px;
+  line-height: 25px;
+  margin: auto;
+  overflow: hidden;
+  padding: 5px;
+  text-align: center;
+  width: 150px;
+  border-top-left-radius: 25px 40px;
+  border-top-right-radius: 25px 40px;
+}
+
+.clickme {
+  cursor: pointer;
+}
+
+.drawer-content {
+  background: #ffffff;
+  border-collapse: collapse;
+  border-top: 3px solid #000000;
+  height: 110px;
+  width: 100%;
+}
+
+.drawer-items {
+  margin: auto;
+  width: 960px;
+}
+
+.drawer-items li {
+  float: left;
+  list-style: none;
+  margin-left: 0px;
+  width: 200px;
+}
+
+.drawer-items li a {
+  color: #fff;
+  display: block;
+  height: 86px;
+  padding: 12px;
+  text-decoration: none;
+  width: 176px;
 }
 
 /******************** Account Mgmt Page *************************/

@@ -7,8 +7,42 @@
             <%= render feed.type.downcase, feed: feed %>
           <% end %>
         </div>
+        <section class="drawer" style="height: 140px;">
+          <header class="clickme">Current Events</header>
+          <div class="drawer-content">
+            <div class="drawer-items">
+              <ul>
+                <li>
+                  <a>One</a>
+                </li>
+                <li>
+                  <a>Two</a>
+                </li>
+                <li>
+                  <a>Three</a>
+                </li>
+                <li>
+                  <a>Four</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
         </div> <!--end of #masonry-container -->
       </div> <!--end of .innertube -->
     </div> <!--end of #contentcolumn -->
   </div> <!--end of #contentwrapper -->
 </div> <!--end of #maincontainer -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<%= javascript_include_tag "jquery.slidedrawer.min.js" %>
+<script>
+  $(function(){
+    $('.drawer').slideDrawer({
+      showDrawer: true,
+      slideTimeout: true,
+      slideSpeed: 600,
+      slideTimeoutCount: 3000,
+    });
+  });
+</script>
