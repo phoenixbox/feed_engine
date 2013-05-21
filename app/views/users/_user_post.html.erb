@@ -1,6 +1,6 @@
 <div class="radio-perk"><input class="perkdrop" id="tab1" type="radio" name="amount" value="250"><label for="tab1">Text Post</label>
 </div>
-<div id="tabs-250" class="dropdown">
+<div id="text-form" class="dropdown">
    <%= simple_form_for @tl_text, remote: true do |f| %>
     <%= f.text_area :content, label: "512 character limit", placeholder: "512 character limit", :rows => 6, :cols => 45 %>
   </br>
@@ -11,7 +11,7 @@
 <div class="radio-perk"><input class="perkdrop" id="tab1" type="radio" name="amount" value="250"><label for="tab1">Link Post</label>
 </div>
 
-<div id="tabs-250" class="dropdown">
+<div id="link-form" class="dropdown">
    <%= simple_form_for @tl_link, remote: true do |f| %>
     <%= f.input :link, label: "Please enter link here" %>
     <%= f.text_area :content, :rows => 6, :cols => 30 %>
@@ -21,7 +21,7 @@
 
 <div class="radio-perk"><input class="perkdrop" id="tab1" type="radio" name="amount" value="250"><label for="tab1">Image Post</label>
 </div>
-<div id="tabs-250" class="dropdown">
+<div id="image-form" class="dropdown">
     <%= simple_form_for @tl_image, :html => { :multipart => true } do |f| %>
     <%= f.label :photo %>
     <%= f.file_field :photo %>
