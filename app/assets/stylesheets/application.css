@@ -346,13 +346,27 @@ margin-top: 0;
 .upper-info-transparent {
   position: relative;
   width: 260px;
-  height: 60px;
+  height: 55px;
   background: #4d4d4d;
   opacity:0.6;
 }
 
+.icon-type {
+  margin-top: 5px;
+  float: left;
+  width: 50px;
+  height: 50px;
+  background: #ffffff;
+}
 
-
+.rank-box {
+  margin-top: 5px;
+  display: inline;
+  float: right;
+  width: 50px;
+  height: 50px;
+  background: #ffffff;
+}
 
 /******************** Account Mgmt Page *************************/
 
