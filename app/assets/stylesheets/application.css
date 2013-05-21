@@ -91,6 +91,16 @@ width: 100%;
   background: #ff5763;
 }
 
+#twitter-bird {
+  width:auto;
+  height:60px;
+}
+
+#twitter-bird img {
+  margin-top: 5px;
+  margin-left: 40%;
+}
+
 .text-post {
   margin: 5px;
   width: 270px;
