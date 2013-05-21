@@ -93,8 +93,8 @@ width: 100%;
 
 .text-post {
   margin: 5px;
-  width: 340px;
-  height: 220px;
+  width: 270px;
+  height: auto;
   background: #5d5d5d;
 }
 
@@ -102,11 +102,18 @@ width: 100%;
   position: relative;
   padding: 5px;
   margin: 5px;
-  width: 320px;
-  height: 200px;
+  width: 250px;
+  height: auto;
   font-size: medium;
   background: #ffffff;
   word-wrap: break-word;
+}
+
+.content-type-float {
+  margin-right: 5px;
+  float: left;
+  height: 50px;
+  width: 50px;
 }
 
 .user-thumbnail {
@@ -162,17 +169,17 @@ width: 100%;
 
 .img-post {
   margin: 5px;
-  width: 340px;
-  height: 400px;
+  width: 270px;
+  height: auto;
   background: #5d5d5d;
 }
 
 .img-post-box {
   position: relative;
   padding: 5px;
-  margin: 5px;
-  width: 320px;
-  height: 380px;
+  margin: 5px 5px 5px 5px;
+  width: 250px;
+  height: auto;
   font-size: medium;
   background: #ffffff;
 }
@@ -181,11 +188,11 @@ width: 100%;
   position: absolute;
   bottom: 5px;
   margin: 5px;
-  width: 310px;
-  height: 280px;
+  width: 240px;
+  height: auto;
 }
 
-.feed-item-image img {
+.img-post-box img {
  /* max-width: 100%;
   max-height: 100%;*/
   width: 100%
@@ -207,8 +214,8 @@ width: 100%;
 
 .link-post {
   margin: 5px;
-  width: 340px;
-  height: 280px;
+  width: 270px;
+  height: auto;
   background: #5d5d5d;
   word-wrap: break-word;
 }
@@ -222,17 +229,24 @@ width: 100%;
   position: relative;
   padding: 5px;
   margin: 5px;
-  width: 320px;
-  height: 260px;
+  width: 250px;
+  height: auto;
   font-size: medium;
   background: #ffffff
 }
 
 .link-box {
-  margin-top: 90px;
+  text-align: center;
+  margin-top: 12px;
+  float: right;
   height: 25px;
-  width: 320px; 
+  width: 190px; 
   background: #d5d5d5;
+}
+
+.link-details {
+  height: 50px;
+  width: auto;
 }
 
 #albumart-sample {
@@ -366,6 +380,14 @@ width: 100%;
   float: left;
   width: 50px;
   height: 50px;
+}
+
+.icon-type-overlay {
+  float: left;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 10;
 }
 
 .rank-box {
