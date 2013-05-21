@@ -333,6 +333,25 @@ margin-top: 0;
   color:#ffffff;
 }
 
+/*------------------ Upper Info Box ------------------*/
+.lastfm-top-track-upper-info-box {
+  top: -5px;
+  position: absolute;
+  width: 260px;
+  height: 60px;
+  z-index: 10;
+  display: none;
+}
+
+.upper-info-transparent {
+  position: relative;
+  width: 260px;
+  height: 60px;
+  background: #4d4d4d;
+  opacity:0.6;
+}
+
+
 
 
 /******************** Account Mgmt Page *************************/
