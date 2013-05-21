@@ -316,6 +316,15 @@ margin-top: 0;
   z-index: 10;
 }
 
+.track-bottom-info {
+  position: absolute;
+  bottom: 5px;
+}
+
+.track-bottom-info p {
+  color:#ffffff;
+}
+
 .lastfm-top-track-inner-box  h1{
   font-size: x-large;
   color:#ffffff;
