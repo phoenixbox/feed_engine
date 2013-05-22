@@ -7,22 +7,42 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <script src="http://connect.soundcloud.com/sdk.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo|Nova+Cut' rel='stylesheet' type='text/css'>
   <body>
     <div id="maincontainer" >
+      <div class="nav_image">
+        <% if current_user %>
+          <%= image_tag current_user.image_url.gsub("normal","bigger") %>
+        <% end %>
+        </div>
+      <div class="name-space">
+        <% if current_user %>
+        Signed in as, <div class="user_name"> <%= current_user.name %>!
+        </div>
+      </div>
       <div id="topsection">
         <div class="innertube">
           <div id="logo">
-            <h1><%= link_to "Tuneline", root_path %></h1>
+            <div id="logo_image">
+              <%= image_tag('tuneline.png')%>
+            </div>
           </div>
           <div id="login">
-            <% if current_user %>
-              Signed in as <%= current_user.name %>!
+            <center>
+            <div class="login-buttons">
               <%= link_to "My Account", myaccount_path %>
+            </div>
+            <div class="login-buttons">
               <%= link_to "My Feed", root_url(subdomain: current_user.subdomain) %>
+            </div>
+            <div class="login-buttons">
               <%= link_to "Sign out", signout_path %>
+            </div>
               <!-- render template for header nav -->
             <% else %>
+            <div class="login-buttons">
               <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+            </div>
             <% end %>
         </div> <!--end of #topsection -->
           <% flash.each do |name, msg| %>
@@ -34,3 +54,4 @@
     </div>
   </body>
 </html>
+
