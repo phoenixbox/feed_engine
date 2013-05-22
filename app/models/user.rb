@@ -1,15 +1,18 @@
 class User < ActiveRecord::Base
-
   has_many :feed_items
   has_many :tl_texts
   has_many :tl_images
   has_many :tl_links
   has_many :tweets
   has_many :lastfm_top_tracks
+  has_many :lastfm_top_artists
+  has_many :lastfm_top_albums
+  has_many :soundcloud_favorites
 
   has_many :authorizations
   has_many :twitter_auths
   has_many :lastfm_auths
+  has_many :soundcloud_auths
 
   def self.from_omniauth(auth)
     where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
@@ -20,9 +23,11 @@ class User < ActiveRecord::Base
     @user = create! do |user|
       user.uid = auth["uid"]
       user.name = name
+      user.image_url = auth["info"]["image"]
       user.subdomain = name.downcase.gsub('_','-')
     end
     @user.twitter_auths.create_from_omniauth(auth["credentials"]["token"], auth["credentials"]["secret"], @user.id, "twitter")
+    @user.create_from_mentions
     @user
   end
 
@@ -56,7 +61,10 @@ class User < ActiveRecord::Base
 
   def create_from_mentions
     tuneline_mentions.each do |mention|
-      tweets.create(data: {"text" => mention.text, "twitter_id" => mention.id})
+      tweets.create(
+        data: {"text" => mention.text, "twitter_id" => mention.id},
+        api_created_at: mention.created_at
+      )
     end
   end
 

@@ -1,0 +1,29 @@
+<div id="maincontainer">
+  <div id="contentwrapper">
+    <div id="contentcolumn">
+      <div class="innertube">
+        <div id="content">
+          <% @feeds.each do |feed| %>
+            <%= render feed.type.downcase, feed: feed %>
+          <% end %>
+        </div>
+        </div> <!--end of #masonry-container -->
+      </div> <!--end of .innertube -->
+    </div> <!--end of #contentcolumn -->
+  </div> <!--end of #contentwrapper -->
+  <div id="leftcolumn">
+    <div class="innertube">
+      <div id="personal-profile">
+        <h1><b>Personal Profile</b></h1>
+        <p>I love TuneLine yes I do</p>
+        <p><%= link_to "Link to LastFM", "/auth/lastfm" %></p>
+      <div> <!--end of #personal-profile -->
+      <div id="user-posting">
+        <h2>Post to your feed:</h2>
+        <hr>
+        <%= render 'user_post' %>
+      </div> <!--end of #user-postin -->
+     
+    </div> <!--end of #innertube -->
+  </div><!--end of #leftcolumn -->
+</div> <!--end of #maincontainer -->

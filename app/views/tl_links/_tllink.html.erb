@@ -1,0 +1,16 @@
+<div class="item link-post">
+  <div class="link-post-box">
+    <div class="link-details">
+      <div class="content-type-float">
+        <%= image_tag('small_link.png')%>
+      </div>
+      <div class="link-box">
+        <%= link_to @tl_link.link, "http://#{@tl_link.link}", :target => "_blank" %>
+      </div><!--end of .link-box -->
+    </div>
+
+    <div class="text-content">
+      <p><%= @tl_link.content %></p><br />
+    </div>
+  </div>
+</div>
