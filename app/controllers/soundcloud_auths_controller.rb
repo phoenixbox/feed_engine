@@ -30,7 +30,6 @@ private
       :client_id      => ENV["SOUNDCLOUD_CONSUMER_KEY"],
       :client_secret  => ENV["SOUNDCLOUD_CONSUMER_SECRET"],
       :redirect_uri   => "http://www.streamrolled.com/connect/soundcloud/callback"
-      #:redirect_uri   => "http://lvh.me:3000/connect/soundcloud/callback"
     })
   end
 end

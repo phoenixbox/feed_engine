@@ -2,3 +2,8 @@ TweetForAllUsers:
   every: 30s
   class: TweetForAllUsers
   queue: tweet_for_all_users
+
+SoundcloudFavorites:
+  every: 1d
+  class: SoundcloudFavorites
+  queue: soundcloud_favorites
