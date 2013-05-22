@@ -12,7 +12,7 @@ class SoundcloudAuthsController < ApplicationController
 
     if soundcloud_auth.save
       SoundcloudFavorite.update_favorites_for_user(user.id)
-      redirect_to :back
+      redirect_to user_path(user)
     else
       redirect_to user_path(user), :message => "Sorry, unable to connect"
     end
