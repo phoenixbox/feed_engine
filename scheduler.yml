@@ -3,7 +3,7 @@ TweetForAllUsers:
   class: TweetForAllUsers
   queue: tweet_for_all_users
 
-SoundcloudFavorites:
+SoundcloudFavoritesForAllUsers:
   every: 1d
-  class: SoundcloudFavorites
-  queue: soundcloud_favorites
+  class: SoundcloudFavoritesForAllUsers
+  queue: soundcloud_favorites_for_all_users
