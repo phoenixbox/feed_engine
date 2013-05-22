@@ -11,7 +11,7 @@ class SoundcloudAuthsController < ApplicationController
     soundcloud_auth = user.soundcloud_auths.new(token: access_token)
 
     if soundcloud_auth.save
-      SoundcloudFavorite.update_favorites_for_user(user.id)
+      Resque.enqueue(SoundcloudFavorites, {:user_id => user.id})
       redirect_to root_url(subdomain: current_user.subdomain)
     else
       redirect_to root_url(subdomain: current_user.subdomain), message: "Sorry, unable to connect to Soundcloud"
