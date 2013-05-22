@@ -105,7 +105,8 @@ width: 100%;
   margin: 5px;
   width: 270px;
   height: auto;
-  background-image: url('etcher-small.png');
+  background: #d5d5d5;
+  /*background-image: url('etcher-small.png');*/
 }
 
 .text-post-box {
@@ -160,7 +161,7 @@ width: 100%;
   width: 330px;
   height: 340px;
   background: #ff5763;
-  background-image: url('etcher-small.png');
+  /*background-image: url('etcher-small.png');*/
 }
 
 #imgpost-sample {
@@ -182,7 +183,8 @@ width: 100%;
   margin: 5px;
   width: 270px;
   height: auto;
-  background-image: url('etcher-small.png');
+  background: #d5d5d5;
+  /*background-image: url('etcher-small.png');*/
 }
 
 .img-post-box {
@@ -227,7 +229,8 @@ width: 100%;
   margin: 5px;
   width: 270px;
   height: auto;
-  background-image: url('etcher-small.png');
+  background: #d5d5d5;
+  /*background-image: url('etcher-small.png');*/
   word-wrap: break-word;
 }
 
@@ -415,7 +418,31 @@ width: 100%;
   height: 50px;
 }
 
-/*------------------ Drawer ------------------*/
+/********************** Soundcloud *************************/
+
+.soundcloud-transparent {
+  position: relative;
+  width: 260px;
+  height: 120px;
+  background: #4d4d4d;
+  opacity:0.6;
+}
+
+.soundcloud-details {
+  top: 5px;
+  left: 10px;
+  position: absolute;
+  width: 260px;
+  height: 120px;
+  z-index: 10;
+}
+
+.soundlcoud-bottom-info {
+  position: absolute;
+  bottom: 10px;
+}
+
+/********************** Drawer *************************/
 
 .drawer {
   float: right;
@@ -492,7 +519,7 @@ width: 100%;
   width: 695px;
   height: 85%;
   background: #929292;
-  background-image: url('etcher-small.png');
+  /*background-image: url('etcher-small.png');*/
 }
 
 .drawer-music {
@@ -500,7 +527,7 @@ width: 100%;
   height: 85%;
   width: 695px;
   background: #929292;
-  background-image: url('etcher-small.png');
+  /*background-image: url('etcher-small.png');*/
 }
 
 /*---------------------- Radio Buttons ----------------------*/
