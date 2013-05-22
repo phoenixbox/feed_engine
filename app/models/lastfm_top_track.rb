@@ -34,7 +34,7 @@ class LastfmTopTrack < FeedItem
             "rank"      => track["rank"],
             "playcount" => track["playcount"],
             "image_url" => track["image"][3]["content"],
-            "url" => track["url"]
+            "url"       => track["url"]
           })
       end
       date -= 1

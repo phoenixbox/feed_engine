@@ -27,10 +27,11 @@ class LastfmTopArtist < FeedItem
       top_artists.each do |artist|
         if artist["image"]
           user.lastfm_top_artists.create(data: {
-            "name"    => artist["name"],
+            "name"      => artist["name"],
             "rank"      => artist["rank"],
             "playcount" => artist["playcount"],
-            "image_url" => artist["image"][3]["content"]
+            "image_url" => artist["image"][3]["content"],
+            "url"       => artist["url"]
           })
         end
       end
