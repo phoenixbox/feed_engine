@@ -30,7 +30,8 @@ class LastfmTopAlbum < FeedItem
             "rank"      => album["rank"],
             "name"      => album["name"],
             "artist"    => album["artist"]["name"],
-            "image_url" => album["image"][3]["content"]
+            "image_url" => album["image"][3]["content"],
+            "url"       => album["url"]
           })
         end
       end

@@ -9,9 +9,9 @@ class LastfmAuthsController < ApplicationController
       LastfmTopTrack.update_top_tracks_for_user(user.id)
       LastfmTopAlbum.update_top_albums_for_user(user.id)
       LastfmTopArtist.update_top_artists_for_user(user.id)
-      redirect_to root_path
+      redirect_to root_url(subdomain: current_user.subdomain)
     else
-      redirect_to user_path(user), :message => "Sorry, unable to connect"
+      redirect_to root_url(subdomain: current_user.subdomain), :message => "Sorry, unable to connect"
     end
   end
 end
