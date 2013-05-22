@@ -12,7 +12,7 @@ FeedEngine::Application.routes.draw do
     end
   end
 
-  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/:provider/callback', to: 'sessions#create', as: 'signin'
   match 'auth/failure', to: redirect('/')
   match 'connect/lastfm/callback', to: 'lastfm_auths#create'
   match 'connect/soundcloud/callback', to: 'soundcloud_auths#create'

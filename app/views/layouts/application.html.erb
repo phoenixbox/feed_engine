@@ -9,19 +9,20 @@
     <script src="http://connect.soundcloud.com/sdk.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo|Nova+Cut' rel='stylesheet' type='text/css'>
   <body>
-    <div id="maincontainer" >
-      <div class="nav_image">
-          <%= image_tag current_user.image_url.gsub("normal","bigger") %>
+    <% if current_user %>
+    <div id="topsection">
+      <div class="innertube">
+        <div id="maincontainer" >
+          <div class="nav_image">
+            <%= image_tag current_user.image_url.gsub("normal","bigger") %>
+          </div>
+          <div class="name-space">
+            Signed in as, <div class="user_name"> <%= current_user.name %>!
+          </div>
+          <div class="signout">
+            <%= link_to "[Sign out]", signout_path, redirect_to: root_url(subdomain: 'www') %>
+          </div>
         </div>
-      <div class="name-space">
-        Signed in as, <div class="user_name"> <%= current_user.name %>!
-        </div>
-        <div class="signout">
-         <%= link_to "[Sign out]", signout_path %>
-        </div>
-      </div>
-      <div id="topsection">
-        <div class="innertube">
           <div id="logo">
             <div id="logo_image">
               <%= image_tag('tuneline.png')%>
@@ -29,21 +30,33 @@
           </div>
           <div class="global_feed_button">
             <center>
-            <%= image_tag('globe.png', :size => "50x43") %>
+            <%= link_to( image_tag('globe.png', :size => "50x43"), root_url(subdomain: 'www')) %>
           </div>
           <div id="login">
-            <center>
-            <div class="login-buttons">
-              <%= link_to "My Account", myaccount_path %>
-            </div>
-            <div class="login-buttons">
-              <%= link_to "My Feed", root_url(subdomain: current_user.subdomain) %>
-            </div>
-        </div> <!--end of #topsection -->
-          <% flash.each do |name, msg| %>
-              <%= content_tag :div, msg, id: "flash_#{name}" %>
-          <% end %>
-        <%= yield %>
+              <center>
+              <div class="login-buttons">
+                <%= link_to "My Account", myaccount_path %>
+              </div>
+              <div class="login-buttons">
+                <%= link_to "My Feed", root_url(subdomain: current_user.subdomain) %>
+              </div>
+              <% else %>
+              <div id="topsection">
+                <div class="innertube">
+                  <div id="logo">
+                    <div id="logo_image">
+                      <%= image_tag('tuneline.png')%>
+                    </div>
+                  </div>
+                  <div class="signin">
+                      <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+                  </div>
+              <% end %>
+          </div> <!--end of #topsection -->
+            <% flash.each do |name, msg| %>
+                <%= content_tag :div, msg, id: "flash_#{name}" %>
+            <% end %>
+          <%= yield %>
       </div> <!--end of #maincontainer -->
       
     </div>

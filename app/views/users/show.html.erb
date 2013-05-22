@@ -10,41 +10,42 @@
     </div> <!--end of .innertube -->
   </div> <!--end of #contentcolumn -->
 </div> <!--end of #contentwrapper -->
-<footer class="drawer" style="height: 220px;">
-  <header class="clickme">Post Content</header>
-  <div class="drawer-content">
-    <div class="drawer-container">
-      <div class="drawer-posting">
+  <footer class="drawer" style="height: 220px;">
+    <header class="clickme">Post Content</header>
+    <div class="drawer-content">
+      <div class="drawer-container">
+        <div class="drawer-posting">
 
-        <%=  render 'user_post' %>
-        
-      </div><!-- end of .drawer-posting -->
-      <div class="drawer-music">
-        <ul>
-          <li class="genre"><a href='#'>Dubstep</a></li>
-          <li class="genre"><a href='#'>Electronic</a></li>
-          <li class="genre"><a href='#'>Punk</a></li>
-          <li class="genre"><a href='#'>House</a></li>
-          <li class="genre"><a href='#'>R&B</a></li>
-        </ul>
-        <div id="target"></div>
-      </div><!-- end of .drawer-music -->
-    </div><!-- end of .drawer-container -->
-  </div><!-- end of .drawer-content -->
-</footer><!-- end of .drawer -->
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-<script>
-  $(function(){
-    $('.drawer').slideDrawer({
-      showDrawer: true,
-      slideTimeout: false,
-      slideSpeed: 600,
+          <%=  render 'user_post' %>
+          
+        </div><!-- end of .drawer-posting -->
+        <div class="drawer-music">
+          <ul>
+            <li class="genre"><a href='#'>Dubstep</a></li>
+            <li class="genre"><a href='#'>Electronic</a></li>
+            <li class="genre"><a href='#'>Punk</a></li>
+            <li class="genre"><a href='#'>House</a></li>
+            <li class="genre"><a href='#'>R&B</a></li>
+          </ul>
+          <div id="target"></div>
+        </div><!-- end of .drawer-music -->
+      </div><!-- end of .drawer-container -->
+    </div><!-- end of .drawer-content -->
+  </footer><!-- end of .drawer -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+  <script>
+    $(function(){
+      $('.drawer').slideDrawer({
+        showDrawer: true,
+        slideTimeout: false,
+        slideSpeed: 600,
+      });
+      var wait = setTimeout(function(){
+        $('.drawer').slideDrawer({showDrawer:"slide"});
+      },3000);
+      $(document).on("mouseover", ".drawer", function(){
+        clearTimeout(wait);
+      });
     });
-    var wait = setTimeout(function(){
-      $('.drawer').slideDrawer({showDrawer:"slide"});
-    },3000);
-    $(document).on("mouseover", ".drawer", function(){
-      clearTimeout(wait);
-    });
-  });
-</script>
+  </script>
+

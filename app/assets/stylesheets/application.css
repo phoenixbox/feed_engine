@@ -1036,3 +1036,13 @@ margin-left: 10px; /*Set left margin to LeftColumnWidth*/
   margin: -3px 0px 0px 100px;
 
 }
+
+.signin {
+  font-size: 24px;
+  float:left;
+  margin: -70px 0px 0px 100px;
+}
+
+.signin > a {
+  color:#00B2EE;
+}
