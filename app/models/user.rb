@@ -27,7 +27,6 @@ class User < ActiveRecord::Base
       user.subdomain = name.downcase.gsub('_','-')
     end
     @user.twitter_auths.create_from_omniauth(auth["credentials"]["token"], auth["credentials"]["secret"], @user.id, "twitter")
-    Resque.enqueue_in(1.minute, TweetUpdates, :user_id => @user.id)
     @user
   end
 
