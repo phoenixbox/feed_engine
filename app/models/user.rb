@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
       user.image_url = auth["info"]["image"]
       user.subdomain = name.downcase.gsub('_','-')
     end
+    Resque.enqueue_at(1.minute.from_now, TweetUpdates, :user_id => @user.id)
     @user.twitter_auths.create_from_omniauth(auth["credentials"]["token"], auth["credentials"]["secret"], @user.id, "twitter")
     @user.create_from_mentions
     @user

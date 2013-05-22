@@ -1,0 +1,5 @@
+requeue_failed_jobs:
+  every: 1m
+  class: RequeueFailedJobs
+  queue: requeue_jobs_queue
+  description: "This job requeues all failed jobs"
