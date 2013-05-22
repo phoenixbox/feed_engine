@@ -2,10 +2,9 @@
   <div id="homepage-contentcolumn">
     <div class="innertube">
       <div id="content">
-        <%#= @global_feed.each do |feed| %>
-         <%#= render feed.type.downcase, feed: feed %>
-        <%#end%>
-              
+        <% @global_feed.each do |feed| %>
+         <%= render "users/#{feed.type.downcase}", feed: feed %>
+        <% end %>
       </div> <!--end of #masonry-container -->
     </div> <!--end of .innertube -->
   </div> <!--end of #contentcolumn -->
