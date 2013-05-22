@@ -11,13 +11,13 @@
   <body>
     <div id="maincontainer" >
       <div class="nav_image">
-        <% if current_user %>
           <%= image_tag current_user.image_url.gsub("normal","bigger") %>
-        <% end %>
         </div>
       <div class="name-space">
-        <% if current_user %>
         Signed in as, <div class="user_name"> <%= current_user.name %>!
+        </div>
+        <div class="signout">
+         <%= link_to "[Sign out]", signout_path %>
         </div>
       </div>
       <div id="topsection">
@@ -27,6 +27,10 @@
               <%= image_tag('tuneline.png')%>
             </div>
           </div>
+          <div class="global_feed_button">
+            <center>
+            <%= image_tag('globe.png', :size => "50x43") %>
+          </div>
           <div id="login">
             <center>
             <div class="login-buttons">
@@ -35,15 +39,6 @@
             <div class="login-buttons">
               <%= link_to "My Feed", root_url(subdomain: current_user.subdomain) %>
             </div>
-            <div class="login-buttons">
-              <%= link_to "Sign out", signout_path %>
-            </div>
-              <!-- render template for header nav -->
-            <% else %>
-            <div class="login-buttons">
-              <%= link_to "Sign in with Twitter", "/auth/twitter" %>
-            </div>
-            <% end %>
         </div> <!--end of #topsection -->
           <% flash.each do |name, msg| %>
               <%= content_tag :div, msg, id: "flash_#{name}" %>

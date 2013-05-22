@@ -1016,10 +1016,23 @@ margin-left: 10px; /*Set left margin to LeftColumnWidth*/
 
 #login {
   float: right;
-  margin: -80px 40px 1px 800px;
+  margin: -75px 40px 1px 800px;
   padding: 2px 2px 2px 2px;
 }
 
 #login > a {
   padding: 0px 0px 0px 35px;
+}
+
+.global_feed_button {
+  float: right;
+  margin: -78px 285px 1px 800px;
+  padding: 2px 2px 2px 2px;
+}
+
+.signout {
+  font-size: 12px;
+  float:left;
+  margin: -3px 0px 0px 100px;
+
 }
