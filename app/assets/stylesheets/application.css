@@ -105,7 +105,7 @@ width: 100%;
   margin: 5px;
   width: 270px;
   height: auto;
-  background: #5d5d5d;
+  background-image: url('etcher-small.png');
 }
 
 .text-post-box {
@@ -160,6 +160,7 @@ width: 100%;
   width: 330px;
   height: 340px;
   background: #ff5763;
+  background-image: url('etcher-small.png');
 }
 
 #imgpost-sample {
@@ -181,7 +182,7 @@ width: 100%;
   margin: 5px;
   width: 270px;
   height: auto;
-  background: #5d5d5d;
+  background-image: url('etcher-small.png');
 }
 
 .img-post-box {
@@ -226,7 +227,7 @@ width: 100%;
   margin: 5px;
   width: 270px;
   height: auto;
-  background: #5d5d5d;
+  background-image: url('etcher-small.png');
   word-wrap: break-word;
 }
 
@@ -484,14 +485,14 @@ width: 100%;
   float: left;
   width: 695px;
   height: 85%;
-  background: #4d4d4d;
+  background-image: url('etcher-small.png');
 }
 
 .drawer-music {
   float: right;
   height: 85%;
   width: 695px;
-  background: #4d4d4d;
+  background-image: url('etcher-small.png');
 }
 
 /*---------------------- Radio Buttons ----------------------*/
@@ -937,6 +938,56 @@ margin-left: 10px; /*Set left margin to LeftColumnWidth*/
 .login-buttons a{
   color: black;
 }
+
+.user-post-buttons {
+  
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fbb450), color-stop(1, #f89306));
+  background:-moz-linear-gradient(top, #fbb450 5%, #f89306 100%);
+  background:-webkit-linear-gradient(top, #fbb450 5%, #f89306 100%);
+  background:-o-linear-gradient(top, #fbb450 5%, #f89306 100%);
+  background:-ms-linear-gradient(top, #fbb450 5%, #f89306 100%);
+  background:linear-gradient(to bottom, #fbb450 5%, #f89306 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fbb450', endColorstr='#f89306',GradientType=0);
+  
+  background-color:#fbb450;
+  
+  -moz-border-radius:15px;
+  -webkit-border-radius:15px;
+  border-radius:15px;
+  
+  border:1px solid #c97e1c;
+  
+  display:inline-block;
+  color:#ffffff;
+  font-family:arial;
+  font-size:13px;
+  font-weight:normal;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #8f7f24;
+  float: center;
+  margin: 10px 10px 10px 30px;
+}
+
+.user-post-buttons a{
+  color: black;
+}
+.user-post-buttons:hover {
+  
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f89306), color-stop(1, #fbb450));
+  background:-moz-linear-gradient(top, #f89306 5%, #fbb450 100%);
+  background:-webkit-linear-gradient(top, #f89306 5%, #fbb450 100%);
+  background:-o-linear-gradient(top, #f89306 5%, #fbb450 100%);
+  background:-ms-linear-gradient(top, #f89306 5%, #fbb450 100%);
+  background:linear-gradient(to bottom, #f89306 5%, #fbb450 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f89306', endColorstr='#fbb450',GradientType=0);
+  
+  background-color:#f89306;
+}
+.user-post-buttons:active {
+  position:relative;
+  top:1px;
+}
+
 
 .name-space{
   float: left;
