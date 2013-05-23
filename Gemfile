@@ -15,7 +15,7 @@ group :development, :test do
   gem 'launchy'
   gem 'cane'
   gem 'reek'
-  gem 'simplecov'
+  gem 'simplecov', :require => false, :group => :test
   gem 'rack_session_access'
   gem 'selenium-webdriver', '2.31.0'
 end

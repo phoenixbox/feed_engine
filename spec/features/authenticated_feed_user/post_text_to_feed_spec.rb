@@ -8,7 +8,7 @@ feature "authenticated user can add feed_items to their feed" do
       visit 'http://lvh.me:1234/'
       mock_auth_hash
       click_link 'Sign in with Twitter'
-      click_link 'Go to my page'
+      click_link 'My Feed'
     end
 
     let(:bad_content) { "a" * 513 }
@@ -17,11 +17,11 @@ feature "authenticated user can add feed_items to their feed" do
       expect(current_path).to eq root_path
       end
 
-    it "user will see the welcome message" do
-      expect(page).to have_content "This is my profile!"
+    it "user will see the content post option on their page only" do
+      expect(page).to have_content "Post Content"
     end
 
-    xit "user can post a text feed_item to their wall " do
+    it "user can post a text feed_item to their wall " do
       check('text')
       within(:css, 'div#textpost') {
         fill_in 'tl_text_content', with: 'Sample input'

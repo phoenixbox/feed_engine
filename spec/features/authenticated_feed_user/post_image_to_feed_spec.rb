@@ -7,7 +7,7 @@ feature "autheticated user can post an image to their wall" do
       visit 'http://lvh.me:1234/'
       mock_auth_hash
       click_link "Sign in with Twitter"
-      click_link "Go to my page"
+      click_link "My Feed"
     end
 
      it "user can login and visit their personal music wall" do
@@ -15,10 +15,10 @@ feature "autheticated user can post an image to their wall" do
     end
 
     it "user will see the welcome message" do
-      expect(page).to have_content "This is my profile!"
+      expect(page).to have_content "Post Content"
     end
 
-    xit "user can post an image feed_item" do
+    it "user can post an image feed_item" do
       check('image')
       within(:css, 'div#imagepost') {
         page.attach_file('tl_image_image', '~/app/assets/images/test.png')
