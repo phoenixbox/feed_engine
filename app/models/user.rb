@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
     mentions = []
 
     twitter_tweets.each do |tweet|
-      if tweet.text.downcase.include?("tuneline")
+      if tweet.text.downcase.include?("streamroll")
         mentions << tweet if tweet.id > last_tweet_twitter_id
       end
     end
