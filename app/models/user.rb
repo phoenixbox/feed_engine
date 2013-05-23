@@ -40,7 +40,6 @@ class User < ActiveRecord::Base
   end
 
   def tuneline_mentions
-    binding.pry
     mentions = []
 
     twitter_tweets.each do |tweet|
@@ -61,7 +60,6 @@ class User < ActiveRecord::Base
   end
 
   def create_from_mentions
-    binding.pry
     tuneline_mentions.each do |mention|
       tweets.create(
         data: {"text" => mention.text, "twitter_id" => mention.id},

@@ -1,17 +1,18 @@
 <div id="input-type-toggles">
-    <div class="radio-perk">
+
+    <div class="radio-perk-text">
       <div class="drawer-link">
         <div class="link-of-drawer">   
-          <a href="#text-post" class="perkdrop" id="drawer-text-post" name="text">
+          <a href="#text-post" class="perkdrop" id="drawer-text-post" name="text" data-form="text-post-input">
           <label for="drawer-text-post">Text Post</label>
         </div>
       </div>
-    </div><!-- end of .radio-perk -->
+    </div><!-- end of .radio-perk-text -->
 
-    <div class="radio-perk alt">
+    <div class="radio-perk-link alt">
       <div class="drawer-link">
         <div class="link-of-drawer"> 
-          <a href="#" class="perkdrop" id="drawer-link-post" name="link">
+          <a href="#" class="perkdrop" id="drawer-link-post" name="link" data-form="link-post-input">
           <label for="drawer-link-post">Link Post</label>
         </div>
       </div>
@@ -20,7 +21,7 @@
     <div class="radio-perk">
        <div class="drawer-link">
           <div class="link-of-drawer"> 
-            <a href="#" class="perkdrop" id="drawer-image-post" name="image">
+            <a href="#" class="perkdrop" id="drawer-image-post" name="image" data-form="image-post-input">
             <label for="drawer-image-post">Image Post</label>
           </div>
       </div><!-- end of #drawer-image-post -->
@@ -28,14 +29,14 @@
 </div><!-- end of #input-type-toggles -->
 
 <div id="post-input-area">
-  <div id="text-post-input" class="dropdown">
+  <div id="text-post-input" class="dropdown-text">
      <%= simple_form_for @tl_text, remote: true do |f| %>
       <%= f.text_area :content, label: "512 character limit", placeholder: "512 character limit", input_html: { class: 'special'} %>
     </br>
       <%= f.submit "Submit" %>
     <% end %>
   </div>
-  <div id="link-post-input" class="dropdown">
+  <div id="link-post-input" class="dropdown-link">
      <%= simple_form_for @tl_link, remote: true do |f| %>
       <%= f.input :link, placeholder: "Please enter link here" %>
       <%= f.text_area :content, :rows => 6, :cols => 30 %>
@@ -52,14 +53,52 @@
 </div>
 
 <script>
+// ************************ text ************************
 
-  $(document).on("click", '.radio-perk a', function(){
-    $('#text-post-input').slideToggle();
-    console.log("link clicked");
+  $(document).on("click", '.radio-perk-text a', function(){
+    // conditional
+    if( $('#text-post-input').hasClass('dropdown-text') ) { 
+      // make it visible
+      $('.dropdown-text').slideToggle().removeClass("dropdown-text");
+    }
+    else {
+      // make it invisible
+     $('#text-post-input').slideToggle().addClass("dropdown-text");
+    }
   });
-  // $(document).on("click", '.radio-perk a', function(){
-  //   $('.toggle-visible').slideToggle().removeClass("toggle-visible");
-  //   var selector = "#" + $(this).attr("id") + "-input"
-  //   $(selector).slideToggle().addClass("toggle-visible");
-  // });
+
+// ************************ link ************************
+
+  $(document).on("click", '.radio-perk-link a', function() {
+    // others
+    if( $('#text-post-input').hasClass('dropdown-text') ) { //if text is invisible
+      // make it visible
+      // $('.dropdown-text').slideToggle().removeClass("dropdown-text");
+      $('#link-post-input').slideToggle().removeClass("dropdown-link"); //make link post visible
+    }
+    else {
+      $('#text-post-input').slideToggle().addClass("dropdown-text");
+      $('#link-post-input').slideToggle().removeClass("dropdown-link"); //make link post visible
+    }
+    // if( $('#link-post-input').hasClass('dropdown-link') )  //if its invisible
+    // {
+    //   $('.dropdown-link').slideToggle().removeClass("dropdown-link"); //make it visible
+    // }
+    // else 
+    // {
+    //   $("#link-post-input").slideToggle().addClass("dropdown-link"); //make it invisible
+    // }
+  });
+
+
+
+    // var selector = "text-post-input"
+    // console.log($(this).data('form'));
+    // var selector = $(this).data('form');
+    // console.log(selector)
+    // hide all forms
+    // show the one that is selected
+
+    // make it invisible
+    //$("#" + selector).slideToggle().addClass("dropdown-text");
 </script>

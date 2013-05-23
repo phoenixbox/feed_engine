@@ -43,7 +43,7 @@ em{color: red;}
 
 textarea {
   margin: 5px 5px -5px 5px;
-  width: 408px;
+  width: 409px;
   height: 115px;
   background-color: yellow; /* This ruins default border */
   /*background: url(images/benice.png) center center no-repeat; /* This ruins default border */*/
@@ -565,7 +565,33 @@ width: 100%;
   background: #ff7878;
   border: 0.2px solid;
 }
+/****************** Javascript Form *************************/
 
+/*---------------------------------------- text */
+
+.radio-perk-text {
+  margin-top: 21px;
+  background: #ff7878;
+  border: 0.2px solid;
+}
+
+.dropdown-text{
+  display: none;
+}
+
+/*---------------------------------------- link */
+
+.radio-perk-link {
+  margin-top: 21px;
+  background: #ff7878;
+  border: 0.2px solid;
+}
+
+.dropdown-link{
+  display: none;
+}
+
+/**************************************************************/
 .radio-perk img {
   float:right;
 }
@@ -590,6 +616,18 @@ width: 100%;
   margin: 5px;
   height: 160px;
   width: 425px;
+}
+
+#text-post-input {
+  z-index: 100;
+}
+
+#link-post-input {
+  z-index: 50;
+}
+
+#image-post-input {
+  z-index: 30;
 }
 
 /*---------------------- Drawer Icons ----------------------*/
