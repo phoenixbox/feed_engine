@@ -1,0 +1,49 @@
+<div id="input-type-toggles">
+    <div class="radio-perk">
+      <div id="post-link">
+        <a href="#" class="perkdrop" id="text-post" name="text">
+        <label for="text-post">Text Post</label>
+    </div><!-- end of .radio-perk -->
+
+    <div class="radio-perk">
+      <a href="#" class="perkdrop" id="link-post" name="link">
+      <label for="link-post">Link Post</label>
+    </div><!-- end of .radio-perk -->
+
+    <div class="radio-perk">
+      <a href="#" class="perkdrop" id="image-post" name="image">
+      <label for="image-post">Image Post</label>
+    </div>
+</div><!-- end of #input-type-toggles -->
+
+<div id="post-input-area" style="float: right">
+  <div id="text-post-input" class="dropdown">
+     <%= simple_form_for @tl_text, remote: true do |f| %>
+      <%= f.text_area :content, label: "512 character limit", placeholder: "512 character limit", :rows => 6, :cols => 45 %>
+    </br>
+      <%= f.submit "Submit" %>
+    <% end %>
+  </div>
+  <div id="link-post-input" class="dropdown">
+     <%= simple_form_for @tl_link, remote: true do |f| %>
+      <%= f.input :link, placeholder: "Please enter link here" %>
+      <%= f.text_area :content, :rows => 6, :cols => 30 %>
+      <%= f.submit "Submit" %>
+  <% end %>
+  </div>
+  <div id="image-post-input" class="dropdown">
+      <%= simple_form_for @tl_image, :html => { :multipart => true } do |f| %>
+      <%= f.label :photo %>
+      <%= f.file_field :photo %>
+      <%= f.submit "Submit" %>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  $(document).on("click", '.radio-perk a', function(){
+    $('.toggle-visible').slideToggle().removeClass("toggle-visible");
+    var selector = "#" + $(this).attr("id") + "-input"
+    $(selector).slideToggle().addClass("toggle-visible");
+  });
+</script>

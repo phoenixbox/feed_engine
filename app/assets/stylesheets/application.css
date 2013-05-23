@@ -41,6 +41,18 @@ line-height: 1.5em;
 b{font-size: 110%;}
 em{color: red;}
 
+textarea {
+  margin: 5px 5px -5px 5px;
+  width: 408px;
+  height: 115px;
+  background-color: yellow; /* This ruins default border */
+  /*background: url(images/benice.png) center center no-repeat; /* This ruins default border */*/
+}
+
+textarea.special {
+
+}
+
 /* // 3. PAGE SECTION STYLES */
 /* ################################################################ */
 #wrapper {
@@ -64,8 +76,6 @@ width: 100%;
 
 .dropdown{
   display: none;
-  float: right;
-  margin-right: 100px;
 }
 
 .links-inline li {
@@ -422,10 +432,11 @@ width: 100%;
 
 .soundcloud-transparent {
   position: relative;
-  width: 260px;
+  width: auto;
   height: 120px;
   background: #4d4d4d;
-  opacity:0.6;
+  opacity: 0.6;
+  z-index: 1000;
 }
 
 .soundcloud-details {
@@ -518,7 +529,7 @@ width: 100%;
   float: left;
   width: 695px;
   height: 85%;
-  background: #929292;
+  background: #abceff;
   /*background-image: url('etcher-small.png');*/
 }
 
@@ -530,18 +541,90 @@ width: 100%;
   /*background-image: url('etcher-small.png');*/
 }
 
-/*---------------------- Radio Buttons ----------------------*/
+#input-type-toggles {
+  background: #ffffff;
+  float: left;
+  margin: 5px;
+  height: 160px;
+  width: 250px;
+}
+
+#input-type-toggles div.alt {
+  background-color: #ffffff;
+}
+
+
+.drawer-link {
+  height: auto;
+  width: 100%;
+  background: #929292;
+}
 
 .radio-perk {
-  margin: 0px 20px 0px 40px;
-  padding-top: 5px;
-}
-.text-form{
+  margin-top: 21px;
+  background: #ff7878;
+  border: 0.2px solid;
 }
 
-.text-form{
-  float: right;
+.radio-perk img {
+  float:right;
 }
+
+.link-of-drawer {
+  vertical-align: middle;
+  text-align: center;
+  background: #fff;
+}
+/*
+#small-pencil {
+  float:right;
+  height:50px;
+  width:50px;
+}*/
+
+/*---------------------- Posting Forms ----------------------*/
+
+#post-input-area {
+  background: #ffffff;
+  float: right;
+  margin: 5px;
+  height: 160px;
+  width: 425px;
+}
+
+/*---------------------- Drawer Icons ----------------------*/
+
+#drawer-icons {
+  float: left;
+  margin: 5px;
+  height: 160px;
+  width: 50px;
+}
+
+#drawer-icons-container {
+
+}
+
+#small-pencil {
+  
+}
+#small-link {
+
+}
+#small-img {
+
+}
+
+
+/*---------------------- Radio Buttons ----------------------*/
+
+
+/*.text-form{
+}*/
+
+/*.text-form{
+  float: right;
+}*/
 
 /*---------------------- Drawer Music ----------------------*/
 
