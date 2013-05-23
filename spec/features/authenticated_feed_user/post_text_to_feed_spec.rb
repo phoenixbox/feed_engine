@@ -17,18 +17,6 @@ feature "authenticated user can add feed_items to their feed" do
       expect(current_path).to eq root_path
       end
 
-    it "user will see the content post option on their page only" do
-      expect(page).to have_content "Post Content"
-    end
-
-    it "user can post a text feed_item to their wall " do
-      check('text')
-      within(:css, 'div#textpost') {
-        fill_in 'tl_text_content', with: 'Sample input'
-        click_button('Submit')
-      }
-      expect(page).to have_content('Sample input')
-
     it "user will see the welcome message", js: true do
       expect(page).to have_content "Signed in as,"
     end
