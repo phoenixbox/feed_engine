@@ -3,14 +3,11 @@ require 'spec_helper'
 describe "TlImage" do
 
   context "valid input" do
-    it "creates a record with content saved in the data field" do
-      tl_image = TlImage.create_from_form({"content" => "This is a test...", "photo" => "/spec/fixtures/files/test.png"})
-      expect(tl_image).to be_valid
-      expect(tl_image.content).to eq("This is a test...")
+    it "invalid content and data not saved in the data field" do
+      tl_image = TlImage.create_from_form({"content" => "", "photo" => "not_a_photo"})
+      expect(tl_image).to be_invalid
     end
   end
-
-
 
   context "invalid input" do
     let(:bad_content) { "a" * 257 }
