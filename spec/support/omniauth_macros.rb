@@ -7,7 +7,8 @@ module OmniauthMacros
       'uid' => '123545',
       'info' => {
         'nickname' => 'mockuser',
-        'image' => 'mock_user_thumbnail_url'
+        'image' => 'mock_user_thumbnail_url',
+        'nav_image'=> 'mock_user_twitter-picture'
       },
       'credentials' => {
         'token' => 'mock_token',
