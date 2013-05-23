@@ -38,8 +38,8 @@ padding:0;
 line-height: 1.5em;
 }
 
-b{font-size: 110%;}
-em{color: red;}
+b{font-size: 100%;}
+/*em{color: red;}*/
 
 textarea {
   margin: 5px 5px -5px 5px;
@@ -61,6 +61,7 @@ textarea.link-textarea {
   width: 409px;
   height: 80px;
 }
+
 
 /* // 3. PAGE SECTION STYLES */
 /* ################################################################ */
@@ -535,19 +536,33 @@ width: 100%;
 }
 
 .drawer-posting {
-  float: left;
+  float: right;
   width: 695px;
   height: 85%;
   background: #abceff;
   /*background-image: url('etcher-small.png');*/
 }
 
-.drawer-music {
-  float: right;
+.drawer-info {
+  float: left;
   height: 85%;
   width: 695px;
   background: #929292;
   /*background-image: url('etcher-small.png');*/
+}
+
+.drawer-info h1 {
+  vertical-align: center;
+  font-size: large;
+}
+
+.no-link {
+  background: #fff;
+}
+
+.drawer-info h1.active {
+  pointer-events: none;
+   cursor: default;
 }
 
 #input-type-toggles {
