@@ -6,9 +6,12 @@ class LastfmAuthsController < ApplicationController
     lfm.session = lfm.auth.get_session(:token => params["token"])['key']
     lastfm_auth = user.lastfm_auths.new(token: lfm.session)
     if lastfm_auth.save
-      LastfmTopTrack.update_top_tracks_for_user(user.id)
-      LastfmTopAlbum.update_top_albums_for_user(user.id)
-      LastfmTopArtist.update_top_artists_for_user(user.id)
+      Resque.enqueue(LastfmTopTracks, {:user_id => user.id})
+      Resque.enqueue(LastfmTopAlbums, {:user_id => user.id})
+      Resque.enqueue(LastfmTopArtists, {:user_id => user.id})
+      #LastfmTopTrack.update_top_tracks_for_user(user.id)
+      #LastfmTopAlbum.update_top_albums_for_user(user.id)
+      #LastfmTopArtist.update_top_artists_for_user(user.id)
       redirect_to root_url(subdomain: current_user.subdomain)
     else
       redirect_to root_url(subdomain: current_user.subdomain), :message => "Sorry, unable to connect"
