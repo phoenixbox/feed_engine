@@ -10,9 +10,11 @@
     <link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo|Nova+Cut' rel='stylesheet' type='text/css'>
   <body>
     <div id="maincontainer" >
-      <div class="nav_image">
-          <%= image_tag current_user.image_url.gsub("normal","bigger") %>
-        </div>
+      <div class="innertube">
+        <div id="topsection">
+          <div class="nav_image">
+            <%= image_tag current_user.image_url.gsub("normal","bigger") %>
+          </div>
       <div class="name-space">
         Signed in as, <div class="user_name"> <%= current_user.name %>!
         </div>
@@ -20,8 +22,6 @@
          <%= link_to "[Sign out]", signout_path %>
         </div>
       </div>
-      <div id="topsection">
-        <div class="innertube">
           <div id="logo">
             <div id="logo_image">
               <%= image_tag('tuneline.png')%>
@@ -29,7 +29,8 @@
           </div>
           <div class="global_feed_button">
             <center>
-            <%= image_tag('globe.png', :size => "50x43") %>
+            <%= link_to( image_tag('globe.png', :size => "50x43"), root_url(subdomain: "www")) %>
+
           </div>
           <div id="login">
             <center>
