@@ -26,21 +26,21 @@
      <%= simple_form_for @tl_text, remote: true do |f| %>
       <%= f.text_area :content, label: "512 character limit", placeholder: "512 character limit", :rows => 6, :cols => 45 %>
     </br>
-      <%= f.submit "Submit" %>
+      <%= f.submit "Submit", :id => "text-post" %>
     <% end %>
   </div>
   <div id="link-post-input" class="dropdown">
      <%= simple_form_for @tl_link, remote: true do |f| %>
       <%= f.input :link, placeholder: "Please enter link here" %>
       <%= f.text_area :content, :rows => 6, :cols => 30 %>
-      <%= f.submit "Submit" %>
+      <%= f.submit "Submit", :id => "link-post" %>
   <% end %>
   </div>
   <div id="image-post-input" class="dropdown">
       <%= simple_form_for @tl_image, :html => { :multipart => true } do |f| %>
       <%= f.label :photo %>
       <%= f.file_field :photo %>
-      <%= f.submit "Submit" %>
+      <%= f.submit "Submit", :id => "image-post" %>
     <% end %>
   </div>
 </div>

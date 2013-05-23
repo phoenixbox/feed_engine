@@ -11,16 +11,19 @@ describe "TlLink" do
   end
 
   context "invalid input" do
-    let(:bad_content)   { "a" * 257 }
+
+     let(:bad_content) { "a" * 257 }
 
     it "validates presence of content" do
-      invalid_attributes = {"content" => "", "link" => ""}
-      expect{ TlLink.create_from_form(invalid_attributes) }.to raise_exception(ActiveRecord::RecordInvalid)
+      expect(TlLink.create_from_form({"content" => "", "link" => "www.google.com"})).to_not be_valid
     end
 
-    it "requires the length be less than 240 chars" do
-      invalid_attributes = { "link" => "http://www.google.com", "content" => bad_content }
-      expect{ TlLink.create_from_form(invalid_attributes) }.to raise_exception(ActiveRecord::RecordInvalid)
+    it "validates the link" do 
+      expect(TlLink.create_from_form({"content" => bad_content, "link" => "qwerty"})).to_not be_valid
+    end
+
+    it "requires the content length be less than 240 chars" do
+      expect(TlLink.create_from_form({"content" => bad_content, "link" => "www.google.com"})).to_not be_valid
     end
 
     it "prevents unspecifed attributes from being saved" do
