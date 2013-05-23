@@ -27,7 +27,6 @@ class User < ActiveRecord::Base
       user.subdomain = name.downcase.gsub('_','-')
     end
     @user.twitter_auths.create_from_omniauth(auth["credentials"]["token"], auth["credentials"]["secret"], @user.id, "twitter")
-    @user.create_from_mentions
     @user
   end
 
@@ -43,7 +42,7 @@ class User < ActiveRecord::Base
     mentions = []
 
     twitter_tweets.each do |tweet|
-      if tweet.text.downcase.include?("tuneline")
+      if tweet.text.downcase.include?("streamroll")
         mentions << tweet if tweet.id > last_tweet_twitter_id
       end
     end

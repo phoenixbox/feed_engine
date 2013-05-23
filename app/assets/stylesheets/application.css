@@ -36,10 +36,13 @@ body{
 margin:0;
 padding:0;
 line-height: 1.5em;
+background:url(stressed_linen.png);
 }
 
 b{font-size: 100%;}
 /*em{color: red;}*/
+
+a {color:white;}
 
 textarea {
   margin: 5px 5px -5px 5px;
@@ -62,13 +65,19 @@ textarea.link-textarea {
   height: 80px;
 }
 
-
 /* // 3. PAGE SECTION STYLES */
 /* ################################################################ */
 #wrapper {
   position: relative;
 }
 
+#wrapper a{
+  color:#fff;
+}
+
+#wrapper a:visited{
+  color:#fff;
+}
 #maincontainer {
   position: relative;
   height: 100%;
@@ -93,8 +102,7 @@ width: 100%;
 }
 
 #content {
-  border-style: solid;
-  border-width: 1px;
+  margin-top:10px;
 }
 
 #tweet-sample {
@@ -478,7 +486,7 @@ width: 100%;
   background: #4d4d4d;
   color: #ffffff;
   display: inline;
-  margin-left: 45%;
+  margin-left: 43%;
   overflow: hidden;
   padding: 0px 30px 0px 30px;
   vertical-align: middle;
@@ -560,7 +568,7 @@ width: 100%;
 }
 
 #drawer-info-inner {
-  margin: -15px 0px 0px 10px
+  margin: 0px 0px 0px 10px
 }
 
 .no-link {
@@ -711,15 +719,20 @@ width: 100%;
 /******************** Account Mgmt Page *************************/
 
 #account-mgmt-container {
+  color:#999;
   width: 960px;
-  margin: auto;
-  background: #d5d5d5;
+  margin: 10px auto;
+  background: #111;
+  border:solid 1px #1A2033;
   height: 100%;
+}
+
+#account-mgmt-container a{
+  color: #999;
 }
 
 #account-mgmt-filter-container {
   margin: 10px;
-  background: #e5e5e5;
   height: 40px;
 }
 
@@ -733,20 +746,17 @@ width: 100%;
   margin: 10px;
   padding-top: 5px;
   height: 60px;
-  background: #e5e5e5;
   text-align: center;
 }
 
 #integration-outer-container {
   margin: 10px;
   height: 370px;
-  background: #e5e5e5;
 }
 
 #integration-inner-container {
   margin: 10px;
   height: 350px;
-  background: #ff5763;
 }
 
 .integration-container-1 {
@@ -754,7 +764,6 @@ width: 100%;
   margin: 10px 230px 10px 10px;
   width: 210px;
   height: 225px;
-  background: #e5e5e5;
   position: relative;
 }
 
@@ -763,7 +772,6 @@ width: 100%;
   margin: 10px 10px 100px 230px;
   width: 210px;
   height: 225px;
-  background: #e5e5e5;
   position: absolute;
 }
 
@@ -771,7 +779,6 @@ width: 100%;
   margin: 5px;
   width: 200px;
   height: 50px;
-  background: #ff5763;
   text-align: center;
 }
 
@@ -784,7 +791,6 @@ width: 100%;
   width: 200px;
   height: 120px;
   vertical-align: middle;
-  background: #ff5763;
 }
 
 /* TODO: not correctly centered */
@@ -796,24 +802,21 @@ width: 100%;
   margin: 5px;
   width: 200px;
   height: 30px;
-  background: #ff5763;
 }
 
 .integration-button {
-  /* % experimentation */
-  margin-left: 33%;
+    text-align:center;
+    margin-left: -3px;
 }
 
 #account-details-outer-container {
   margin: 10px;
   height: 250px;
-  background: #e5e5e5;
 }
 
 #account-details-inner-container {
   margin: 10px;
   height: 230px;
-  background: #ff5763;
   display: block-inline;
 }
 
@@ -821,7 +824,6 @@ width: 100%;
   margin:15px;
   height: 40px;
   width: 910px;
-  background: #e5e5e5;
   padding-top: 5px;
   text-align: center;
 }
@@ -830,7 +832,6 @@ width: 100%;
   margin: 5px;
   height: 160px;
   width: 910px;
-  background: #e5e5e5;
 }
 
 #account-details-content h3 {
@@ -845,7 +846,6 @@ width: 100%;
   margin: 5px;
   height: 40px;
   width: 910px;
-  background: #e5e5e5;
 }
 
 #account-buttons {
@@ -858,6 +858,47 @@ width: 100%;
   display: inline;
   width:100%;
 }
+
+
+
+.btn {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #374e5a), color-stop(1, #1d2b3f));
+    background:-moz-linear-gradient(top, #374e5a 5%, #1d2b3f 100%);
+    background:-webkit-linear-gradient(top, #374e5a 5%, #1d2b3f 100%);
+    background:-o-linear-gradient(top, #374e5a 5%, #1d2b3f 100%);
+    background:-ms-linear-gradient(top, #374e5a 5%, #1d2b3f 100%);
+    background:linear-gradient(to bottom, #374e5a 5%, #1d2b3f 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#374e5a', endColorstr='#1d2b3f',GradientType=0);
+    background-color:#374e5a;
+    -moz-border-radius:7px;
+    -webkit-border-radius:7px;
+    border-radius:7px;
+    border:1px solid #27436b;
+    display:inline-block;
+    color:#dbdbdb;
+    font-family:Arial;
+    font-size:16px;
+    font-weight:normal;
+    padding:6px 11px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #000000;
+
+}
+.btn:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #1d2b3f), color-stop(1, #374e5a));
+    background:-moz-linear-gradient(top, #1d2b3f 5%, #374e5a 100%);
+    background:-webkit-linear-gradient(top, #1d2b3f 5%, #374e5a 100%);
+    background:-o-linear-gradient(top, #1d2b3f 5%, #374e5a 100%);
+    background:-ms-linear-gradient(top, #1d2b3f 5%, #374e5a 100%);
+    background:linear-gradient(to bottom, #1d2b3f 5%, #374e5a 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1d2b3f', endColorstr='#374e5a',GradientType=0);
+    background-color:#1d2b3f;
+}
+.btn:active {
+    position:relative;
+    top:1px;
+}
+
 
 /********************** Account Mgmt Feeds Page *************************/
 
@@ -1059,146 +1100,79 @@ margin-left: 10px; /*Set left margin to LeftColumnWidth*/
 /* // 5. HEADERS */
 /* ################################################################ */
 
-#topsection{
-  background: #EAEAEA;
-  height: 7em; /*Height of top section*/
-}
 
-#topsection h1{
-  margin: 0;
-  padding-top: 15px;
+#topsection{
+  padding-top:5px;
+  color: #7C7B7B;
+  background: #2a2a2a;
+  border-bottom: solid 1px #333;
 }
 
 #logo {
-  margin: 0px 0px 0px 512px;
+  margin: 0px 0px 0px 52px;
+  width:250px;
+  margin: 0 auto;
 }
 
-.login-buttons {
-  -moz-box-shadow: 0px 1px 0px 0px #f0f7fa;
-  -webkit-box-shadow: 0px 1px 0px 0px #f0f7fa;
-  box-shadow: 0px 1px 0px 0px #f0f7fa;
-  
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #33bdef), color-stop(1, #019ad2));
-  background:-moz-linear-gradient(top, #33bdef 5%, #019ad2 100%);
-  background:-webkit-linear-gradient(top, #33bdef 5%, #019ad2 100%);
-  background:-o-linear-gradient(top, #33bdef 5%, #019ad2 100%);
-  background:-ms-linear-gradient(top, #33bdef 5%, #019ad2 100%);
-  background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#33bdef', endColorstr='#019ad2',GradientType=0);
-  
-  background-color:#33bdef;
-  
-  -moz-border-radius:6px;
-  -webkit-border-radius:6px;
-  border-radius:6px;
-  
-  border:1px solid #057fd0;
-  
-  display:inline-block;
-  color:#ffffff;
-  font-family:arial;
-  font-size:15px;
-  font-weight:bold;
-  padding:6px 24px;
-  text-decoration:none;
-  
-  text-shadow:0px -1px 0px #5b6178;
-  
-}
-.login-buttons:hover {
-  
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #019ad2), color-stop(1, #33bdef));
-  background:-moz-linear-gradient(top, #019ad2 5%, #33bdef 100%);
-  background:-webkit-linear-gradient(top, #019ad2 5%, #33bdef 100%);
-  background:-o-linear-gradient(top, #019ad2 5%, #33bdef 100%);
-  background:-ms-linear-gradient(top, #019ad2 5%, #33bdef 100%);
-  background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#019ad2', endColorstr='#33bdef',GradientType=0);
-  
-  background-color:#019ad2;
-}
-.login-buttons:active {
-  position:relative;
-  top:1px;
-}
-.login-buttons a{
-  color: black;
-}
-
-.user-post-buttons {
-  
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fbb450), color-stop(1, #f89306));
-  background:-moz-linear-gradient(top, #fbb450 5%, #f89306 100%);
-  background:-webkit-linear-gradient(top, #fbb450 5%, #f89306 100%);
-  background:-o-linear-gradient(top, #fbb450 5%, #f89306 100%);
-  background:-ms-linear-gradient(top, #fbb450 5%, #f89306 100%);
-  background:linear-gradient(to bottom, #fbb450 5%, #f89306 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fbb450', endColorstr='#f89306',GradientType=0);
-  
-  background-color:#fbb450;
-  
-  -moz-border-radius:15px;
-  -webkit-border-radius:15px;
-  border-radius:15px;
-  
-  border:1px solid #c97e1c;
-  
-  display:inline-block;
-  color:#ffffff;
-  font-family:arial;
-  font-size:13px;
-  font-weight:normal;
-  text-decoration:none;
-  text-shadow:0px 1px 0px #8f7f24;
-  float: center;
-  margin: 10px 10px 10px 30px;
-}
-
-.user-post-buttons a{
-  color: black;
-}
-.user-post-buttons:hover {
-  
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f89306), color-stop(1, #fbb450));
-  background:-moz-linear-gradient(top, #f89306 5%, #fbb450 100%);
-  background:-webkit-linear-gradient(top, #f89306 5%, #fbb450 100%);
-  background:-o-linear-gradient(top, #f89306 5%, #fbb450 100%);
-  background:-ms-linear-gradient(top, #f89306 5%, #fbb450 100%);
-  background:linear-gradient(to bottom, #f89306 5%, #fbb450 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f89306', endColorstr='#fbb450',GradientType=0);
-  
-  background-color:#f89306;
-}
 .user-post-buttons:active {
   position:relative;
   top:1px;
 }
 
-
 .name-space{
   float: left;
-  margin: 27px 0px 0px 20px;
+  margin: 20px 0px 0px 20px;
   font-size: 18px;
 }
 
-.nav_image{
-  float:left;
-  margin: 15px 0px 0px 37px;
-  border-style: solid;
-  border-width: 3px;
+.name-space a{
+  color: #FFF;
+  font-weight:bold;
 }
 
-.user_name{
-  font-family: 'Swanky and Moo Moo', cursive;
-  font-size: 32px;
+.nav_image{
+  margin-top:5px;
+  margin-left:10px;
+  float:left;
+  width: 48px;
+  height: 48px;
+  border-radius: 48px;
+  -webkit-border-radius: 48px;
+  -moz-border-radius: 48px;
 }
 
 #login {
   float: right;
-  margin: -80px 40px 1px 800px;
+  margin: -75px 40px 1px 800px;
   padding: 2px 2px 2px 2px;
 }
 
-#login > a {
-  padding: 0px 0px 0px 35px;
+.global_feed_button {
+  float: right;
+  margin: -60px 285px 1px 800px;
+  padding: 2px 2px 2px 2px;
+}
+
+.signout {
+  font-size: 12px;
+  float:left;
+  margin: -3px 0px 0px 100px;
+
+}
+
+.signin a{
+  color:#FFF;
+  font-size: 24px;
+  float:left;
+  margin: -50px 0px 0px 100px;
+}
+
+ul.nav {
+  margin-top:20px;
+  margin-right:10px;
+}
+
+.nav li{
+  padding-left:20px;
+  display:inline;
 }

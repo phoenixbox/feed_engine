@@ -9,47 +9,46 @@
     <script src="http://connect.soundcloud.com/sdk.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo|Nova+Cut' rel='stylesheet' type='text/css'>
   <body>
-    <div id="maincontainer" >
-      <div class="nav_image">
-        <% if current_user %>
-          <%= image_tag current_user.image_url.gsub("normal","bigger") %>
-        <% end %>
-        </div>
-      <div class="name-space">
-        <% if current_user %>
-        Signed in as, <div class="user_name"> <%= current_user.name %>!
-        </div>
-      </div>
-      <div id="topsection">
-        <div class="innertube">
-          <div id="logo">
-            <div id="logo_image">
-              <%= image_tag('tuneline.png')%>
+    <% if current_user %>
+    <div id="topsection">
+      <div class="innertube">
+        <div id="maincontainer" >
+
+          <div class="left-header">
+            <div class="nav_image" style="background:url(<%= current_user.image_url %>) no-repeat;"></div>
+            <div class="name-space">
+              Signed in as <%= current_user.name %>!
+              <%= link_to "Sign out", signout_path, redirect_to: root_url(subdomain: 'www') %>
             </div>
           </div>
+
+        </div>
+          <div id="logo">
+            <%= link_to(image_tag('tuneline.png'), root_url(subdomain: "www"))%>
+          </div>
           <div id="login">
-            <center>
-            <div class="login-buttons">
-              <%= link_to "My Account", myaccount_path %>
-            </div>
-            <div class="login-buttons">
-              <%= link_to "My Feed", root_url(subdomain: current_user.subdomain) %>
-            </div>
-            <div class="login-buttons">
-              <%= link_to "Sign out", signout_path %>
-            </div>
-              <!-- render template for header nav -->
-            <% else %>
-            <div class="login-buttons">
-              <%= link_to "Sign in with Twitter", "/auth/twitter" %>
-            </div>
+              <ul class="nav">
+                <li><%= link_to "My Account ", myaccount_path %></li>
+                <li><%= link_to "My Crate", root_url(subdomain: current_user.subdomain) %></li>
+              </ul>
+          <% else %>
+              <div id="topsection">
+                <div class="innertube">
+                  <div id="logo">
+                    <div id="logo_image">
+                      <%= link_to(image_tag('tuneline.png'), root_url(subdomain: "www"))%>
+                    </div>
+                  </div>
+                  <div class="signin">
+                    <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+                  </div>
+              <% end %>
+          </div> <!--end of #topsection -->
+            <% flash.each do |name, msg| %>
+                <%= content_tag :div, msg, id: "flash_#{name}" %>
             <% end %>
-        </div> <!--end of #topsection -->
-          <% flash.each do |name, msg| %>
-              <%= content_tag :div, msg, id: "flash_#{name}" %>
-          <% end %>
-        <%= yield %>
-      </div> <!--end of #maincontainer -->  
+          <%= yield %>
+      </div> <!--end of #maincontainer -->      
     </div>
   </body>
 </html>

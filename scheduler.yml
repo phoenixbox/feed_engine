@@ -1,5 +1,24 @@
 TweetForAllUsers:
-  every: ["30s"]
+  every: 30s
   class: TweetForAllUsers
   queue: tweet_for_all_users
-  cron: "*/1 * * * *"
+
+SoundcloudFavoritesForAllUsers:
+  every: 1d
+  class: SoundcloudFavoritesForAllUsers
+  queue: soundcloud_favorites_for_all_users
+
+LastfmTopAlbumsForAllUsers:
+  every: 1w
+  class: LastfmTopAlbumsForAllUsers
+  queue: lastfm_top_albums_for_all_users
+
+LastfmTopTracksforAllUsers:
+  every: 1w
+  class: LastfmTopTracksForAllUsers
+  queue: lastfm_top_tracks_for_all_users
+
+LastfmTopArtistsForAllUsers:
+  every: 1w
+  class: LastfmTopArtistsForAllUsers
+  queue: lastfm_top_artists_for_all_users

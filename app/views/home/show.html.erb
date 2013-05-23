@@ -2,84 +2,9 @@
   <div id="homepage-contentcolumn">
     <div class="innertube">
       <div id="content">
-
-      <!-- *************** Sample Set 1 *************** -->
-        <div class="item" id="tweet-sample">
-          <div id="tweet-content">
-          </div> <!--end of #tweet-content -->
-        </div> <!--end of #tweet-sample -->
-        <div class="item" id="textpost-sample">
-          <div id="textpost-content">
-          </div><!--end of #textpost-content -->
-        </div> <!--end of #textpost-sample -->
-        <div class="item" id="imgpost-sample">
-          <div id="imgpost-content">
-          </div><!--end of #imgpost-content -->
-        </div> <!--end of #imgpost-sample -->
-        <div class="item" id="linkpost-sample">
-          <div id="linkpost-content">
-          </div><!--end of #linkpost-content -->
-        </div> <!--end of #linkpost-sample -->
-        <div class="item" id="albumart-sample">
-           <div id="albumart-content">
-          </div><!--end of #albumart-content -->
-        </div> <!--end of #albumart-sample -->
-        <div class="item" id="soundcloud-sample">
-          <div id="soundcloud-content">
-          </div><!--end of #soundcloud-content -->
-        </div> <!--end of #souncloud-sample -->
-
-      <!-- *************** Sample Set 2 *************** -->
-        <div class="item" id="textpost-sample">
-          <div id="textpost-content">
-          </div><!--end of #textpost-content -->
-        </div> <!--end of #textpost-sample -->
-        <div class="item" id="tweet-sample">
-          <div id="tweet-content">
-          </div> <!--end of #tweet-content -->
-        </div> <!--end of #tweet-sample -->
-        <div class="item" id="linkpost-sample">
-          <div id="linkpost-content">
-          </div><!--end of #linkpost-content -->
-        </div> <!--end of #linkpost-sample -->
-        <div class="item" id="imgpost-sample">
-          <div id="imgpost-content">
-          </div><!--end of #imgpost-content -->
-        </div> <!--end of #imgpost-sample -->
-        <div class="item" id="albumart-sample">
-           <div id="albumart-content">
-          </div><!--end of #albumart-content -->
-        </div> <!--end of #albumart-sample -->
-        <div class="item" id="soundcloud-sample">
-          <div id="soundcloud-content">
-          </div><!--end of #soundcloud-content -->
-        </div> <!--end of #souncloud-sample -->
-      
-      <!-- *************** Sample Set 3 *************** -->
-        <div class="item" id="soundcloud-sample">
-          <div id="soundcloud-content">
-          </div><!--end of #soundcloud-content -->
-        </div> <!--end of #souncloud-sample -->
-        <div class="item" id="textpost-sample">
-          <div id="textpost-content">
-          </div><!--end of #textpost-content -->
-        </div> <!--end of #textpost-sample -->
-        <div class="item" id="imgpost-sample">
-          <div id="imgpost-content">
-          </div><!--end of #imgpost-content -->
-        </div> <!--end of #imgpost-sample -->
-        <div class="item" id="linkpost-sample">
-          <div id="linkpost-content">
-          </div><!--end of #linkpost-content -->
-        </div> <!--end of #linkpost-sample -->
-        <div class="item" id="tweet-sample">
-          <div id="tweet-content">
-          </div> <!--end of #tweet-content -->
-        </div> <!--end of #tweet-sample -->
-        <div class="item" id="albumart-sample">
-          <div id="albumart-content">
-          </div><!--end of #albumart-content -->
-        </div> <!--end of #albumart-sample -->        
+        <% @global_feed.each do |feed| %>
+         <%= render "users/#{feed.type.downcase}", feed: feed %>
+        <% end %>
       </div> <!--end of #masonry-container -->
     </div> <!--end of .innertube -->
   </div> <!--end of #contentcolumn -->

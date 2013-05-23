@@ -3,7 +3,7 @@
     <div class="radio-perk-text">
       <div class="drawer-link">
         <div class="link-of-drawer">   
-          <a href="#text-post" class="perkdrop" id="drawer-text-post" name="text" data-form="text-post-input">
+          <a href="#" class="perkdrop" id="drawer-text-post" name="text" data-form="text-post-input">
           <label for="drawer-text-post" style="color: #dbdbdb">Post Text</label></a>
         </div>
       </div>
@@ -35,7 +35,7 @@
      <%= simple_form_for @tl_text, remote: true do |f| %>
       <%= f.text_area :content, label: "512 character limit", placeholder: "512 character limit", class: 'text' %>
     </br>
-      <%= f.submit "Submit" %>
+      <%= f.submit "Submit", :id => "text-post" %>
     <% end %>
   </div>
   <div id="link-post-input" class="hidden">
@@ -49,7 +49,7 @@
       <%= simple_form_for @tl_image, :html => { :multipart => true } do |f| %>
       <%= f.label :photo %>
       <%= f.file_field :photo %>
-      <%= f.submit "Submit" %>
+      <%= f.submit "Submit", :id => "image-post" %>
     <% end %>
   </div>
 </div>
@@ -102,37 +102,3 @@
     }
   });
 </script>
-
-<!-- ************************* Attempt 1 ************************* -->
-
-<!-- 
-$(document).on("click", '.radio-perk-text a', function(){
-    // conditional
-    if( $('#text-post-input').hasClass('dropdown-text') ) { 
-      // make it visible
-      $('.dropdown-text').slideToggle().removeClass("dropdown-text");
-    }
-    else {
-      // make it invisible
-     $('#text-post-input').slideToggle().addClass("dropdown-text");
-    }
-  });
-
-// ************************ link ************************
-
-  $(document).on("click", '.radio-perk-link a', function() {
-    // others
-    if( $('#text-post-input').hasClass('dropdown-text') ) { //if text is invisible
-      // make it visible
-      // $('.dropdown-text').slideToggle().removeClass("dropdown-text");
-      $('#link-post-input').slideToggle().removeClass("dropdown-link"); //make link post visible
-    }
-    else {
-      $('#text-post-input').slideToggle().addClass("dropdown-text");
-      $('#link-post-input').slideToggle().removeClass("dropdown-link"); //make link post visible
-    } -->
-
-
-<!-- ************************* Attempt 2 ************************* -->
-<!-- 
- -->
