@@ -38,4 +38,5 @@ FeedEngine::Application.configure do
   config.active_support.deprecation = :stderr
 
   ENV["REDISTOGO_URL"] = 'redis://localhost:6379'
+
 end

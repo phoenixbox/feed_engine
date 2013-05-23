@@ -18,12 +18,10 @@ feature "autheticated user can post an image to their wall" do
       expect(page).to have_content "Signed in as, mockuser!"
     end
 
-    it "user can post get to image upload field", js: true do
+    it "user can get to image upload field", js: true do
       click_link "Image Post"
       click_button('image-post')
       expect(page).to have_content("Sorry pal")
     end
   end
 end
-
-

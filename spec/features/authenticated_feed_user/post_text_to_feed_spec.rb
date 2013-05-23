@@ -8,7 +8,7 @@ feature "authenticated user can add feed_items to their feed" do
       visit 'http://lvh.me:1234/'
       mock_auth_hash
       click_link 'Sign in with Twitter'
-      click_link "My Feed"
+      click_link 'My Feed'
     end
 
     let(:bad_content) { "a" * 514 }
@@ -26,6 +26,7 @@ feature "authenticated user can add feed_items to their feed" do
       fill_in 'tl_text[content]', with: "Apple Bottom Jeans"
       click_button("text-post")
       expect(page).to have_content("Apple Bottom Jeans")
+
     end
 
     it "throws an error if the post is over 512 chars", js: true do
