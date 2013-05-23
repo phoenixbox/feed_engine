@@ -11,7 +11,7 @@ Signup/Login with your twitter details<br>
 <br>
 Step 3: <br>
 Integrate with Lastfm &/or Soundcloud if you have those accounts<br>
-If not, once signed up/logged in feel free to visit www.sdjrog.streamrolled.com to check out the same content as that from the demo <br>
+If not, <em>once signed up/logged</em> in feel free to visit www.sdjrog.streamrolled.com to check out the same content as that from the demo <br>
 
 Step 4: <br>
 Streamroll away!<br>
