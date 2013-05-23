@@ -22,11 +22,6 @@ describe "TlText" do
       tl_text = TlText.create_from_form({ "content" => bad_content })
       expect(tl_text).to_not be_valid
     end
-
-    it "prevents unspecifed attributes from being saved" do
-      tl_text = TlText.create_from_form({"content" => "test", "wibble" => "wibble"})
-      expect(tl_text.data).to eq({"content" => "test"})
-    end
   end
 
 end
