@@ -282,9 +282,13 @@ width: 100%;
   text-align: center;
   margin-top: 12px;
   float: right;
-  height: 25px;
+  height: auto;
   width: 190px; 
   background: #d5d5d5;
+}
+
+.link-box a {
+  color: #2a2a2a;
 }
 
 .link-details {
