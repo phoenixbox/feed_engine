@@ -43,14 +43,23 @@ em{color: red;}
 
 textarea {
   margin: 5px 5px -5px 5px;
-  width: 409px;
-  height: 115px;
-  background-color: yellow; /* This ruins default border */
+ 
+   /* This ruins default border */
   /*background: url(images/benice.png) center center no-repeat; /* This ruins default border */*/
 }
 
-textarea.special {
+textarea.text {
+  width: 409px;
+  height: 115px;
+}
 
+input.link-length {
+  size: 90px;
+}
+
+textarea.link-textarea {
+  width: 409px;
+  height: 80px;
 }
 
 /* // 3. PAGE SECTION STYLES */
@@ -575,10 +584,6 @@ width: 100%;
   border: 0.2px solid;
 }
 
-.dropdown-text{
-  display: none;
-}
-
 /*---------------------------------------- link */
 
 .radio-perk-link {
@@ -587,8 +592,12 @@ width: 100%;
   border: 0.2px solid;
 }
 
-.dropdown-link{
-  display: none;
+/*---------------------------------------- image */
+
+.radio-perk-image {
+  margin-top: 21px;
+  background: #ff7878;
+  border: 0.2px solid;
 }
 
 /**************************************************************/
@@ -607,6 +616,10 @@ width: 100%;
   height:50px;
   width:50px;
 }*/
+
+.hidden {
+  display: none;
+}
 
 /*---------------------- Posting Forms ----------------------*/
 

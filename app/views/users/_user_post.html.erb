@@ -18,7 +18,7 @@
       </div>
     </div><!-- end of .radio-perk -->
 
-    <div class="radio-perk">
+    <div class="radio-perk-image">
        <div class="drawer-link">
           <div class="link-of-drawer"> 
             <a href="#" class="perkdrop" id="drawer-image-post" name="image" data-form="image-post-input">
@@ -29,21 +29,21 @@
 </div><!-- end of #input-type-toggles -->
 
 <div id="post-input-area">
-  <div id="text-post-input" class="dropdown-text">
+  <div id="text-post-input" class="hidden">
      <%= simple_form_for @tl_text, remote: true do |f| %>
-      <%= f.text_area :content, label: "512 character limit", placeholder: "512 character limit", input_html: { class: 'special'} %>
+      <%= f.text_area :content, label: "512 character limit", placeholder: "512 character limit", class: 'text' %>
     </br>
       <%= f.submit "Submit" %>
     <% end %>
   </div>
-  <div id="link-post-input" class="dropdown-link">
+  <div id="link-post-input" class="hidden">
      <%= simple_form_for @tl_link, remote: true do |f| %>
-      <%= f.input :link, placeholder: "Please enter link here" %>
-      <%= f.text_area :content, :rows => 6, :cols => 30 %>
+      <%= f.input :link, placeholder: "Please enter link here", :html =>{size: 90}, class: "link-length" %>
+      <%= f.text_area :content, placeholder: "256 character limit" ,class: 'link-textarea' %>
       <%= f.submit "Submit" %>
   <% end %>
   </div>
-  <div id="image-post-input" class="dropdown">
+  <div id="image-post-input" class="hidden">
       <%= simple_form_for @tl_image, :html => { :multipart => true } do |f| %>
       <%= f.label :photo %>
       <%= f.file_field :photo %>
@@ -54,27 +54,49 @@
 
 <script>
   $(document).on("click", '.radio-perk-text a', function(){
-    // others
-    if( $('#link-post-input').hasClass('dropdown-link') ) 
-    { //self
-      $('#text-post-input').slideToggle().removeClass("dropdown-text");
+    console.log('.radio-perk-text')
+    if( $('#text-post-input').hasClass('hidden') ) 
+    {
+      $('#text-post-input').removeClass("hidden");
+      $('#link-post-input').addClass("hidden");
+      $('#image-post-input').addClass("hidden");
     }
     else {
-      $('#link-post-input').slideToggle().addClass("dropdown-link");
-      $('#text-post-input').slideToggle().removeClass("dropdown-text");
+      $('#text-post-input').addClass("hidden");
+      $('#link-post-input').addClass("hidden");
+      $('#image-post-input').addClass("hidden");
     }
   });
 
   $(document).on("click", '.radio-perk-link a', function() {
-    // others
-    if( $('#text-post-input').hasClass('dropdown-text') ) 
-    { //self
-      $('#link-post-input').slideToggle().removeClass("dropdown-link"); //make link post visible
+    console.log('.radio-perk-link')
+    if( $('#link-post-input').hasClass('hidden') ) 
+    {
+      $('#link-post-input').removeClass("hidden");
+      $('#text-post-input').addClass("hidden");
+      $('#image-post-input').addClass("hidden");
     }
     else 
     {
-      $('#text-post-input').slideToggle().addClass("dropdown-text");
-      $('#link-post-input').slideToggle().removeClass("dropdown-link"); //make link post visible
+      $('#text-post-input').addClass("hidden");
+      $('#link-post-input').addClass("hidden");
+      $('#image-post-input').addClass("hidden");
+    }
+  });
+
+  $(document).on("click", '.radio-perk-image a', function() {
+    console.log('.radio-perk-image')
+    if( $('#image-post-input').hasClass('hidden') ) 
+    {
+      $('#image-post-input').removeClass("hidden");
+      $('#text-post-input').addClass("hidden");
+      $('#link-post-input').addClass("hidden");
+    }
+    else 
+    {
+      $('#text-post-input').addClass("hidden");
+      $('#link-post-input').addClass("hidden");
+      $('#image-post-input').addClass("hidden");
     }
   });
 </script>
@@ -111,27 +133,4 @@ $(document).on("click", '.radio-perk-text a', function(){
 
 <!-- ************************* Attempt 2 ************************* -->
 <!-- 
-$(document).on("click", '.radio-perk-text a', function(){
-    // others
-    if( $('#link-post-input').hasClass('dropdown-link') ) 
-    { //self
-      $('#text-post-input').slideToggle().removeClass("dropdown-text");
-    }
-    else {
-      $('#link-post-input').slideToggle().addClass("dropdown-link");
-      $('#text-post-input').slideToggle().removeClass("dropdown-text");
-    }
-  });
-
-  $(document).on("click", '.radio-perk-link a', function() {
-    // others
-    if( $('#text-post-input').hasClass('dropdown-text') ) 
-    { //self
-      $('#link-post-input').slideToggle().removeClass("dropdown-link"); //make link post visible
-    }
-    else 
-    {
-      $('#text-post-input').slideToggle().addClass("dropdown-text");
-      $('#link-post-input').slideToggle().removeClass("dropdown-link"); //make link post visible
-    }
-  }); -->
+ -->
