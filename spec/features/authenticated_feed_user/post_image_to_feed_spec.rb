@@ -7,7 +7,7 @@ feature "autheticated user can post an image to their wall" do
       visit 'http://lvh.me:1234/'
       mock_auth_hash
       click_link 'Sign in with Twitter'
-      click_link "My Feed"
+      click_link "My Crate"
     end
 
     it "user can login and visit their personal music wall", js: true do
@@ -15,15 +15,13 @@ feature "autheticated user can post an image to their wall" do
     end
 
     it "user will see the welcome message", js: true do
-      expect(page).to have_content "Signed in as, mockuser!"
+      expect(page).to have_content "Signed in as mockuser!"
     end
 
-    it "user can post get to image upload field", js: true do
+    it "user can get to image upload field", js: true do
       click_link "Image Post"
       click_button('image-post')
       expect(page).to have_content("Sorry pal")
     end
   end
 end
-
-

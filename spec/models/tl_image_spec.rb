@@ -8,12 +8,4 @@ describe "TlImage" do
       expect(tl_image).to be_invalid
     end
   end
-
-  context "invalid input" do
-    it "prevents unspecifed attributes from being saved" do
-      tl_image = TlImage.create_from_form({"content" => "test"})
-      expect(tl_image.data).to eq({"content" => "test"})
-    end
-  end
-
 end
