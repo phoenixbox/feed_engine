@@ -53,9 +53,36 @@
 </div>
 
 <script>
-// ************************ text ************************
-
   $(document).on("click", '.radio-perk-text a', function(){
+    // others
+    if( $('#link-post-input').hasClass('dropdown-link') ) 
+    { //self
+      $('#text-post-input').slideToggle().removeClass("dropdown-text");
+    }
+    else {
+      $('#link-post-input').slideToggle().addClass("dropdown-link");
+      $('#text-post-input').slideToggle().removeClass("dropdown-text");
+    }
+  });
+
+  $(document).on("click", '.radio-perk-link a', function() {
+    // others
+    if( $('#text-post-input').hasClass('dropdown-text') ) 
+    { //self
+      $('#link-post-input').slideToggle().removeClass("dropdown-link"); //make link post visible
+    }
+    else 
+    {
+      $('#text-post-input').slideToggle().addClass("dropdown-text");
+      $('#link-post-input').slideToggle().removeClass("dropdown-link"); //make link post visible
+    }
+  });
+</script>
+
+<!-- ************************* Attempt 1 ************************* -->
+
+<!-- 
+$(document).on("click", '.radio-perk-text a', function(){
     // conditional
     if( $('#text-post-input').hasClass('dropdown-text') ) { 
       // make it visible
@@ -79,26 +106,32 @@
     else {
       $('#text-post-input').slideToggle().addClass("dropdown-text");
       $('#link-post-input').slideToggle().removeClass("dropdown-link"); //make link post visible
+    } -->
+
+
+<!-- ************************* Attempt 2 ************************* -->
+<!-- 
+$(document).on("click", '.radio-perk-text a', function(){
+    // others
+    if( $('#link-post-input').hasClass('dropdown-link') ) 
+    { //self
+      $('#text-post-input').slideToggle().removeClass("dropdown-text");
     }
-    // if( $('#link-post-input').hasClass('dropdown-link') )  //if its invisible
-    // {
-    //   $('.dropdown-link').slideToggle().removeClass("dropdown-link"); //make it visible
-    // }
-    // else 
-    // {
-    //   $("#link-post-input").slideToggle().addClass("dropdown-link"); //make it invisible
-    // }
+    else {
+      $('#link-post-input').slideToggle().addClass("dropdown-link");
+      $('#text-post-input').slideToggle().removeClass("dropdown-text");
+    }
   });
 
-
-
-    // var selector = "text-post-input"
-    // console.log($(this).data('form'));
-    // var selector = $(this).data('form');
-    // console.log(selector)
-    // hide all forms
-    // show the one that is selected
-
-    // make it invisible
-    //$("#" + selector).slideToggle().addClass("dropdown-text");
-</script>
+  $(document).on("click", '.radio-perk-link a', function() {
+    // others
+    if( $('#text-post-input').hasClass('dropdown-text') ) 
+    { //self
+      $('#link-post-input').slideToggle().removeClass("dropdown-link"); //make link post visible
+    }
+    else 
+    {
+      $('#text-post-input').slideToggle().addClass("dropdown-text");
+      $('#link-post-input').slideToggle().removeClass("dropdown-link"); //make link post visible
+    }
+  }); -->
