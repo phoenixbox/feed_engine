@@ -8,7 +8,7 @@ feature "authenticated user can add feed_items to their feed" do
       visit 'http://lvh.me:1234/'
       mock_auth_hash
       click_link 'Sign in with Twitter'
-      click_link 'My Feed'
+      click_link 'My Crate'
     end
 
     let(:bad_content) { "a" * 514 }
@@ -18,7 +18,7 @@ feature "authenticated user can add feed_items to their feed" do
       end
 
     it "user will see the welcome message", js: true do
-      expect(page).to have_content "Signed in as,"
+      expect(page).to have_content "Signed in as"
     end
 
     it "user can post a text feed_item to their wall ", js: true do

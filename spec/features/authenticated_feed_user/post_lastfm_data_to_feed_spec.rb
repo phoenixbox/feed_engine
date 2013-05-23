@@ -8,7 +8,7 @@ feature "authenticated user can add feed_items to their feed" do
       visit 'http://lvh.me:1234/'
       mock_auth_hash
       click_link 'Sign in with Twitter'
-      click_link 'My Feed'
+      click_link 'My Crate'
     end
 
     it 'they can login and view their wall' do
