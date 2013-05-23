@@ -39,10 +39,31 @@ line-height: 1.5em;
 background:url(stressed_linen.png);
 }
 
-a{color:white;}
+b{font-size: 100%;}
+/*em{color: red;}*/
 
-b{font-size: 110%;}
-em{color: red;}
+a {color:white;}
+
+textarea {
+  margin: 5px 5px -5px 5px;
+ 
+   /* This ruins default border */
+  /*background: url(images/benice.png) center center no-repeat; /* This ruins default border */*/
+}
+
+textarea.text {
+  width: 409px;
+  height: 115px;
+}
+
+input.link-length {
+  size: 90px;
+}
+
+textarea.link-textarea {
+  width: 409px;
+  height: 80px;
+}
 
 /* // 3. PAGE SECTION STYLES */
 /* ################################################################ */
@@ -74,8 +95,6 @@ width: 100%;
 
 .dropdown{
   display: none;
-  float: right;
-  margin-right: 100px;
 }
 
 .links-inline li {
@@ -114,10 +133,12 @@ width: 100%;
   margin: 5px;
   width: 270px;
   height: auto;
-  background-image: url('etcher-small.png');
+  background: #d5d5d5;
+  /*background-image: url('etcher-small.png');*/
 }
 
 .text-post-box {
+  min-height: 50px;
   position: relative;
   padding: 5px;
   margin: 5px;
@@ -169,7 +190,7 @@ width: 100%;
   width: 330px;
   height: 340px;
   background: #ff5763;
-  background-image: url('etcher-small.png');
+  /*background-image: url('etcher-small.png');*/
 }
 
 #imgpost-sample {
@@ -191,7 +212,8 @@ width: 100%;
   margin: 5px;
   width: 270px;
   height: auto;
-  background-image: url('etcher-small.png');
+  background: #d5d5d5;
+  /*background-image: url('etcher-small.png');*/
 }
 
 .img-post-box {
@@ -236,7 +258,8 @@ width: 100%;
   margin: 5px;
   width: 270px;
   height: auto;
-  background-image: url('etcher-small.png');
+  background: #d5d5d5;
+  /*background-image: url('etcher-small.png');*/
   word-wrap: break-word;
 }
 
@@ -424,7 +447,32 @@ width: 100%;
   height: 50px;
 }
 
-/*------------------ Drawer ------------------*/
+/********************** Soundcloud *************************/
+
+.soundcloud-transparent {
+  position: relative;
+  width: auto;
+  height: 120px;
+  background: #4d4d4d;
+  opacity: 0.6;
+  z-index: 1000;
+}
+
+.soundcloud-details {
+  top: 5px;
+  left: 10px;
+  position: absolute;
+  width: 260px;
+  height: 120px;
+  z-index: 10;
+}
+
+.soundlcoud-bottom-info {
+  position: absolute;
+  bottom: 10px;
+}
+
+/********************** Drawer *************************/
 
 .drawer {
   float: right;
@@ -439,7 +487,7 @@ width: 100%;
   background: #4d4d4d;
   color: #ffffff;
   display: inline;
-  margin-left: 45%;
+  margin-left: 43%;
   overflow: hidden;
   padding: 0px 30px 0px 30px;
   vertical-align: middle;
@@ -456,9 +504,9 @@ width: 100%;
 
 .drawer-content {
   position: relative;
-  background: #ffffff;
+  background: #2a2a2a;
   border-collapse: collapse;
-  border-top: 3px solid #000000;
+  border-top: 1px solid #454545;
   height: 200px;
   width: 100%;
 }
@@ -497,33 +545,164 @@ width: 100%;
 }
 
 .drawer-posting {
-  float: left;
+  float: right;
   width: 695px;
   height: 85%;
-  background: #929292;
-  background-image: url('etcher-small.png');
+  background: #5a5a5a;
+  border-radius: 5px;
+  /*background-image: url('etcher-small.png');*/
 }
 
-.drawer-music {
-  float: right;
+.drawer-info {
+  float: left;
   height: 85%;
   width: 695px;
-  background: #929292;
-  background-image: url('etcher-small.png');
+  background: #5a5a5a;
+  border-radius: 5px;
+  color: #dbdbdb;
+  /*background-image: url('etcher-small.png');*/
 }
+
+.drawer-info h1 {
+  font-size: large;
+  border-radius: 15px;
+}
+
+#drawer-info-inner {
+  margin: 0px 0px 0px 10px
+}
+
+.no-link {
+  background: #fff;
+}
+
+.drawer-info h1.active {
+  pointer-events: none;
+   cursor: default;
+}
+
+#input-type-toggles {
+  background: #5a5a5a;
+  float: left;
+  margin: 5px;
+  height: 160px;
+  width: 250px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+
+
+
+.drawer-link {
+  height: auto;
+  width: 100%;
+}
+
+.radio-perk {
+  margin-top: 21px;
+  border: 0.2px solid;
+}
+/****************** Javascript Form *************************/
+
+/*---------------------------------------- text */
+
+.radio-perk-text {
+  margin-top: 21px;
+}
+
+/*---------------------------------------- link */
+
+.radio-perk-link {
+  margin-top: 21px;
+  border: 0.2px solid;
+  color: #fff;
+}
+
+/*---------------------------------------- image */
+
+.radio-perk-image {
+  margin-top: 21px;
+  border: 0.2px solid;
+}
+
+/**************************************************************/
+.radio-perk img {
+  float:right;
+}
+
+.link-of-drawer {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/*
+#small-pencil {
+  float:right;
+  height:50px;
+  width:50px;
+}*/
+
+.hidden {
+  display: none;
+}
+
+/*---------------------- Posting Forms ----------------------*/
+
+#post-input-area {
+  background: #ffffff;
+  float: right;
+  margin: 5px;
+  height: 160px;
+  width: 425px;
+  border-radius: 5px;
+}
+
+#text-post-input {
+  z-index: 100;
+}
+
+#link-post-input {
+  z-index: 50;
+}
+
+#image-post-input {
+  z-index: 30;
+}
+
+/*---------------------- Drawer Icons ----------------------*/
+
+#drawer-icons {
+  float: left;
+  margin: 5px;
+  height: 160px;
+  width: 50px;
+}
+
+#drawer-icons-container {
+
+}
+
+#small-pencil {
+  
+}
+#small-link {
+
+}
+#small-img {
+
+}
+
 
 /*---------------------- Radio Buttons ----------------------*/
 
-.radio-perk {
-  margin: 0px 20px 0px 40px;
-  padding-top: 5px;
-}
-.text-form{
-}
 
-.text-form{
+/*.text-form{
+}*/
+
+/*.text-form{
   float: right;
-}
+}*/
 
 /*---------------------- Drawer Music ----------------------*/
 

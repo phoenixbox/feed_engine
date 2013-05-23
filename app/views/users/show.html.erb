@@ -10,42 +10,40 @@
     </div> <!--end of .innertube -->
   </div> <!--end of #contentcolumn -->
 </div> <!--end of #contentwrapper -->
-  <footer class="drawer" style="height: 220px;">
-    <header class="clickme">Post Content</header>
-    <div class="drawer-content">
-      <div class="drawer-container">
-        <div class="drawer-posting">
-
-          <%=  render 'user_post' %>
-          
-        </div><!-- end of .drawer-posting -->
-        <div class="drawer-music">
+<footer class="drawer" style="height: 220px;">
+  <header class="clickme">Post Content</header>
+  <div class="drawer-content">
+    <div class="drawer-container">
+      <div class="drawer-posting">
+        <%=  render 'user_post' %> 
+      </div><!-- end of .drawer-posting -->
+      <div class="drawer-info">
+        <div id="drawer-info-inner">
+          <h1><font color:"white">Post to your StreamRolled crate!</font></h1>
+          <p>Some handy guidelines:</p><br>
           <ul>
-            <li class="genre"><a href='#'>Dubstep</a></li>
-            <li class="genre"><a href='#'>Electronic</a></li>
-            <li class="genre"><a href='#'>Punk</a></li>
-            <li class="genre"><a href='#'>House</a></li>
-            <li class="genre"><a href='#'>R&B</a></li>
+            <li><b>Text Posts:</b> Content can be up to 512 characters in length. Be creative!</li>
+            <li><b>Link Posts:</b> Include a link to your content of choice, text captions can be up to 256 characters long.</li>
+            <li><b>Image Posts:</b> Express yourself and upload an image!</li>
           </ul>
-          <div id="target"></div>
-        </div><!-- end of .drawer-music -->
-      </div><!-- end of .drawer-container -->
-    </div><!-- end of .drawer-content -->
-  </footer><!-- end of .drawer -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-  <script>
-    $(function(){
-      $('.drawer').slideDrawer({
-        showDrawer: true,
-        slideTimeout: false,
-        slideSpeed: 600,
-      });
-      var wait = setTimeout(function(){
-        $('.drawer').slideDrawer({showDrawer:"slide"});
-      },3000);
-      $(document).on("mouseover", ".drawer", function(){
-        clearTimeout(wait);
-      });
+        </div>
+      </div><!-- end of .drawer-info -->
+    </div><!-- end of .drawer-container -->
+  </div><!-- end of .drawer-content -->
+</footer><!-- end of .drawer -->
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<script>
+  $(function(){
+    $('.drawer').slideDrawer({
+      showDrawer: true,
+      slideTimeout: false,
+      slideSpeed: 600,
     });
-  </script>
-
+    var wait = setTimeout(function(){
+      $('.drawer').slideDrawer({showDrawer:"slide"});
+    },3000);
+    $(document).on("mouseover", ".drawer", function(){
+      clearTimeout(wait);
+    });
+  });
+</script>

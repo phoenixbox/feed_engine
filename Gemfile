@@ -36,6 +36,7 @@ gem 'lastfm'
 gem 'soundcloud'
 
 gem 'resque', :require => 'resque/server'
+
 gem 'resque-scheduler', :require => 'resque_scheduler'
 gem 'paperclip'
 gem 'aws-s3'

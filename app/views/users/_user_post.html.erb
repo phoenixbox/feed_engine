@@ -1,42 +1,51 @@
-<div id="input-type-toggles" style="float: left">
-  <div class="user-post-buttons">
-    <div class="radio-perk">
-      <a href="#" class="perkdrop" id="text-post" name="text">
-      <label for="text-post">Text Post</label>
-    </div>
-  </div>
+<div id="input-type-toggles">
 
-  <div class="user-post-buttons">    
-    <div class="radio-perk">
-      <a href="#" class="perkdrop" id="link-post" name="link">
-      <label for="link-post">Link Post</label>
-    </div>
-  </div>
+    <div class="radio-perk-text">
+      <div class="drawer-link">
+        <div class="link-of-drawer">   
+          <a href="#" class="perkdrop" id="drawer-text-post" name="text" data-form="text-post-input">
+          <label for="drawer-text-post" style="color: #dbdbdb">Post Text</label></a>
+        </div>
+      </div>
+    </div><!-- end of .radio-perk-text -->
 
-  <div class="user-post-buttons">
-    <div class="radio-perk">
-      <a href="#" class="perkdrop" id="image-post" name="image">
-      <label for="image-post">Image Post</label>
-    </div>
-  </div>
-</div>
+    <div class="radio-perk-link alt">
+      <div class="drawer-link">
+        <div class="link-of-drawer"> 
+          <a href="#" class="perkdrop" id="drawer-link-post" name="link" data-form="link-post-input">
+          <label for="drawer-link-post" style="color: #dbdbdb">Post Link</label>
+          </a>
+        </div>
+      </div>
+    </div><!-- end of .radio-perk -->
 
-<div id="post-input-area" style="float: right">
-  <div id="text-post-input" class="dropdown">
+    <div class="radio-perk-image">
+       <div class="drawer-link">
+          <div class="link-of-drawer"> 
+            <a href="#" class="perkdrop" id="drawer-image-post" name="image" data-form="image-post-input">
+            <label for="drawer-image-post" style="color: #dbdbdb">Post Image</label>
+          </a>
+          </div>
+      </div><!-- end of #drawer-image-post -->
+    </div><!-- end of .radio-perk -->
+</div><!-- end of #input-type-toggles -->
+
+<div id="post-input-area">
+  <div id="text-post-input" class="hidden">
      <%= simple_form_for @tl_text, remote: true do |f| %>
-      <%= f.text_area :content, label: "512 character limit", placeholder: "512 character limit", :rows => 6, :cols => 45 %>
+      <%= f.text_area :content, label: "512 character limit", placeholder: "512 character limit", class: 'text' %>
     </br>
       <%= f.submit "Submit", :id => "text-post" %>
     <% end %>
   </div>
-  <div id="link-post-input" class="dropdown">
+  <div id="link-post-input" class="hidden">
      <%= simple_form_for @tl_link, remote: true do |f| %>
-      <%= f.input :link, placeholder: "Please enter link here" %>
-      <%= f.text_area :content, :rows => 6, :cols => 30 %>
-      <%= f.submit "Submit", :id => "link-post" %>
+      <%= f.input :link, placeholder: "Please enter link here", :html =>{size: 90}, class: "link-length" %>
+      <%= f.text_area :content, placeholder: "256 character limit" ,class: 'link-textarea' %>
+      <%= f.submit "Submit" %>
   <% end %>
   </div>
-  <div id="image-post-input" class="dropdown">
+  <div id="image-post-input" class="hidden">
       <%= simple_form_for @tl_image, :html => { :multipart => true } do |f| %>
       <%= f.label :photo %>
       <%= f.file_field :photo %>
@@ -46,9 +55,50 @@
 </div>
 
 <script>
-  $(document).on("click", '.radio-perk a', function(){
-    $('.toggle-visible').slideToggle().removeClass("toggle-visible");
-    var selector = "#" + $(this).attr("id") + "-input"
-    $(selector).slideToggle().addClass("toggle-visible");
+  $(document).on("click", '.radio-perk-text a', function(){
+    console.log('.radio-perk-text')
+    if( $('#text-post-input').hasClass('hidden') ) 
+    {
+      $('#text-post-input').removeClass("hidden");
+      $('#link-post-input').addClass("hidden");
+      $('#image-post-input').addClass("hidden");
+    }
+    else {
+      $('#text-post-input').addClass("hidden");
+      $('#link-post-input').addClass("hidden");
+      $('#image-post-input').addClass("hidden");
+    }
+  });
+
+  $(document).on("click", '.radio-perk-link a', function() {
+    console.log('.radio-perk-link')
+    if( $('#link-post-input').hasClass('hidden') ) 
+    {
+      $('#link-post-input').removeClass("hidden");
+      $('#text-post-input').addClass("hidden");
+      $('#image-post-input').addClass("hidden");
+    }
+    else 
+    {
+      $('#text-post-input').addClass("hidden");
+      $('#link-post-input').addClass("hidden");
+      $('#image-post-input').addClass("hidden");
+    }
+  });
+
+  $(document).on("click", '.radio-perk-image a', function() {
+    console.log('.radio-perk-image')
+    if( $('#image-post-input').hasClass('hidden') ) 
+    {
+      $('#image-post-input').removeClass("hidden");
+      $('#text-post-input').addClass("hidden");
+      $('#link-post-input').addClass("hidden");
+    }
+    else 
+    {
+      $('#text-post-input').addClass("hidden");
+      $('#link-post-input').addClass("hidden");
+      $('#image-post-input').addClass("hidden");
+    }
   });
 </script>

@@ -15,7 +15,6 @@ REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.passwor
 Resque.redis = REDIS
 
 task "resque:setup" => :environment do
-
   Resque.before_fork = Proc.new { ActiveRecord::Base.establish_connection }
 end
 
