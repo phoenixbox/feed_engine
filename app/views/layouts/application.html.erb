@@ -13,34 +13,25 @@
     <div id="topsection">
       <div class="innertube">
         <div id="maincontainer" >
-          <div class="nav_image">
-            <%= image_tag current_user.image_url.gsub("normal","bigger") %>
-          </div>
-          <div class="name-space">
-            Signed in as, <div class="user_name"> <%= current_user.name %>!
-          </div>
-          <div class="signout">
-            <%= link_to "[Sign out]", signout_path, redirect_to: root_url(subdomain: 'www') %>
-          </div>
-        </div>
-          <div id="logo">
-            <div id="logo_image">
-              <%= image_tag('tuneline.png')%>
+
+          <div class="left-header">
+            <div class="nav_image" style="background:url(<%= current_user.image_url %>) no-repeat;"></div>
+            <div class="name-space">
+              Signed in as <%= current_user.name %>!
+              <%= link_to "Sign out", signout_path, redirect_to: root_url(subdomain: 'www') %>
             </div>
           </div>
-          <div class="global_feed_button">
-            <center>
-            <%= link_to( image_tag('globe.png', :size => "50x43"), root_url(subdomain: "www")) %>
+
+        </div>
+          <div id="logo">
+            <%= image_tag('tuneline.png')%>
           </div>
           <div id="login">
-              <center>
-              <div class="login-buttons">
-                <%= link_to "My Account", myaccount_path %>
-              </div>
-              <div class="login-buttons">
-                <%= link_to "My Feed", root_url(subdomain: current_user.subdomain) %>
-              </div>
-              <% else %>
+              <ul class="nav">
+                <li><%= link_to "My Account ", myaccount_path %></li>
+                <li><%= link_to "My Crate", root_url(subdomain: current_user.subdomain) %></li>
+              </ul>
+          <% else %>
               <div id="topsection">
                 <div class="innertube">
                   <div id="logo">
@@ -49,7 +40,7 @@
                     </div>
                   </div>
                   <div class="signin">
-                      <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+                    <%= link_to "Sign in with Twitter", "/auth/twitter" %>
                   </div>
               <% end %>
           </div> <!--end of #topsection -->
