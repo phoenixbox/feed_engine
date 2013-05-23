@@ -8,6 +8,7 @@ feature "authenticated user can post a link to their wall" do
       visit 'http://lvh.me:1234/'
       mock_auth_hash
       click_link 'Sign in with Twitter'
+      click_link "My Feed"
     end
 
 

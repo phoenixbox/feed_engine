@@ -17,7 +17,7 @@ describe TlLinksController do
     end
 
     it 'does not increase the FeedItems by 1 with invalid attributes' do
-      expect {post :create, @invalid_attributes}.to raise_exception(ActiveRecord::RecordInvalid)
+      expect {post :create, @invalid_attributes}.to_not change(FeedItem, :count).by(1)
     end
   end
 
