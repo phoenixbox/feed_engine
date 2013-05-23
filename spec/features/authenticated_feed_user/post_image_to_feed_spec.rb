@@ -19,7 +19,7 @@ feature "autheticated user can post an image to their wall" do
     end
 
     it "user can get to image upload field", js: true do
-      click_link "Image Post"
+      click_link "Post Image"
       click_button('image-post')
       expect(page).to have_content("Sorry pal")
     end

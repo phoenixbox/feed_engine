@@ -22,7 +22,7 @@ feature "authenticated user can add feed_items to their feed" do
     end
 
     it "user can post a text feed_item to their wall ", js: true do
-      click_link "Text Post"
+      click_link "Post Text"
       fill_in 'tl_text[content]', with: "Apple Bottom Jeans"
       click_button("text-post")
       expect(page).to have_content("Apple Bottom Jeans")
@@ -30,7 +30,7 @@ feature "authenticated user can add feed_items to their feed" do
     end
 
     it "throws an error if the post is over 512 chars", js: true do
-      click_link "Text Post"
+      click_link "Post Text"
       fill_in 'tl_text[content]', with: bad_content
       click_button("text-post")
       expect(page).to_not have_content(bad_content)

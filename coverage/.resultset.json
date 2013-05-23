@@ -466,7 +466,7 @@
         null,
         null,
         1,
-        136,
+        174,
         null,
         null
       ],
@@ -482,10 +482,10 @@
         1,
         null,
         1,
-        221,
+        297,
         0,
-        221,
-        221,
+        297,
+        297,
         null,
         0,
         null,
@@ -656,7 +656,7 @@
         null,
         null,
         1,
-        298,
+        412,
         null,
         null
       ],
@@ -940,8 +940,6 @@
         null
       ],
       "/Users/joshmejia/code/gschool/feed-tuneline/app/models/lastfm_hyped_artists.rb": [
-        null,
-        null,
         null,
         null,
         null,
@@ -1501,6 +1499,6 @@
         null
       ]
     },
-    "timestamp": 1369296425
+    "timestamp": 1369311926
   }
 }

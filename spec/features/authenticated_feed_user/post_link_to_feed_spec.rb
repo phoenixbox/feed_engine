@@ -21,7 +21,7 @@ feature "authenticated user can post a link to their wall" do
     end
 
     it "user can post a link feed_item", js: true do
-      click_link "Link Post"
+      click_link "Post Link"
       fill_in 'tl_link[link]', with: "www.google.com"
       fill_in 'tl_link[content]', with: "LeGoogs"
       click_button("link-post")
@@ -29,7 +29,7 @@ feature "authenticated user can post a link to their wall" do
     end
 
     it "validates the input of the link and the length of the content", js: true do
-      click_link "Link Post"
+      click_link "Post Link"
       fill_in 'tl_link[link]', with: "NotALink"
       fill_in 'tl_link[content]', with: "Yeahs"
       click_button("link-post")

@@ -42,7 +42,7 @@
      <%= simple_form_for @tl_link, remote: true do |f| %>
       <%= f.input :link, placeholder: "Please enter link here", :html =>{size: 90}, class: "link-length" %>
       <%= f.text_area :content, placeholder: "256 character limit" ,class: 'link-textarea' %>
-      <%= f.submit "Submit" %>
+      <%= f.submit "Submit", id: "link-post" %>
   <% end %>
   </div>
   <div id="image-post-input" class="hidden">
