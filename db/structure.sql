@@ -88,11 +88,11 @@ CREATE TABLE feed_items (
     feed_item_points_count integer,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
+    type character varying(255),
     photo_file_name character varying(255),
     photo_content_type character varying(255),
     photo_file_size integer,
     photo_updated_at timestamp without time zone,
-    type character varying(255),
     api_created_at timestamp without time zone
 );
 
