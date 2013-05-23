@@ -533,15 +533,20 @@ width: 100%;
 /******************** Account Mgmt Page *************************/
 
 #account-mgmt-container {
+  color:#999;
   width: 960px;
-  margin: auto;
-  background: #d5d5d5;
+  margin: 10px auto;
+  background: #111;
+  border:solid 1px #1A2033;
   height: 100%;
+}
+
+#account-mgmt-container a{
+  color: #999;
 }
 
 #account-mgmt-filter-container {
   margin: 10px;
-  background: #e5e5e5;
   height: 40px;
 }
 
@@ -555,20 +560,17 @@ width: 100%;
   margin: 10px;
   padding-top: 5px;
   height: 60px;
-  background: #e5e5e5;
   text-align: center;
 }
 
 #integration-outer-container {
   margin: 10px;
   height: 370px;
-  background: #e5e5e5;
 }
 
 #integration-inner-container {
   margin: 10px;
   height: 350px;
-  background: #ff5763;
 }
 
 .integration-container-1 {
@@ -576,7 +578,6 @@ width: 100%;
   margin: 10px 230px 10px 10px;
   width: 210px;
   height: 225px;
-  background: #e5e5e5;
   position: relative;
 }
 
@@ -585,7 +586,6 @@ width: 100%;
   margin: 10px 10px 100px 230px;
   width: 210px;
   height: 225px;
-  background: #e5e5e5;
   position: absolute;
 }
 
@@ -593,7 +593,6 @@ width: 100%;
   margin: 5px;
   width: 200px;
   height: 50px;
-  background: #ff5763;
   text-align: center;
 }
 
@@ -606,7 +605,6 @@ width: 100%;
   width: 200px;
   height: 120px;
   vertical-align: middle;
-  background: #ff5763;
 }
 
 /* TODO: not correctly centered */
@@ -618,24 +616,21 @@ width: 100%;
   margin: 5px;
   width: 200px;
   height: 30px;
-  background: #ff5763;
 }
 
 .integration-button {
-  /* % experimentation */
-  margin-left: 33%;
+    text-align:center;
+    margin-left: -3px;
 }
 
 #account-details-outer-container {
   margin: 10px;
   height: 250px;
-  background: #e5e5e5;
 }
 
 #account-details-inner-container {
   margin: 10px;
   height: 230px;
-  background: #ff5763;
   display: block-inline;
 }
 
@@ -643,7 +638,6 @@ width: 100%;
   margin:15px;
   height: 40px;
   width: 910px;
-  background: #e5e5e5;
   padding-top: 5px;
   text-align: center;
 }
@@ -652,7 +646,6 @@ width: 100%;
   margin: 5px;
   height: 160px;
   width: 910px;
-  background: #e5e5e5;
 }
 
 #account-details-content h3 {
@@ -667,7 +660,6 @@ width: 100%;
   margin: 5px;
   height: 40px;
   width: 910px;
-  background: #e5e5e5;
 }
 
 #account-buttons {
@@ -680,6 +672,47 @@ width: 100%;
   display: inline;
   width:100%;
 }
+
+
+
+.btn {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #374e5a), color-stop(1, #1d2b3f));
+    background:-moz-linear-gradient(top, #374e5a 5%, #1d2b3f 100%);
+    background:-webkit-linear-gradient(top, #374e5a 5%, #1d2b3f 100%);
+    background:-o-linear-gradient(top, #374e5a 5%, #1d2b3f 100%);
+    background:-ms-linear-gradient(top, #374e5a 5%, #1d2b3f 100%);
+    background:linear-gradient(to bottom, #374e5a 5%, #1d2b3f 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#374e5a', endColorstr='#1d2b3f',GradientType=0);
+    background-color:#374e5a;
+    -moz-border-radius:7px;
+    -webkit-border-radius:7px;
+    border-radius:7px;
+    border:1px solid #27436b;
+    display:inline-block;
+    color:#dbdbdb;
+    font-family:Arial;
+    font-size:16px;
+    font-weight:normal;
+    padding:6px 11px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #000000;
+
+}
+.btn:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #1d2b3f), color-stop(1, #374e5a));
+    background:-moz-linear-gradient(top, #1d2b3f 5%, #374e5a 100%);
+    background:-webkit-linear-gradient(top, #1d2b3f 5%, #374e5a 100%);
+    background:-o-linear-gradient(top, #1d2b3f 5%, #374e5a 100%);
+    background:-ms-linear-gradient(top, #1d2b3f 5%, #374e5a 100%);
+    background:linear-gradient(to bottom, #1d2b3f 5%, #374e5a 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1d2b3f', endColorstr='#374e5a',GradientType=0);
+    background-color:#1d2b3f;
+}
+.btn:active {
+    position:relative;
+    top:1px;
+}
+
 
 /********************** Account Mgmt Feeds Page *************************/
 
@@ -882,8 +915,8 @@ margin-left: 10px; /*Set left margin to LeftColumnWidth*/
 /* ################################################################ */
 
 #topsection{
-  background: #EAEAEA;
-  height: 7em; /*Height of top section*/
+  background: #2a2a2a;
+  border-bottom: solid 1px #333;
 }
 
 #topsection h1{
