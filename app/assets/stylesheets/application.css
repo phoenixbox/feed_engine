@@ -36,6 +36,7 @@ body{
 margin:0;
 padding:0;
 line-height: 1.5em;
+background:url(stressed_linen.png);
 }
 
 b{font-size: 110%;}
