@@ -32,7 +32,7 @@ feature "authenticated user can add feed_items to their feed" do
       click_link "Text Post"
       fill_in 'tl_text[content]', with: bad_content
       click_button("text-post")
-      expect(page).to have_content("Your message must be between 1-512 characters")
+      expect(page).to_not have_content(bad_content)
     end
   end
 end
