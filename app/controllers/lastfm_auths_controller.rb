@@ -9,12 +9,9 @@ class LastfmAuthsController < ApplicationController
       Resque.enqueue(LastfmTopTracks, {:user_id => user.id})
       Resque.enqueue(LastfmTopAlbums, {:user_id => user.id})
       Resque.enqueue(LastfmTopArtists, {:user_id => user.id})
-      #LastfmTopTrack.update_top_tracks_for_user(user.id)
-      #LastfmTopAlbum.update_top_albums_for_user(user.id)
-      #LastfmTopArtist.update_top_artists_for_user(user.id)
-      redirect_to root_url(subdomain: current_user.subdomain)
+      redirect_to myaccount_path, message: "Successfully connected to LastFM."
     else
-      redirect_to root_url(subdomain: current_user.subdomain), :message => "Sorry, unable to connect"
+      redirect_to myaccount_path, error: "Unable to connect to LastFM."
     end
   end
 end
